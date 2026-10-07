@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
+  trailingSlash: true,
+  images: {
+    // Static-host friendly (no /_next/image proxy), matching allwhitelaser-next.
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "www.hollywoodwhitening.com" },
+    ],
   },
 };
 

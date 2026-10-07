@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Hollywood Whitening™ | Potenciando Sonrisas | Blanqueamiento Profesional de Dientes",
+    "description": "Inicia tu lucrativo camino en el blanqueamiento dental cosmético con los paquetes empresariales completos de Hollywood Whitening. ¡Logra hasta 20 tonos más claros con entrenamiento completo y protección legal!"
+  },
+  "hero": {
+    "titleLight": "Únase a la revolución.",
+    "body": "Con más de 20 años de experiencia, aportamos no solo experiencia, sino también un compromiso con la calidad y la innovación en cada sonrisa que mejoramos. Nuestra misión va más allá de blanquear los dientes; se trata de empoderar sonrisas y facilitar el éxito.",
+    "ctaPrimary": "Empiece hoy",
+    "ctaSecondary": "Ver paquetes",
+    "avgRating": "valoración media de los paquetes",
+    "trust": "La confianza de profesionales de todo el mundo",
+    "videoPause": "Pausar vídeo de fondo",
+    "videoPlay": "Reproducir vídeo de fondo"
+  },
+  "stats": {
+    "label": "Hollywood Whitening en cifras",
+    "items": [
+      "Años potenciando sonrisas",
+      "Continentes con oficinas",
+      "Industria anual del blanqueamiento",
+      "Valoración media de los paquetes"
+    ]
+  },
+  "marquee": [
+    "Paquetes de negocio oficiales",
+    "¡El amarillo está fuera… el blanco está dentro!",
+    "La confianza de profesionales de todo el mundo",
+    "Resultados extraordinarios",
+    "Formación online y soporte comercial",
+    "Star One™ · Comet 2™ · Galaxy™"
+  ],
+  "global": {
+    "eyebrow": "Red mundial",
+    "title": "Iluminando sonrisas en todo el mundo",
+    "body": "Bienvenido a Hollywood Whitening, sinónimo de sonrisas transformadoras y tecnología de vanguardia en la industria del blanqueamiento dental. Nuestra presencia global, con oficinas en Europa, Asia y Norteamérica, refleja nuestro compromiso de ofrecer lo mejor en blanqueamiento dental cosmético a clientes de todo el mundo.",
+    "regions": [
+      "Europa",
+      "Asia",
+      "Norteamérica"
+    ],
+    "caption": {
+      "kicker": "Presencia global",
+      "text": "Oficinas en Europa, Asia y Norteamérica"
+    },
+    "imageAlt": "Dos hombres sonrientes mirando una caja de producto Hollywood Whitening",
+    "supportTitle": "Todo lo que necesita para brillar",
+    "supportText": "Desde dispositivos de blanqueamiento efectivos y de alta gama hasta capacitación a gran escala y soporte comercial incomparable, brindamos todo lo que necesita para brillar en la industria del blanqueamiento dental.",
+    "becomeProvider": "Conviértete en proveedor",
+    "learnMore": "Más información"
+  },
+  "packages": {
+    "eyebrow": "Paquetes de negocio",
+    "title": "Elige tu paquete de negocios",
+    "intro": "Todo lo necesario para empezar — la máquina, los tratamientos, la marca y la formación — en un paquete completo.",
+    "mostPopular": "Más popular",
+    "completePackage": "Paquete completo",
+    "ratingCount": "{n} valoraciones",
+    "ratingAria": "Valorado con {r} de 5 en base a {n} valoraciones de clientes",
+    "results": "Resultados {n}/10",
+    "getStartedWith": "Empezar con {name}",
+    "callForPrice": "Solicitar precio",
+    "items": {
+      "star-one": {
+        "badge": "Paquete de inicio",
+        "tier": "Valor",
+        "treatments": "20 tratamientos incluidos",
+        "features": [
+          "Gran movilidad",
+          "Longitud de onda única",
+          "Marca Hollywood Whitening™ n.º 1",
+          "Sin mantenimiento"
+        ]
+      },
+      "comet-2": {
+        "badge": "MEJOR VENDIDO",
+        "tier": "Definitivo",
+        "treatments": "40 tratamientos incluidos",
+        "features": [
+          "Uso móvil y fijo",
+          "Longitudes de onda triples",
+          "Marca Hollywood Whitening™ n.º 1",
+          "Sin mantenimiento"
+        ]
+      },
+      "galaxy": {
+        "badge": "Avanzado",
+        "tier": "Profesional",
+        "treatments": "50 tratamientos incluidos",
+        "features": [
+          "Solo para uso fijo",
+          "Longitud de onda única",
+          "Marca Hollywood Whitening™ n.º 1",
+          "Alto mantenimiento"
+        ]
+      }
+    }
+  },
+  "technology": {
+    "eyebrow": "Tecnología innovadora y experiencia",
+    "title": [
+      "Producto perfeccionado.",
+      "Diseño atractivo.",
+      "Resultados extraordinarios."
+    ],
+    "body": [
+      "La calidad de nuestros sistemas se ve reforzada por la funcionalidad intuitiva de los equipos y el uso de productos de alta calidad. En conjunto, esto ofrece resultados extraordinarios que ningún otro sistema puede lograr.",
+      "Tecnología innovadora, producto perfeccionado, hermoso diseño y una estructura comercial sobresaliente: esto ha superado drásticamente los límites de Hollywood Whitening, dándonos el mejor nombre en la historia del blanqueamiento dental."
+    ],
+    "highlights": [
+      {
+        "title": "Tecnología innovadora",
+        "text": "Perfeccionada con un funcionamiento intuitivo del equipo."
+      },
+      {
+        "title": "Producto perfeccionado",
+        "text": "Productos superiores para resultados extraordinarios."
+      },
+      {
+        "title": "Diseño atractivo",
+        "text": "Estético y adaptable a cualquier entorno profesional."
+      },
+      {
+        "title": "Estructura de negocio",
+        "text": "Un modelo probado, fácil de entender y aplicar."
+      }
+    ],
+    "cta": "Descubra la ciencia",
+    "chipTraining": {
+      "title": "Formación online",
+      "text": "Incluye requisitos legales y orientación de marketing."
+    },
+    "chipWavelengths": {
+      "title": "Longitudes de onda triples",
+      "text": "Comet 2™ — uso móvil y fijo, resultados 10/10."
+    },
+    "imageAlt": "Primer plano de un cabezal de luz Hollywood Whitening",
+    "galleryAlt": "Tratamiento Hollywood Whitening en curso"
+  },
+  "why": {
+    "eyebrow": "¿Por qué elegir Hollywood Whitening?",
+    "title": "¡Su socio para un negocio exitoso de blanqueamiento dental!",
+    "body": [
+      "Transforme su sonrisa y lance su exitoso negocio de blanqueamiento dental con Hollywood Whitening. Como la marca más confiable de la industria, ofrecemos capacitación integral, máquinas de vanguardia y productos innovadores para garantizar resultados de primera clase.",
+      "Nuestros productos, de elegante diseño, no solo son eficaces, sino también estéticamente agradables, integrándose a la perfección en cualquier entorno profesional. Nuestro modelo de negocio, de eficacia comprobada, es fácil de entender e implementar, lo que lo hace ideal para quienes aspiran a abrir un centro de blanqueamiento dental."
+    ],
+    "cta": "Empiece su negocio hoy",
+    "pillars": [
+      {
+        "title": "Formación completa",
+        "text": "Formación online sobre nuestros productos, requisitos legales y marketing."
+      },
+      {
+        "title": "Máquinas de vanguardia",
+        "text": "Dispositivos de alta gama y eficacia para resultados de primer nivel."
+      },
+      {
+        "title": "Modelo de negocio probado",
+        "text": "Fácil de entender y aplicar — ideal para abrir su propio centro de blanqueamiento."
+      },
+      {
+        "title": "Confianza mundial",
+        "text": "Una marca reconocida mundialmente que sus clientes desean y su competencia envidia."
+      }
+    ]
+  },
+  "trend": {
+    "kicker": "¡El amarillo está fuera… el blanco está dentro!",
+    "title": "La marca de blanqueamiento dental más deseada",
+    "quote": "Hollywood Whitening™ es una marca que tus clientes desean, que tus competidores envidian y que a tu negocio le encantará.",
+    "attribution": "Investigador de tendencias empresariales",
+    "badge": "Marca más deseada",
+    "imageAlt": "Un plátano blanco — fuera el amarillo, dentro el blanco"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "No confíe sólo en nuestras palabras…",
+    "intro": "Opiniones reales de proveedores Hollywood Whitening de todo el mundo.",
+    "items": [
+      {
+        "name": "Sailunaglow",
+        "location": "Australia",
+        "quote": "Fue la mejor decisión de negocios que he tomado y no solo eso, estoy cambiando la sonrisa de las personas."
+      },
+      {
+        "name": "Sunny Smile",
+        "location": "EE.UU",
+        "quote": "Hollywood Whitening es único. Mi éxito empresarial se basa en su solidez y experiencia."
+      },
+      {
+        "name": "Hollywood by Chelsea",
+        "location": "Inglaterra-Reino Unido",
+        "quote": "¡Pasé de tener 1 o 2 clientes por semana a transformar más de 70 sonrisas por mes además de tener un trabajo de tiempo completo!"
+      },
+      {
+        "name": "Smile by Sophie",
+        "location": "Escocia-Reino Unido",
+        "quote": "Nunca imaginé que mi negocio sería tan exitoso como lo ha sido…"
+      }
+    ]
+  },
+  "blogFaq": {
+    "blogEyebrow": "Visita nuestro blog",
+    "blogTitle": "Noticias y consejos",
+    "readMore": "Leer más",
+    "readArticle": "Leer artículo",
+    "category": "Blanqueamiento dental",
+    "posts": [
+      {
+        "title": "¿Cuánto tiempo se debe mantener el gel blanqueador en los dientes de forma segura?",
+        "href": "/es/blog/cuanto-tiempo-se-debe-mantener-el-gel-blanqueador-en-los-dientes-de-forma-segura/"
+      },
+      {
+        "title": "Cómo curar y prevenir las quemaduras en las encías causadas por el blanqueamiento dental",
+        "href": "/es/blog/como-curar-y-prevenir-quemaduras-en-las-encias-blanqueamiento-dental/"
+      },
+      {
+        "title": "¿Por qué aparecen manchas blancas en los dientes después del blanqueamiento?",
+        "href": "/es/blog/manchas-blancas-despues-del-blanqueamiento-dental/"
+      },
+      {
+        "title": "¿Cómo funciona el blanqueamiento dental?",
+        "href": "/es/blog/como-funciona-el-blanqueamiento-dental/"
+      },
+      {
+        "title": "¿Cuánto dura el blanqueamiento dental? Duración, consejos y qué afecta los resultados",
+        "href": "/es/blog/cuanto-dura-el-blanqueamiento-dental/"
+      }
+    ],
+    "faqEyebrow": "Respuestas claras",
+    "faqTitle": "Preguntas frecuentes",
+    "faqIntro": "¿Piensa iniciar un negocio de blanqueamiento dental? Estas son las preguntas más frecuentes.",
+    "faqs": [
+      {
+        "q": "¿Qué es el blanqueamiento dental cosmético?",
+        "a": [
+          "El blanqueamiento dental cosmético es un método increíblemente eficaz para mejorar el tono natural de tus dientes, blanqueándolos sin necesidad de eliminar nada del esmalte, la capa superficial del diente."
+        ]
+      },
+      {
+        "q": "¿Cómo funciona el entrenamiento con Hollywood Whitening?",
+        "a": [
+          "Nuestros capacitadores profesionales realizan la capacitación de forma remota, guiándolo a través de cada aspecto que necesita comprender sobre nuestros productos.",
+          "Cubrirán los requisitos legales y también ofrecerán orientación de marketing para ayudarle a tener éxito."
+        ]
+      },
+      {
+        "q": "¿Existe demanda para el blanqueamiento dental como negocio?",
+        "a": [
+          "La demanda de blanqueamiento dental como negocio está creciendo rápidamente, ya que las personas son cada vez más conscientes de su salud bucal. La mayoría de las personas en el mundo occidental padecen algún grado de caries, por lo que existe un mercado considerable para dientes perfectos, así como para productos blanqueadores.",
+          "Existen varios métodos para blanquear los dientes, pero el blanqueamiento dental con láser es, sin duda, el más eficaz y seguro. Utiliza luz para oxidar los químicos del gel y disolver las manchas superficiales de los dientes. Este método suele ser instantáneo y puede realizarse durante la hora del almuerzo."
+        ]
+      },
+      {
+        "q": "¿Puede una persona que no sea dentista tener un negocio de blanqueamiento dental?",
+        "a": [
+          "Sí, quienes no sean dentistas pueden tener un negocio de blanqueamiento dental. Sin embargo, deberán consultar con Hollywood Whitening para asegurarse de que el negocio cumpla con todas las regulaciones necesarias. Además, deberán asegurarse de contar con el equipo, los productos, la capacitación y la orientación adecuados bajo la supervisión de Hollywood Whitening."
+        ]
+      },
+      {
+        "q": "¿Cuánto vale la industria del negocio del blanqueamiento dental?",
+        "a": [
+          "La industria del blanqueamiento dental genera un valor estimado de entre 100 y 2500 millones de dólares anuales. Esto la convierte en una de las industrias cosméticas más lucrativas y populares del mundo.",
+          "Hay diversas razones por las que esta industria es tan popular. En primer lugar, el blanqueamiento dental se ha puesto cada vez más de moda en los últimos años, y la gente está dispuesta a aprovechar cualquier oportunidad que ofrezca una solución rápida y sencilla a sus decoloraciones dentales. En segundo lugar, existe una creciente concienciación sobre la importancia de una buena higiene bucal, especialmente entre las generaciones más jóvenes, y la gente está dispuesta a hacer todo lo posible para asegurar que sus dientes luzcan lo mejor posible.",
+          "En cuanto a precios, los tratamientos de blanqueamiento dental pueden variar desde muy asequibles hasta extremadamente caros. Sin embargo, a la gente no le importa pagar un poco más por el blanqueamiento Hollywood en comparación con otros, lo que significa que nuestros miembros pueden disfrutar de la popularidad de usar una gran marca."
+        ]
+      },
+      {
+        "q": "¿El blanqueamiento dental con láser/luz debilita los dientes?",
+        "a": [
+          "Existe mucha confusión sobre el blanqueamiento dental con láser y sus posibles efectos en los dientes y el esmalte. En resumen, si bien el blanqueamiento dental con láser puede causar sensibilidad temporal, no debilita ni daña el esmalte en absoluto.",
+          "Lo que realmente ocurre durante el blanqueamiento dental con láser es que la luz se dirige a los dientes y la longitud de onda correcta actúa sobre el gel blanqueador, lo que provoca una oxidación para blanquear los dientes. Esto elimina las decoloraciones y manchas superficiales de los dientes en tan solo una hora. Aunque parezca que sus dientes no responden bien cada vez que se somete a un tratamiento en comparación con el primero, esto se debe únicamente a que se están aclarando visiblemente."
+        ]
+      },
+      {
+        "q": "¿Qué alimentos se deben evitar después del blanqueamiento dental?",
+        "a": [
+          "Después de someterse a un blanqueamiento dental, es aconsejable evitar ciertos alimentos y bebidas, entre ellos:"
+        ],
+        "list": [
+          "Café",
+          "Refresco de color oscuro",
+          "Curry",
+          "Alimentos y bebidas con colores fuertes (por ejemplo, vino tinto)"
+        ]
+      },
+      {
+        "q": "¿Cómo prepararse para el blanqueamiento dental con láser?",
+        "a": [
+          "Hay algunas cosas que puede hacer para prepararse para el blanqueamiento dental con láser.",
+          "Primero, asegúrese de cepillarse los dientes antes. También puede enjuagarse con agua antes del procedimiento. Esto ayudará a evitar que cualquier alimento interfiera en el proceso de blanqueamiento.",
+          "En segundo lugar, asegúrese de usar gafas protectoras durante el procedimiento."
+        ]
+      }
+    ]
+  },
+  "provider": {
+    "pill": "Únase a nuestra red de élite",
+    "title": "Conviértase en proveedor de Hollywood Whitening™",
+    "body": [
+      "Únase a nuestra red de élite y acceda a tecnología avanzada de blanqueamiento dental y capacitación experta. Mejore sus servicios, destaque en su consultorio y obtenga resultados excepcionales que dejen a sus clientes sonriendo con confianza.",
+      "Sea parte de una marca reconocida mundialmente comprometida con la excelencia en el blanqueamiento dental cosmético."
+    ],
+    "primary": "Conviértete en proveedor",
+    "secondary": "Comparar paquetes de negocio"
+  }
+}

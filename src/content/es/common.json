@@ -1,0 +1,48 @@
+{
+  "announcement": "Empoderando Sonrisas por más de 20 años",
+  "login": "Inicio de sesión",
+  "nav": {
+    "home": "Inicio",
+    "scienceFaq": "Ciencia y FAQ",
+    "science": "La ciencia",
+    "faq": "Preguntas frecuentes sobre el tratamiento",
+    "products": "Productos",
+    "training": "Acerca de la capacitación",
+    "about": "Sobre nosotros",
+    "blog": "Blog",
+    "providers": "Encuentre un proveedor",
+    "contact": "Contáctenos",
+    "shop": "Tienda"
+  },
+  "navDescriptions": {
+    "science": "Cómo funciona el blanqueamiento moderno acelerado por luz.",
+    "faq": "Respuestas a todo lo que preguntan sus clientes.",
+    "star-one": "Paquete de inicio · 20 tratamientos",
+    "comet-2": "Más vendido · 40 tratamientos",
+    "galaxy": "Avanzado · 50 tratamientos"
+  },
+  "explorePackages": "Ver paquetes",
+  "speakWith": [
+    "Hable con",
+    "un especialista"
+  ],
+  "openMenu": "Abrir menú",
+  "closeMenu": "Cerrar menú",
+  "menu": "Menú",
+  "skipToContent": "Saltar al contenido",
+  "language": "Idioma",
+  "homeAria": "Hollywood Whitening — inicio",
+  "footer": {
+    "about": "Más de 20 años potenciando sonrisas con tecnología de blanqueamiento de vanguardia, formación completa y un soporte comercial incomparable.",
+    "explore": "Explorar",
+    "products": "Productos",
+    "company": "Empresa",
+    "bookingLogin": "Iniciar sesión para reservas",
+    "myAccount": "Mi cuenta",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "warranty": "Garantía",
+    "sitemap": "Mapa del sitio",
+    "rights": "Todos los derechos reservados ©"
+  }
+}

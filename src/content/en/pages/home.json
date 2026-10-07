@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Hollywood Whitening™ | Empowering Smiles | Teeth Whitening",
+    "description": "Start your lucrative journey in cosmetic teeth whitening with Hollywood Whitening's comprehensive business packages. Ideal for beginners and salon veterans alike, our systems offer up to 20 shades of teeth lightening with full training and legal protection."
+  },
+  "hero": {
+    "titleLight": "Join the Revolution.",
+    "body": "With a legacy of 20+ years, we bring not just expertise but a commitment to quality and innovation in every smile we enhance. Our mission goes beyond just brightening teeth; it's about empowering smiles and enabling success.",
+    "ctaPrimary": "Get Started Today",
+    "ctaSecondary": "Explore Packages",
+    "avgRating": "average package rating",
+    "trust": "Trusted worldwide by professionals",
+    "videoPause": "Pause background video",
+    "videoPlay": "Play background video"
+  },
+  "stats": {
+    "label": "Hollywood Whitening in numbers",
+    "items": [
+      "Years empowering smiles",
+      "Continents with offices",
+      "Annual whitening industry",
+      "Average package rating"
+    ]
+  },
+  "marquee": [
+    "Official Business Packages",
+    "Yellow’s out… White’s in!",
+    "Trusted Worldwide by Professionals",
+    "Extraordinary Results",
+    "Remote Training & Business Support",
+    "Star One™ · Comet 2™ · Galaxy™"
+  ],
+  "global": {
+    "eyebrow": "Worldwide Network",
+    "title": "Illuminating Smiles Across the Globe",
+    "body": "Welcome to Hollywood Whitening, a name synonymous with transformative smiles and cutting-edge technology in the teeth whitening industry. Our global presence, with offices spanning Europe, Asia, and North America, reflects our commitment to bringing the best in cosmetic teeth whitening to clients around the world.",
+    "regions": [
+      "Europe",
+      "Asia",
+      "North America"
+    ],
+    "caption": {
+      "kicker": "Global presence",
+      "text": "Offices spanning Europe, Asia & North America"
+    },
+    "imageAlt": "Two smiling men looking at a Hollywood Whitening product box",
+    "supportTitle": "Everything you need to shine",
+    "supportText": "From high-end, effective whitening devices to full-scale training and unparalleled business support, we provide everything you need to shine in the teeth whitening industry.",
+    "becomeProvider": "Become a Provider",
+    "learnMore": "Learn More"
+  },
+  "packages": {
+    "eyebrow": "Business Packages",
+    "title": "Choose Your Business Package",
+    "intro": "Everything you need to launch — the machine, treatments, branding and training — in one complete package.",
+    "mostPopular": "Most Popular",
+    "completePackage": "Complete Package",
+    "ratingCount": "{n} ratings",
+    "ratingAria": "Rated {r} out of 5 based on {n} customer ratings",
+    "results": "{n}/10 Results",
+    "getStartedWith": "Get Started with {name}",
+    "callForPrice": "Call for Price",
+    "items": {
+      "star-one": {
+        "badge": "Starter Pack",
+        "tier": "Value",
+        "treatments": "20 Treatments Inc",
+        "features": [
+          "Great Mobility",
+          "Single Wavelength",
+          "#1 Hollywood Branding",
+          "No Maintenance"
+        ]
+      },
+      "comet-2": {
+        "badge": "BEST SELLER",
+        "tier": "Ultimate",
+        "treatments": "40 Treatments Inc",
+        "features": [
+          "Mobile & fixed use",
+          "Triple Wavelengths",
+          "#1 Hollywood Branding",
+          "No Maintenance"
+        ]
+      },
+      "galaxy": {
+        "badge": "Advanced",
+        "tier": "Serious",
+        "treatments": "50 Treatments Inc",
+        "features": [
+          "Fixed use only",
+          "Single Wavelength",
+          "#1 Hollywood Branding",
+          "High Maintenance"
+        ]
+      }
+    }
+  },
+  "technology": {
+    "eyebrow": "Innovative Technology & Expertise",
+    "title": [
+      "Perfected product.",
+      "Beautiful design.",
+      "Extraordinary results."
+    ],
+    "body": [
+      "The quality of our systems is refined by intuitive equipment functionality as well as using superior products. Together this offers extraordinary results that no other system can achieve.",
+      "Innovative technology, perfected product, beautiful design and outstanding business structure- This has dramatically pushed the boundaries for Hollywood Whitening, giving us the greatest name in teeth whitening history."
+    ],
+    "highlights": [
+      {
+        "title": "Innovative Technology",
+        "text": "Refined by intuitive equipment functionality."
+      },
+      {
+        "title": "Perfected Product",
+        "text": "Superior products for extraordinary results."
+      },
+      {
+        "title": "Beautiful Design",
+        "text": "Aesthetically pleasing, fitting seamlessly into any professional setting."
+      },
+      {
+        "title": "Business Structure",
+        "text": "A proven model that is easy to understand and implement."
+      }
+    ],
+    "cta": "Discover the Science",
+    "chipTraining": {
+      "title": "Remote training",
+      "text": "Legal requirements and marketing guidance included."
+    },
+    "chipWavelengths": {
+      "title": "Triple Wavelengths",
+      "text": "Comet 2™ — mobile & fixed use, 10/10 results."
+    },
+    "imageAlt": "Close-up of a Hollywood Whitening light head",
+    "galleryAlt": "Hollywood Whitening treatment in progress"
+  },
+  "why": {
+    "eyebrow": "Why Choose Hollywood Whitening?",
+    "title": "Your Partner for a Successful Tooth Whitening Business!",
+    "body": [
+      "Transform smiles and launch your successful teeth whitening business with Hollywood Whitening. As the most trusted brand in the industry, we offer comprehensive training, cutting-edge machines, and innovative products to ensure world-class results.",
+      "Our beautifully designed products are not only effective but also aesthetically pleasing, fitting seamlessly into any professional setting. Our proven business model is easy to understand and implement, making it ideal for anyone aspiring to open a teeth whitening center."
+    ],
+    "cta": "Start Your Business Today",
+    "pillars": [
+      {
+        "title": "Comprehensive Training",
+        "text": "Remote training covering every aspect of our products, legal requirements and marketing guidance."
+      },
+      {
+        "title": "Cutting-edge Machines",
+        "text": "High-end, effective whitening devices engineered for world-class results."
+      },
+      {
+        "title": "Proven Business Model",
+        "text": "Easy to understand and implement — ideal for opening your own whitening centre."
+      },
+      {
+        "title": "Trusted Worldwide",
+        "text": "A globally recognised brand your customers want and your competitors envy."
+      }
+    ]
+  },
+  "trend": {
+    "kicker": "Yellow’s out… White’s in!",
+    "title": "Most Desired Teeth Whitening Brand",
+    "quote": "Hollywood Whitening™ is a brand that your customers want, your competitors envy and your business will love.",
+    "attribution": "Business Trend Researcher",
+    "badge": "Desired brand",
+    "imageAlt": "A white banana — yellow's out, white's in"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Don't Just Take Our Word for it…",
+    "intro": "Real words from Hollywood Whitening providers around the world.",
+    "items": [
+      {
+        "name": "Sailunaglow",
+        "location": "Australia",
+        "quote": "It was the best business decision I have ever made and not only that I am changing peoples smiles"
+      },
+      {
+        "name": "Sunny Smile",
+        "location": "USA",
+        "quote": "Hollywood Whitening is like no others. My business success is built on their strength and expertise."
+      },
+      {
+        "name": "Hollywood by Chelsea",
+        "location": "England, UK",
+        "quote": "I've gone from having 1 or 2 clients a week to transforming over 70+ smiles per month on top of having a full time job!"
+      },
+      {
+        "name": "Smile by Sophie",
+        "location": "Scotland, UK",
+        "quote": "I never imagined my business would be as successful as it has been…"
+      }
+    ]
+  },
+  "blogFaq": {
+    "blogEyebrow": "Check Out Our Blog",
+    "blogTitle": "News & Tips",
+    "readMore": "Read More",
+    "readArticle": "Read article",
+    "category": "Teeth Whitening",
+    "posts": [
+      {
+        "title": "How Long to Keep Whitening Gel on Teeth Safely",
+        "href": "/blog/how-long-keep-whitening-gel-on-teeth-safely/"
+      },
+      {
+        "title": "How to Heal and Prevent Gum Burns from Teeth Whitening",
+        "href": "/blog/how-heal-prevent-gum-burns-teeth-whitening/"
+      },
+      {
+        "title": "Why Do White Spots Appear on Teeth After Whitening?",
+        "href": "/blog/white-spots-after-teeth-whitening/"
+      },
+      {
+        "title": "How Does Teeth Whitening Work?",
+        "href": "/blog/how-does-teeth-whitening-work/"
+      },
+      {
+        "title": "How Long Does Teeth Bleach Last? Duration, Tips & What Affects Results",
+        "href": "/blog/how-long-does-teeth-bleach-last/"
+      }
+    ],
+    "faqEyebrow": "Clear answers",
+    "faqTitle": "Frequently Asked Questions",
+    "faqIntro": "Thinking about starting a teeth whitening business? Here are the questions we hear most.",
+    "faqs": [
+      {
+        "q": "What is Cosmetic Teeth Whitening?",
+        "a": [
+          "Cosmetic teeth whitening is an incredibly efficient method for enhancing the natural shade of your teeth, brightening them without the need to remove any of the enamel, the tooth's surface layer."
+        ]
+      },
+      {
+        "q": "How Does the Training with Hollywood Whitening Work?",
+        "a": [
+          "Our professional trainers conduct the training remotely, guiding you through every aspect you need to understand about our products.",
+          "They'll cover the legal requirements and also offer marketing guidance to help you succeed."
+        ]
+      },
+      {
+        "q": "Is There a Demand for Teeth Whitening as a Business?",
+        "a": [
+          "The demand for teeth whitening as a business is growing rapidly, as people are increasingly conscious of their oral health. The majority of people in the Western world suffer from some degree of tooth decay, so there is a considerable market for perfect teeth as well as teeth whitening products.",
+          "Several different methods can be used to lighten teeth, but laser teeth whitening is by far the most effective and safe. It uses light to oxidise the chemicals in the gel and break up surface stains on teeth. This method is usually instant and can be done in a lunch break."
+        ]
+      },
+      {
+        "q": "Can a Non Dentist Own a Teeth Whitening Business?",
+        "a": [
+          "Yes, non dentist can own a teeth whitening business. However, they will need to consult with Hollywood Whitening to make sure that the business complies with all the necessary regulations. In addition, they will also need to ensure that they have the appropriate equipment, products, training and guidance under the Hollywood Whitening Umbrella."
+        ]
+      },
+      {
+        "q": "How Much is the Teeth Whitening Business Industry Worth?",
+        "a": [
+          "The teeth whitening industry is worth an estimated $2.5 billion annually. This makes it one of the most lucrative and popular cosmetic industries in the world.",
+          "There are a variety of reasons why this industry is so popular. First, teeth whitening has become increasingly fashionable over the past few years, and people are keen to take advantage of any opportunity that offers a quick and easy solution to their tooth discolourations. Second, there is a growing awareness of the importance of good oral hygiene – especially among younger generations – and people are willing to go to great lengths to ensure that their teeth look their best.",
+          "In terms of pricing, teeth whitening treatments can range from very affordable to extremely expensive. However, people don't mind paying a little extra for Hollywood Whitening compared to others, which means our members are able to enjoy the popularity of using a great brand."
+        ]
+      },
+      {
+        "q": "Does Laser/Light Teeth Whitening Weaken Teeth?",
+        "a": [
+          "There is a lot of misunderstanding around laser teeth whitening and its potential effects on teeth and enamel. In short, while laser teeth whitening can cause temporary sensitivity, it does not weaken or damage the enamel in any way.",
+          "What actually happens during laser tooth whitening is that the light is directed onto the teeth, and the correct wavelength targets the whitening gel which causes an oxidisation to whiten teeth. This results in the removal of discolourations and surface stains from your teeth, in just 1 hour. While it may seem like your teeth are not responding well every time you go for treatment compared to the first, this is only because they are becoming more visibly lighter altogether."
+        ]
+      },
+      {
+        "q": "What Foods Should One Avoid After Teeth Whitening?",
+        "a": [
+          "After undergoing teeth whitening, it's advisable to steer clear of certain foods and beverages, including:"
+        ],
+        "list": [
+          "Coffee",
+          "Dark Colored Soda",
+          "Curry",
+          "Foods and Drinks with Strong Colors (e.g. Red Wine)"
+        ]
+      },
+      {
+        "q": "How Do You Prepare Yourself for Laser Teeth Whitening?",
+        "a": [
+          "There are a few things you can do to prepare for laser teeth whitening.",
+          "First, make sure that you brush your teeth prior. Alternatively, rinse with water before the procedure. This will help avoid any potential food getting in the way of the whitening process.",
+          "Secondly, make sure to wear eye goggles during the procedure."
+        ]
+      }
+    ]
+  },
+  "provider": {
+    "pill": "Join our elite network",
+    "title": "Become a Hollywood Whitening Provider",
+    "body": [
+      "Join our elite network and gain access to advanced teeth whitening technology and expert training. Enhance your services, distinguish your practice, and deliver outstanding results that leave your clients smiling confidently.",
+      "Be part of a globally recognized brand committed to excellence in cosmetic teeth whitening."
+    ],
+    "primary": "Become a Provider",
+    "secondary": "Compare Business Packages"
+  }
+}

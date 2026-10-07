@@ -1,0 +1,48 @@
+{
+  "announcement": "Wir schenken seit über 20 Jahren ein strahlendes Lächeln.",
+  "login": "Anmeldung",
+  "nav": {
+    "home": "Startseite",
+    "scienceFaq": "Wissenschaft & FAQ",
+    "science": "Die Wissenschaft",
+    "faq": "Häufig gestellte Fragen zur Behandlung",
+    "products": "Produkte",
+    "training": "Über das Training",
+    "about": "Über uns",
+    "blog": "Blog",
+    "providers": "Anbieter finden",
+    "contact": "Kontaktieren Sie uns",
+    "shop": "Shop"
+  },
+  "navDescriptions": {
+    "science": "So funktioniert moderne lichtbeschleunigte Aufhellung.",
+    "faq": "Antworten auf alles, was Ihre Kunden fragen.",
+    "star-one": "Starterpaket · 20 Behandlungen",
+    "comet-2": "Bestseller · 40 Behandlungen",
+    "galaxy": "Fortschrittlich · 50 Behandlungen"
+  },
+  "explorePackages": "Pakete entdecken",
+  "speakWith": [
+    "Sprechen Sie mit",
+    "einem Experten"
+  ],
+  "openMenu": "Menü öffnen",
+  "closeMenu": "Menü schließen",
+  "menu": "Menü",
+  "skipToContent": "Zum Inhalt springen",
+  "language": "Sprache",
+  "homeAria": "Hollywood Whitening — Startseite",
+  "footer": {
+    "about": "Seit über 20 Jahren für strahlende Lächeln – mit modernster Aufhellungstechnologie, umfassender Schulung und unvergleichlicher Unterstützung für Ihr Unternehmen.",
+    "explore": "Entdecken",
+    "products": "Produkte",
+    "company": "Unternehmen",
+    "bookingLogin": "Buchungslogin",
+    "myAccount": "Mein Konto",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Geschäftsbedingungen",
+    "warranty": "Garantie",
+    "sitemap": "Sitemap",
+    "rights": "Alle Rechte vorbehalten ©"
+  }
+}

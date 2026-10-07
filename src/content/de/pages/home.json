@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Hollywood Whitening™ | Für ein strahlendes Lächeln | Zahnaufhellung",
+    "description": "Starten Sie Ihre lukrative Karriere im Bereich der kosmetischen Zahnaufhellung mit den umfassenden Geschäftspaketen von Hollywood Whitening. Unsere Systeme sind ideal für Einsteiger und erfahrene Salonmitarbeiter gleichermaßen und bieten bis zu 20 Farbnuancen Aufhellung inklusive umfassender Schulung und Rechtsschutz."
+  },
+  "hero": {
+    "titleLight": "Werden Sie Teil der Revolution.",
+    "body": "Mit über 20 Jahren Erfahrung bringen wir nicht nur Fachkompetenz, sondern auch ein hohes Qualitäts- und Innovationsbewusstsein in jedes Lächeln, das wir verschönern. Unsere Mission geht weit über die reine Zahnaufhellung hinaus; es geht uns darum, ein strahlendes Lächeln zu schenken und den Weg zum Erfolg zu ebnen.",
+    "ctaPrimary": "Jetzt starten",
+    "ctaSecondary": "Pakete entdecken",
+    "avgRating": "durchschnittliche Paketbewertung",
+    "trust": "Weltweit von Profis geschätzt",
+    "videoPause": "Hintergrundvideo pausieren",
+    "videoPlay": "Hintergrundvideo abspielen"
+  },
+  "stats": {
+    "label": "Hollywood Whitening in Zahlen",
+    "items": [
+      "Jahre strahlendes Lächeln",
+      "Kontinente mit Niederlassungen",
+      "Jährlicher Markt für Zahnaufhellung",
+      "Durchschnittliche Paketbewertung"
+    ]
+  },
+  "marquee": [
+    "Offizielle Geschäftspakete",
+    "Gelb ist raus… Weiß ist rein!",
+    "Weltweit von Profis geschätzt",
+    "Außergewöhnliche Ergebnisse",
+    "Online-Schulung & Business-Support",
+    "Star One™ · Comet 2™ · Galaxy™"
+  ],
+  "global": {
+    "eyebrow": "Weltweites Netzwerk",
+    "title": "Ein Lächeln auf der ganzen Welt",
+    "body": "Willkommen bei Hollywood Whitening, einem Namen, der für strahlend schöne Zähne und modernste Technologie in der Zahnaufhellungsbranche steht. Unsere globale Präsenz mit Niederlassungen in Europa, Asien und Nordamerika unterstreicht unser Engagement, Kunden weltweit die beste kosmetische Zahnaufhellung zu bieten.",
+    "regions": [
+      "Europa",
+      "Asien",
+      "Nordamerika"
+    ],
+    "caption": {
+      "kicker": "Globale Präsenz",
+      "text": "Niederlassungen in Europa, Asien und Nordamerika"
+    },
+    "imageAlt": "Zwei lächelnde Männer mit einer Hollywood Whitening Produktverpackung",
+    "supportTitle": "Alles, was Sie zum Strahlen brauchen",
+    "supportText": "Von hocheffektiven High-End-Geräten zur Zahnaufhellung über umfassende Schulungen bis hin zu unvergleichlicher Unterstützung für Ihr Unternehmen bieten wir Ihnen alles, was Sie brauchen, um in der Zahnaufhellungsbranche erfolgreich zu sein.",
+    "becomeProvider": "Werden Sie Anbieter",
+    "learnMore": "Mehr erfahren"
+  },
+  "packages": {
+    "eyebrow": "Geschäftspakete",
+    "title": "Wählen Sie Ihr Geschäftspaket",
+    "intro": "Alles für Ihren Start – Gerät, Behandlungen, Branding und Schulung – in einem Komplettpaket.",
+    "mostPopular": "Am beliebtesten",
+    "completePackage": "Komplettpaket",
+    "ratingCount": "{n} Bewertungen",
+    "ratingAria": "Bewertet mit {r} von 5, basierend auf {n} Kundenbewertungen",
+    "results": "Ergebnis: {n}/10",
+    "getStartedWith": "Mit {name} starten",
+    "callForPrice": "Preis auf Anfrage",
+    "items": {
+      "star-one": {
+        "badge": "Starterpaket",
+        "tier": "Preis-Leistung",
+        "treatments": "20 Behandlungen inkl.",
+        "features": [
+          "Hohe Mobilität",
+          "Einzelne Wellenlänge",
+          "#1 Hollywood Whitening™ Branding",
+          "Wartungsfrei"
+        ]
+      },
+      "comet-2": {
+        "badge": "BESTSELLER",
+        "tier": "Ultimativ",
+        "treatments": "40 Behandlungen inkl.",
+        "features": [
+          "Mobile und stationäre Nutzung",
+          "Dreifache Wellenlängen",
+          "#1 Hollywood Whitening™ Branding",
+          "Wartungsfrei"
+        ]
+      },
+      "galaxy": {
+        "badge": "Fortschrittlich",
+        "tier": "Profi",
+        "treatments": "50 Behandlungen inkl.",
+        "features": [
+          "Nur für feste Verwendung",
+          "Einzelne Wellenlänge",
+          "#1 Hollywood Whitening™ Branding",
+          "Hoher Wartungsaufwand"
+        ]
+      }
+    }
+  },
+  "technology": {
+    "eyebrow": "Innovative Technologie & Expertise",
+    "title": [
+      "Perfektioniertes Produkt.",
+      "Ansprechendes Design.",
+      "Außergewöhnliche Ergebnisse."
+    ],
+    "body": [
+      "Die hohe Qualität unserer Systeme wird durch intuitive Gerätebedienung und den Einsatz erstklassiger Produkte gewährleistet. Zusammen erzielen wir so außergewöhnliche Ergebnisse, die mit keinem anderen System erreicht werden können.",
+      "Innovative Technologie, perfektioniertes Produkt, ansprechendes Design und herausragende Geschäftsstruktur – all dies hat die Grenzen für Hollywood Whitening dramatisch erweitert und uns den größten Namen in der Geschichte der Zahnaufhellung eingebracht."
+    ],
+    "highlights": [
+      {
+        "title": "Innovative Technologie",
+        "text": "Durch intuitive Gerätebedienung verfeinert."
+      },
+      {
+        "title": "Perfektioniertes Produkt",
+        "text": "Erstklassige Produkte für außergewöhnliche Ergebnisse."
+      },
+      {
+        "title": "Ansprechendes Design",
+        "text": "Ästhetisch und passend für jedes professionelle Ambiente."
+      },
+      {
+        "title": "Geschäftsstruktur",
+        "text": "Ein bewährtes Modell – leicht verständlich und umsetzbar."
+      }
+    ],
+    "cta": "Die Wissenschaft entdecken",
+    "chipTraining": {
+      "title": "Online-Schulung",
+      "text": "Inklusive rechtlicher Anforderungen und Marketing-Beratung."
+    },
+    "chipWavelengths": {
+      "title": "Dreifache Wellenlängen",
+      "text": "Comet 2™ – mobil & stationär, Ergebnis 10/10."
+    },
+    "imageAlt": "Nahaufnahme eines Hollywood Whitening Lichtkopfs",
+    "galleryAlt": "Hollywood Whitening Behandlung"
+  },
+  "why": {
+    "eyebrow": "Warum Hollywood Whitening wählen?",
+    "title": "Ihr Partner für ein erfolgreiches Zahnaufhellungsgeschäft!",
+    "body": [
+      "Verwandeln Sie Ihr Lächeln und starten Sie Ihr erfolgreiches Zahnaufhellungs-Business mit Hollywood Whitening. Als branchenweit vertrauenswürdigste Marke bieten wir umfassende Schulungen, modernste Geräte und innovative Produkte für erstklassige Ergebnisse.",
+      "Unsere formschönen Produkte sind nicht nur wirksam, sondern auch ästhetisch ansprechend und fügen sich nahtlos in jedes professionelle Ambiente ein. Unser bewährtes Geschäftsmodell ist leicht verständlich und umsetzbar und somit ideal für alle, die ein Zahnaufhellungszentrum eröffnen möchten."
+    ],
+    "cta": "Starten Sie Ihr Geschäft",
+    "pillars": [
+      {
+        "title": "Umfassende Schulung",
+        "text": "Online-Schulung zu allen Produkten, rechtlichen Anforderungen und Marketing."
+      },
+      {
+        "title": "Modernste Geräte",
+        "text": "Hocheffektive High-End-Geräte für erstklassige Ergebnisse."
+      },
+      {
+        "title": "Bewährtes Geschäftsmodell",
+        "text": "Leicht verständlich und umsetzbar – ideal für Ihr eigenes Zahnaufhellungszentrum."
+      },
+      {
+        "title": "Weltweit vertraut",
+        "text": "Eine weltweit anerkannte Marke, die Ihre Kunden wollen und Ihre Konkurrenten beneiden."
+      }
+    ]
+  },
+  "trend": {
+    "kicker": "Gelb ist raus… Weiß ist rein!",
+    "title": "Die beliebteste Marke für Zahnaufhellung",
+    "quote": "Hollywood Whitening™ ist eine Marke, die Ihre Kunden wollen, Ihre Konkurrenten beneiden und die Ihr Unternehmen lieben wird.",
+    "attribution": "Business-Trendforscher",
+    "badge": "Beliebteste Marke",
+    "imageAlt": "Eine weiße Banane – Gelb ist raus, Weiß ist rein"
+  },
+  "testimonials": {
+    "eyebrow": "Erfahrungsberichte",
+    "title": "Glauben Sie uns nicht einfach so…",
+    "intro": "Echte Stimmen von Hollywood Whitening Anbietern weltweit.",
+    "items": [
+      {
+        "name": "Sailunaglow",
+        "location": "Australien",
+        "quote": "Es war die beste Geschäftsentscheidung, die ich je getroffen habe, und nicht nur das, ich verändere auch das Lächeln von Menschen."
+      },
+      {
+        "name": "Sunny Smile",
+        "location": "USA",
+        "quote": "Hollywood Whitening ist einzigartig. Mein Geschäftserfolg basiert auf ihrer Stärke und Expertise."
+      },
+      {
+        "name": "Hollywood by Chelsea",
+        "location": "England – Vereinigtes Königreich",
+        "quote": "Ich habe es geschafft, von 1 oder 2 Kunden pro Woche auf über 70+ Lächeln pro Monat zu kommen – und das neben meiner Vollzeitbeschäftigung!"
+      },
+      {
+        "name": "Smile by Sophie",
+        "location": "Schottland – Vereinigtes Königreich",
+        "quote": "Ich hätte mir nie vorstellen können, dass mein Unternehmen so erfolgreich werden würde…"
+      }
+    ]
+  },
+  "blogFaq": {
+    "blogEyebrow": "Besuchen Sie unseren Blog",
+    "blogTitle": "Neuigkeiten & Tipps",
+    "readMore": "Mehr lesen",
+    "readArticle": "Artikel lesen",
+    "category": "Zahnaufhellung",
+    "posts": [
+      {
+        "title": "Wie lange kann Zahnaufhellungsgel sicher auf den Zähnen bleiben?",
+        "href": "/de/blog/wie-lange-kann-man-zahnaufhellungsgel-sicher-auf-den-zahnen-lassen/"
+      },
+      {
+        "title": "Wie man Zahnfleischverbrennungen durch Zahnaufhellung heilt und vorbeugt",
+        "href": "/de/blog/wie-heilt-und-verhindert-man-zahnfleischverbrennungen-zahnaufhellung/"
+      },
+      {
+        "title": "Warum entstehen nach dem Bleichen weiße Flecken auf den Zähnen?",
+        "href": "/de/blog/weise-flecken-nach-der-zahnaufhellung/"
+      },
+      {
+        "title": "Wie funktioniert Zahnaufhellung?",
+        "href": "/de/blog/wie-funktioniert-zahnaufhellung/"
+      },
+      {
+        "title": "Wie lange hält die Wirkung von Zahnaufhellungsmitteln? Dauer, Tipps & Einflussfaktoren auf das Ergebnis",
+        "href": "/de/blog/wie-lange-halt-die-zahnbleiche/"
+      }
+    ],
+    "faqEyebrow": "Klare Antworten",
+    "faqTitle": "Häufig gestellte Fragen",
+    "faqIntro": "Sie möchten ein Zahnaufhellungs-Business starten? Hier sind die häufigsten Fragen.",
+    "faqs": [
+      {
+        "q": "Was ist kosmetische Zahnaufhellung?",
+        "a": [
+          "Kosmetische Zahnaufhellung ist eine unglaublich effiziente Methode, um die natürliche Farbe Ihrer Zähne zu verbessern und sie aufzuhellen, ohne dass Zahnschmelz, die oberste Schicht des Zahnes, entfernt werden muss."
+        ]
+      },
+      {
+        "q": "Wie funktioniert das Training mit Hollywood Whitening?",
+        "a": [
+          "Unsere professionellen Trainer führen die Schulung per Fernzugriff durch und begleiten Sie durch alle Aspekte, die Sie über unsere Produkte wissen müssen.",
+          "Sie kümmern sich um die rechtlichen Anforderungen und bieten Ihnen außerdem Marketingberatung, um Ihnen zum Erfolg zu verhelfen."
+        ]
+      },
+      {
+        "q": "Besteht eine Nachfrage nach Zahnaufhellung als Geschäftsmodell?",
+        "a": [
+          "Die Nachfrage nach Zahnaufhellungsprodukten wächst rasant, da immer mehr Menschen Wert auf ihre Mundgesundheit legen. Die meisten Menschen in der westlichen Welt leiden in gewissem Maße unter Karies, weshalb ein beträchtlicher Markt für makellose Zähne und Zahnaufhellungsprodukte besteht.",
+          "Es gibt verschiedene Methoden zur Zahnaufhellung, doch die Laserzahnaufhellung ist mit Abstand die effektivste und sicherste. Dabei werden die Inhaltsstoffe des Gels mithilfe von Licht oxidiert, wodurch oberflächliche Verfärbungen auf den Zähnen entfernt werden. Die Wirkung ist in der Regel sofort sichtbar und kann beispielsweise in der Mittagspause durchgeführt werden."
+        ]
+      },
+      {
+        "q": "Kann eine Person, die kein Zahnarzt ist, ein Zahnaufhellungsgeschäft besitzen?",
+        "a": [
+          "Ja, auch Nicht-Zahnärzte können ein Zahnaufhellungsstudio betreiben. Sie müssen sich jedoch mit Hollywood Whitening abstimmen, um sicherzustellen, dass ihr Studio alle erforderlichen Vorschriften erfüllt. Darüber hinaus müssen sie gewährleisten, dass sie über die notwendige Ausrüstung, Produkte, Schulungen und Unterstützung im Rahmen der Richtlinien von Hollywood Whitening verfügen."
+        ]
+      },
+      {
+        "q": "Wie hoch ist der Wert der Zahnaufhellungsbranche?",
+        "a": [
+          "Die Zahnaufhellungsindustrie erwirtschaftet schätzungsweise 1,5 Billionen US-Dollar jährlich. Damit zählt sie zu den lukrativsten und beliebtesten Kosmetikbranchen weltweit.",
+          "Es gibt verschiedene Gründe für die Popularität dieser Branche. Erstens ist die Zahnaufhellung in den letzten Jahren immer beliebter geworden, und viele Menschen nutzen gerne jede Gelegenheit, die eine schnelle und einfache Lösung für ihre Zahnverfärbungen bietet. Zweitens wächst das Bewusstsein für die Bedeutung guter Mundhygiene – insbesondere bei jüngeren Generationen – und viele sind bereit, viel Aufwand zu betreiben, um ein optimales Aussehen ihrer Zähne zu gewährleisten.",
+          "Preislich gesehen können Zahnaufhellungsbehandlungen von sehr günstig bis extrem teuer reichen. Viele Menschen sind jedoch bereit, für Hollywood Whitening etwas mehr zu bezahlen, sodass unsere Mitglieder von der Beliebtheit einer renommierten Marke profitieren können."
+        ]
+      },
+      {
+        "q": "Schwächt die Laser-/Lichtzahnaufhellung die Zähne?",
+        "a": [
+          "Es gibt viele Missverständnisse rund um die Laserzahnaufhellung und ihre möglichen Auswirkungen auf Zähne und Zahnschmelz. Kurz gesagt: Laserzahnaufhellung kann zwar vorübergehende Empfindlichkeit verursachen, schwächt oder schädigt den Zahnschmelz aber in keiner Weise.",
+          "Bei der Laser-Zahnaufhellung wird das Licht gezielt auf die Zähne gerichtet. Die richtige Wellenlänge zielt auf das Aufhellungsgel und bewirkt eine Oxidation, die die Zähne aufhellt. Dadurch werden Verfärbungen und oberflächliche Flecken innerhalb von nur einer Stunde entfernt. Auch wenn es so aussieht, als würden Ihre Zähne mit jeder Behandlung weniger gut reagieren als bei der ersten, liegt das lediglich daran, dass sie insgesamt sichtbar heller werden."
+        ]
+      },
+      {
+        "q": "Welche Lebensmittel sollte man nach einer Zahnaufhellung meiden?",
+        "a": [
+          "Nach einer Zahnaufhellung ist es ratsam, bestimmte Lebensmittel und Getränke zu meiden, darunter:"
+        ],
+        "list": [
+          "Kaffee",
+          "Dunkelfarbige Limonade",
+          "Curry",
+          "Lebensmittel und Getränke mit starken Farbstoffen (z. B. Rotwein)"
+        ]
+      },
+      {
+        "q": "Wie bereitet man sich auf eine Laser-Zahnaufhellung vor?",
+        "a": [
+          "Es gibt ein paar Dinge, die Sie tun können, um sich auf eine Laser-Zahnaufhellung vorzubereiten.",
+          "Putzen Sie Ihre Zähne vor der Behandlung. Alternativ können Sie den Mund auch mit Wasser ausspülen. So verhindern Sie, dass Speisereste den Aufhellungsprozess beeinträchtigen.",
+          "Zweitens, tragen Sie während des Eingriffs unbedingt eine Schutzbrille."
+        ]
+      }
+    ]
+  },
+  "provider": {
+    "pill": "Werden Sie Teil unseres Netzwerks",
+    "title": "Werden Sie Hollywood Whitening™ Anbieter",
+    "body": [
+      "Werden Sie Teil unseres exklusiven Netzwerks und profitieren Sie von modernster Zahnaufhellungstechnologie und Expertenschulungen. Verbessern Sie Ihre Leistungen, heben Sie sich von der Konkurrenz ab und erzielen Sie herausragende Ergebnisse, die Ihren Kunden ein selbstbewusstes Lächeln schenken.",
+      "Werden Sie Teil einer weltweit anerkannten Marke, die sich der Exzellenz im Bereich der kosmetischen Zahnaufhellung verschrieben hat."
+    ],
+    "primary": "Werden Sie Anbieter",
+    "secondary": "Geschäftspakete vergleichen"
+  }
+}

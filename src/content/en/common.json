@@ -1,0 +1,48 @@
+{
+  "announcement": "Empowering Smiles For Over 20+ Years",
+  "login": "Login",
+  "nav": {
+    "home": "Home",
+    "scienceFaq": "Science & FAQ",
+    "science": "The Science",
+    "faq": "Treatment FAQ",
+    "products": "Products",
+    "training": "About the Training",
+    "about": "About Us",
+    "blog": "Blog",
+    "providers": "Find a Provider",
+    "contact": "Contact Us",
+    "shop": "Shop"
+  },
+  "navDescriptions": {
+    "science": "How modern light-accelerated whitening works.",
+    "faq": "Everything your clients ask, answered.",
+    "star-one": "Starter Pack · 20 treatments",
+    "comet-2": "Best Seller · 40 treatments",
+    "galaxy": "Advanced · 50 treatments"
+  },
+  "explorePackages": "Explore Packages",
+  "speakWith": [
+    "Speak with",
+    "a specialist"
+  ],
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "menu": "Menu",
+  "skipToContent": "Skip to content",
+  "language": "Language",
+  "homeAria": "Hollywood Whitening — home",
+  "footer": {
+    "about": "Empowering smiles for over 20 years with cutting-edge whitening technology, full-scale training and unparalleled business support.",
+    "explore": "Explore",
+    "products": "Products",
+    "company": "Company",
+    "bookingLogin": "Booking Login",
+    "myAccount": "My Account",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "warranty": "Warranty",
+    "sitemap": "Sitemap",
+    "rights": "All Rights Reserved ©"
+  }
+}
