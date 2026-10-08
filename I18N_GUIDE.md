@@ -96,6 +96,22 @@ ru "Власть" → "Мощность"), trailing colons on spec labels, plus 
 cover Galaxy™'s "Hollywood-Zahnaufhellung", "blanqueamiento Hollywood", "голливудские процедуры"). Form 7 labels come from the live pages;
 `common.json → product` strings (price note, highlights, buttons) are new translations.
 
+## Training page
+
+```bash
+node scripts/training-scrape.mjs
+```
+
+Writes `src/content/{en,es,de}/pages/training.json` and the images in `public/images/training/`. The
+live page is split at its headings by position (the four locales share the template); the FAQ is
+read from its accordion markup.
+
+**Russian is hand-translated** (`src/content/ru/pages/training.json`) and not touched by the script:
+on the live site `/ru/обучение-отбеливанию-зубов/` redirects to the "Additional training" product that
+shares the slug, so the Russian training page can't be reached. Keep it in step with the English and
+have it reviewed by a native speaker. When the Next site takes over, our page serves that Russian URL;
+the product stays on WordPress under `/ru/product/…`.
+
 ## Refreshing the Instagram feed
 
 ```bash

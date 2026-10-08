@@ -13,10 +13,12 @@ type Props = {
   packages: HomeContent["packages"];
   viewLabel: string;
   locale: Locale;
+  /** Cards per row on desktop (2 on product pages, 3 when listing every package). */
+  columns?: 2 | 3;
 };
 
 /** Live "Related products" — as package cards (no price; links to each package page). */
-export function RelatedProducts({ title, slugs, packages, viewLabel, locale }: Props) {
+export function RelatedProducts({ title, slugs, packages, viewLabel, locale, columns = 2 }: Props) {
   const items = slugs.map((s) => PACKAGES.find((p) => p.slug === s)).filter((p) => p !== undefined);
   if (!items.length) return null;
 
@@ -24,11 +26,14 @@ export function RelatedProducts({ title, slugs, packages, viewLabel, locale }: P
     <section className="bg-white py-16 sm:py-24">
       <div className="container-x">
         <SectionHeading align="left" title={title} />
-        <ul className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
+        {/* Phones: a CSS scroll-snap row (~1.3 cards visible) running edge to edge; sm+: grid. */}
+        <ul
+          className={`-mx-5 mt-8 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden ${columns === 3 ? "lg:grid-cols-3" : ""}`}
+        >
           {items.map((p, i) => {
             const card = packages.items[p.slug as PackageSlug];
             return (
-              <Reveal as="li" key={p.slug} delay={i * 0.06}>
+              <Reveal as="li" key={p.slug} delay={i * 0.06} className="w-[77%] shrink-0 snap-start sm:w-auto">
                 <Link
                   href={pageHref(locale, p.slug)}
                   className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-white transition-shadow hover:shadow-lift"
@@ -49,12 +54,11 @@ export function RelatedProducts({ title, slugs, packages, viewLabel, locale }: P
                     <h3 className="text-xl font-bold text-ink">
                       {p.name} <span className="block font-light text-muted">{packages.completePackage}</span>
                     </h3>
-                    <p className="mt-2 flex items-center gap-1.5 text-sm text-muted">
+                    <p className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-sm text-muted">
                       <Star className="size-4 fill-star text-star" aria-hidden />
                       <strong className="font-semibold text-ink">{p.rating.toFixed(1)}</strong>
-                      <span>
-                        ({fill(packages.ratingCount, { n: p.reviews })}) · {card.treatments}
-                      </span>
+                      <span className="whitespace-nowrap">({fill(packages.ratingCount, { n: p.reviews })})</span>
+                      <span className="whitespace-nowrap">· {card.treatments}</span>
                     </p>
                     <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-brand">
                       {viewLabel}

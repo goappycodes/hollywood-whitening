@@ -21,6 +21,17 @@ export function Header() {
   const t = getCommonContent(locale);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  /**
+   * Desktop dropdowns open on CSS hover / focus-within. After a click the page changes
+   * client-side but the pointer is still over the menu and the link keeps focus, so the
+   * dropdown would stay open. Clicking marks it dismissed (and blurs the link); it re-arms
+   * when the pointer leaves that menu item.
+   */
+  const [dismissed, setDismissed] = useState<string | null>(null);
+  const dismiss = (label: string) => {
+    (document.activeElement as HTMLElement | null)?.blur();
+    setDismissed(label);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -109,26 +120,38 @@ export function Header() {
             <ul className="flex items-center gap-0.5">
               {/* "Home" is left to the logo on desktop — translated labels need the room */}
               {NAV.filter((item) => item.page !== "home").map((item) => (
-                <li key={item.label} className="group relative">
+                <li
+                  key={item.label}
+                  className="group relative"
+                  onMouseLeave={() => dismissed === item.label && setDismissed(null)}
+                >
                   <Link
                     href={pageHref(locale, item.page)}
+                    onClick={() => item.children && dismiss(item.label)}
                     className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-[13px] font-semibold whitespace-nowrap text-ink/80 transition-colors hover:bg-pearl hover:text-ink"
                   >
                     {t.nav[item.label]}
                     {item.children && (
                       <ChevronDown
-                        className="size-3.5 transition-transform group-hover:rotate-180"
+                        className={`size-3.5 transition-transform ${dismissed === item.label ? "" : "group-hover:rotate-180"}`}
                         aria-hidden
                       />
                     )}
                   </Link>
                   {item.children && (
-                    <div className="invisible absolute top-full left-1/2 w-80 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <div
+                      className={`invisible absolute top-full left-1/2 w-80 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 ${
+                        dismissed === item.label
+                          ? ""
+                          : "group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                      }`}
+                    >
                       <ul className="rounded-2xl border border-line bg-white p-2 shadow-lift">
                         {item.children.map((c) => (
                           <li key={c.page}>
                             <Link
                               href={pageHref(locale, c.page)}
+                              onClick={() => dismiss(item.label)}
                               className="block rounded-xl px-4 py-3 transition-colors hover:bg-brand-sky"
                             >
                               <span className="block text-sm font-semibold text-ink">

@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAboutContent, getContactContent, getHomeContent, getLegalContent, getProductContent } from "@/lib/content";
+import {
+  getAboutContent,
+  getContactContent,
+  getHomeContent,
+  getLegalContent,
+  getProductContent,
+  getTrainingContent,
+} from "@/lib/content";
 import {
   absoluteUrl,
   BUILT_PAGES,
@@ -17,6 +24,7 @@ import { AboutSections } from "@/components/pages/AboutSections";
 import { ContactSections } from "@/components/pages/ContactSections";
 import { LegalSections } from "@/components/pages/LegalSections";
 import { ProductSections } from "@/components/pages/ProductSections";
+import { TrainingSections } from "@/components/pages/TrainingSections";
 
 /**
  * Localised catch-all, as in allwhitelaser-next: "/", "/es/", "/de/", "/ru/" (and,
@@ -46,6 +54,7 @@ const PAGE_META: Record<BuiltPage, (locale: Locale) => { title: string; descript
   home: (locale) => getHomeContent(locale).meta,
   about: (locale) => getAboutContent(locale).meta,
   contact: (locale) => getContactContent(locale).meta,
+  training: (locale) => getTrainingContent(locale).meta,
   privacy: (locale) => getLegalContent("privacy", locale).meta,
   terms: (locale) => getLegalContent("terms", locale).meta,
   warranty: (locale) => getLegalContent("warranty", locale).meta,
@@ -76,6 +85,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[[...lang]]"
   const { locale, page } = await resolve(params);
   if (page === "about") return <AboutSections locale={locale} />;
   if (page === "contact") return <ContactSections locale={locale} />;
+  if (page === "training") return <TrainingSections locale={locale} />;
   if (page === "privacy" || page === "terms" || page === "warranty") return <LegalSections page={page} locale={locale} />;
   if (page === "star-one" || page === "comet-2" || page === "galaxy")
     return <ProductSections product={page} locale={locale} />;

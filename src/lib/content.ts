@@ -36,6 +36,12 @@ import warrantyEs from "@/content/es/pages/warranty.json";
 import warrantyDe from "@/content/de/pages/warranty.json";
 import warrantyRu from "@/content/ru/pages/warranty.json";
 
+// Training page (scripts/training-scrape.mjs; Russian translated by hand).
+import trainingEn from "@/content/en/pages/training.json";
+import trainingEs from "@/content/es/pages/training.json";
+import trainingDe from "@/content/de/pages/training.json";
+import trainingRu from "@/content/ru/pages/training.json";
+
 // Product pages (scripts/product-scrape.mjs).
 import starOneEn from "@/content/en/products/star-one.json";
 import starOneEs from "@/content/es/products/star-one.json";
@@ -86,6 +92,13 @@ export type ProductContent = {
   sections: { kind: ProductSectionKind; heading: string; blocks: ContentBlock[] }[];
   related: { title: string; items: string[] };
 };
+/** Teeth Whitening Training page — see scripts/training-scrape.mjs for the shape. */
+export type TrainingContent = Omit<typeof trainingEn, "intro" | "safe" | "technique"> & {
+  intro: { title: string; blocks: ContentBlock[] };
+  safe: { title: string; blocks: ContentBlock[]; cta: { href: string; label: string } | null };
+  technique: { title: string; blocks: ContentBlock[] };
+};
+
 export type ProductSectionKind = "description" | "package" | "training" | "about" | "faq" | "delivery" | "other";
 /** Products with a built page. Add a key (and its four JSON imports) as each is built. */
 export type ProductKey = "star-one" | "comet-2" | "galaxy";
@@ -106,6 +119,7 @@ const PRODUCTS = {
   "comet-2": { en: comet2En, es: comet2Es, de: comet2De, ru: comet2Ru },
   galaxy: { en: galaxyEn, es: galaxyEs, de: galaxyDe, ru: galaxyRu },
 } as Record<ProductKey, Record<Locale, ProductContent>>;
+const TRAINING = { en: trainingEn, es: trainingEs, de: trainingDe, ru: trainingRu } as Record<Locale, TrainingContent>;
 const COMMON: Record<Locale, CommonContent> = { en: commonEn, es: commonEs, de: commonDe, ru: commonRu };
 
 export const getHomeContent = (locale: Locale): HomeContent => HOME[locale];
@@ -113,6 +127,7 @@ export const getAboutContent = (locale: Locale): AboutContent => ABOUT[locale];
 export const getContactContent = (locale: Locale): ContactContent => CONTACT[locale];
 export const getLegalContent = (page: LegalPage, locale: Locale): LegalContent => LEGAL[page][locale];
 export const getProductContent = (key: ProductKey, locale: Locale): ProductContent => PRODUCTS[key][locale];
+export const getTrainingContent = (locale: Locale): TrainingContent => TRAINING[locale];
 export const getCommonContent = (locale: Locale): CommonContent => COMMON[locale];
 
 /** Instagram snapshot (scripts/instagram-snapshot.mjs) — same posts in every locale. */
