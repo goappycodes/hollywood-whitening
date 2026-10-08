@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { getCommonContent } from "@/lib/content";
 import { LOCALE_META, pageHref, resolvePathname, type PageKey } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/ui/Social";
+import { SocialLinks } from "@/components/ui/Social";
 
 function FooterLink({ href, label }: { href: string; label: string }) {
   const cls = "text-sm text-white/60 transition-colors hover:text-white";
@@ -85,24 +85,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex gap-3">
-              {[
-                { href: SITE.social.instagram, label: "Instagram", Icon: InstagramIcon },
-                { href: SITE.social.facebook, label: "Facebook", Icon: FacebookIcon },
-                { href: SITE.social.youtube, label: "YouTube", Icon: YoutubeIcon },
-              ].map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand hover:bg-brand hover:text-white"
-                >
-                  <Icon className="size-4.5" />
-                </a>
-              ))}
-            </div>
+            <SocialLinks className="mt-6" />
           </div>
 
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">

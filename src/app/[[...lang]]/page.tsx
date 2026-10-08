@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getHomeContent } from "@/lib/content";
+import { getAboutContent, getContactContent, getHomeContent, getLegalContent } from "@/lib/content";
 import {
   absoluteUrl,
+  BUILT_PAGES,
   catchAllStaticParams,
   languageAlternates,
   LOCALE_META,
   LOCALES,
   resolveSegments,
+  type BuiltPage,
+  type Locale,
 } from "@/lib/i18n";
 import { HomeSections } from "@/components/pages/HomeSections";
+import { AboutSections } from "@/components/pages/AboutSections";
+import { ContactSections } from "@/components/pages/ContactSections";
+import { LegalSections } from "@/components/pages/LegalSections";
 
 /**
  * Localised catch-all, as in allwhitelaser-next: "/", "/es/", "/de/", "/ru/" (and,
@@ -31,13 +37,22 @@ export function generateStaticParams() {
 async function resolve(params: PageProps<"/[[...lang]]">["params"]) {
   const { lang } = await params;
   const resolved = resolveSegments(lang);
-  if (!resolved || resolved.page !== "home") notFound();
-  return resolved;
+  if (!resolved || !(BUILT_PAGES as readonly string[]).includes(resolved.page)) notFound();
+  return resolved as { locale: Locale; page: BuiltPage };
 }
+
+const PAGE_META: Record<BuiltPage, (locale: Locale) => { title: string; description: string }> = {
+  home: (locale) => getHomeContent(locale).meta,
+  about: (locale) => getAboutContent(locale).meta,
+  contact: (locale) => getContactContent(locale).meta,
+  privacy: (locale) => getLegalContent("privacy", locale).meta,
+  terms: (locale) => getLegalContent("terms", locale).meta,
+  warranty: (locale) => getLegalContent("warranty", locale).meta,
+};
 
 export async function generateMetadata({ params }: PageProps<"/[[...lang]]">): Promise<Metadata> {
   const { locale, page } = await resolve(params);
-  const { meta } = getHomeContent(locale);
+  const meta = PAGE_META[page](locale);
   const url = absoluteUrl(locale, page);
   return {
     title: { absolute: meta.title },
@@ -54,6 +69,9 @@ export async function generateMetadata({ params }: PageProps<"/[[...lang]]">): P
 }
 
 export default async function LocalizedPage({ params }: PageProps<"/[[...lang]]">) {
-  const { locale } = await resolve(params);
+  const { locale, page } = await resolve(params);
+  if (page === "about") return <AboutSections locale={locale} />;
+  if (page === "contact") return <ContactSections locale={locale} />;
+  if (page === "privacy" || page === "terms" || page === "warranty") return <LegalSections page={page} locale={locale} />;
   return <HomeSections locale={locale} />;
 }

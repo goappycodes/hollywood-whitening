@@ -90,7 +90,7 @@ export const PAGE_SLUGS = {
 export type PageKey = keyof typeof PAGE_SLUGS;
 
 /** Pages rendered by the [[...lang]] catch-all. Add a key here when its page is built. */
-export const BUILT_PAGES = ["home"] as const satisfies readonly PageKey[];
+export const BUILT_PAGES = ["home", "about", "contact", "privacy", "terms", "warranty"] as const satisfies readonly PageKey[];
 export type BuiltPage = (typeof BUILT_PAGES)[number];
 
 /** Pages still served by WordPress — linked absolutely so they keep working. */

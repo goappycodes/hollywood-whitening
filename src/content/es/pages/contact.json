@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "¡Contacta con Hollywood Whitening - ¡Ponte en contacto hoy!",
+    "description": "¿Necesitas ayuda con el blanqueamiento dental? Contáctanos para consultas sobre el negocio, máquinas o entrenamiento."
+  },
+  "hero": {
+    "eyebrow": "Contáctenos",
+    "titleBold": "La marca más poderosa",
+    "titleLight": "¡en blanqueamiento dental!",
+    "subtitle": "Las empresas tienen más éxito con Hollywood Whitening.",
+    "cta": "Envíanos un mensaje",
+    "imageAlt": "Mujer sonriente con un folleto de Hollywood Whitening"
+  },
+  "offices": {
+    "eyebrow": "Nuestras oficinas",
+    "title": "Envíos y capacitación a nivel mundial",
+    "intro": "Estés donde estés, nuestro equipo está a una llamada: tenemos oficinas en el Reino Unido, EE. UU. y Australia.",
+    "tel": "Teléfono",
+    "directions": "Cómo llegar",
+    "items": [
+      {
+        "name": "Reino Unido y la UE",
+        "address": "207 Regent Street Londres W1B 3HH"
+      },
+      {
+        "name": "EE. UU.",
+        "address": "200 Rhode Island St, CA 94103"
+      },
+      {
+        "name": "Australia",
+        "address": "126 Phillip Street, Sídney, Nueva Gales del Sur 2000"
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Envíanos un mensaje",
+    "title": "Contáctenos",
+    "quote": {
+      "text": "“La clave del éxito es empezar antes de estar listo”",
+      "author": "Marie Forleo"
+    }
+  }
+}

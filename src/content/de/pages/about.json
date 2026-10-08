@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Über uns | Hollywood Whitening",
+    "description": "Hollywood Whitening ist ein Unternehmen, das seinen Kunden seit über 15 Jahren das beste Zahnaufhellungserlebnis bietet."
+  },
+  "hero": {
+    "eyebrow": "Über Hollywood Whitening",
+    "titleBold": "Ihr Lächeln ist",
+    "titleLight": "unser Geschäft…",
+    "subtitle": "Erzielt außergewöhnliche Ergebnisse wie kein anderes System!",
+    "quoteName": "Josefine Kristensen",
+    "quoteRole": "Research-Analystin bei Hollywood Whitening",
+    "imageAlt": "Hollywood Whitening Anbieterin mit der Aufhellungslampe",
+    "cta": "Kontakt aufnehmen"
+  },
+  "who": {
+    "eyebrow": "Wer wir sind",
+    "title": "Führend in der Zahnaufhellungsbranche",
+    "body": "Hollywood Whitening ist eine international renommierte Marke mit Niederlassungen in Europa, Asien und Nordamerika. Das Unternehmen bietet modernste Technologie und ist heute führend in der Zahnaufhellungsbranche. In den letzten zwei Jahrzehnten hat Hollywood Whitening weltweit Tausende von Zahnaufhellungsstudios eröffnet und sich damit zur führenden Marke für Zahnaufhellung entwickelt.",
+    "cta": "Kontaktieren Sie uns",
+    "businesses": "Aufhellungsstudios weltweit eröffnet",
+    "regions": [
+      "Europa",
+      "Asien",
+      "Nordamerika"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Nehmen Sie Kontakt auf",
+    "title": "Fang heute an, nicht morgen!",
+    "body": "Erzählen Sie uns kurz von sich und Ihren Plänen – unser Team meldet sich mit allem, was Sie für den Start brauchen.",
+    "callUs": "Lieber telefonieren? Rufen Sie uns an"
+  },
+  "blog": {
+    "eyebrow": "Lesen Sie unseren Blog",
+    "title": "Neuigkeiten & Trends",
+    "viewAll": "Alle anzeigen"
+  }
+}
