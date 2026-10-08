@@ -94,6 +94,7 @@ export const BUILT_PAGES = [
   "home",
   "about",
   "contact",
+  "training",
   "privacy",
   "terms",
   "warranty",
