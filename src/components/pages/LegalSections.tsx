@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ChevronDown, ChevronRight, MessageCircle } from "lucide-react";
-import { getCommonContent, getLegalContent, type LegalBlock, type LegalPage } from "@/lib/content";
+import { getCommonContent, getLegalContent, type LegalPage } from "@/lib/content";
 import { absoluteUrl, localePath, LOCALE_META, pageHref, type Locale } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
+import { Prose } from "@/components/ui/Prose";
 
 /**
  * Privacy, Terms and Warranty pages in any locale. The body is the live WordPress
@@ -19,12 +20,14 @@ export function LegalSections({ page, locale }: { page: LegalPage; locale: Local
   const t = common.legal;
   const label = common.footer[page];
 
-  // Stable, script-agnostic anchor ids (headings may be Cyrillic).
-  let n = 0;
-  const blocks = content.blocks.map((b) => (b.type === "h" ? { ...b, id: `section-${++n}` } : b)) as (LegalBlock & {
-    id?: string;
-  })[];
-  const toc = blocks.filter((b): b is { type: "h"; text: string; id: string } => b.type === "h");
+  // Stable, script-agnostic anchor ids (headings may be Cyrillic), keyed by block index.
+  const ids: Record<number, string> = {};
+  const toc: { id: string; text: string }[] = [];
+  content.blocks.forEach((b, i) => {
+    if (b.type !== "h") return;
+    ids[i] = `section-${toc.length + 1}`;
+    toc.push({ id: ids[i], text: b.text });
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -125,39 +128,8 @@ export function LegalSections({ page, locale }: { page: LegalPage; locale: Local
           )}
 
           <div className={toc.length > 2 ? "min-w-0" : "min-w-0 lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-3xl"}>
-            <article className="max-w-3xl text-[15px] leading-relaxed text-muted sm:text-base [&_a]:font-medium [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-brand-deep [&_strong]:font-semibold [&_strong]:text-ink">
-              {blocks.map((b, i) => {
-                if (b.type === "h")
-                  return (
-                    <h2
-                      key={i}
-                      id={b.id}
-                      className="mt-10 flex scroll-mt-28 items-start gap-3 text-xl leading-snug font-bold text-ink first:mt-0 sm:mt-12 sm:text-2xl"
-                    >
-                      <span aria-hidden className="mt-[0.55em] h-0.5 w-4 shrink-0 rounded-full bg-brand" />
-                      {b.text}
-                    </h2>
-                  );
-                if (b.type === "p") return <p key={i} className="mt-4" dangerouslySetInnerHTML={{ __html: b.html }} />;
-                if (b.type === "ol")
-                  return (
-                    <ol key={i} className="mt-4 list-decimal space-y-2 pl-6 marker:font-semibold marker:text-brand">
-                      {b.items.map((li, j) => (
-                        <li key={j} className="pl-1" dangerouslySetInnerHTML={{ __html: li }} />
-                      ))}
-                    </ol>
-                  );
-                return (
-                  <ul key={i} className="mt-4 space-y-2.5">
-                    {b.items.map((li, j) => (
-                      <li key={j} className="flex gap-3">
-                        <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-brand" />
-                        <span className="min-w-0" dangerouslySetInnerHTML={{ __html: li }} />
-                      </li>
-                    ))}
-                  </ul>
-                );
-              })}
+            <article className="max-w-3xl">
+              <Prose blocks={content.blocks} ids={ids} />
             </article>
 
             {/* questions card */}

@@ -92,7 +92,26 @@
       "failed": "Ihre Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an: {phone}."
     },
     "successTitle": "Vielen Dank!",
-    "successBody": "Ihre Anfrage wurde gesendet – ein Mitglied unseres Teams meldet sich in Kürze bei Ihnen."
+    "successBody": "Ihre Anfrage wurde gesendet – ein Mitglied unseres Teams meldet sich in Kürze bei Ihnen.",
+    "interest": {
+      "phone": "Mobiltelefon",
+      "describesChoices": [
+        "Zahnarzt/Kieferorthopäde",
+        "Zahnarzthelfer/in/Zahnarzthygieniker/in",
+        "Zahnmedizinstudent",
+        "Saloninhaber/Manager",
+        "Kosmetikerin",
+        "Andere"
+      ],
+      "howSoon": "Wann möchten Sie kaufen?",
+      "howSoonChoices": [
+        "0 - 3 Monate",
+        "3 - 6 Monate",
+        "6+ Monate",
+        "Ich informiere mich nur"
+      ],
+      "send": "Absenden"
+    }
   },
   "legal": {
     "eyebrow": "Rechtliches",
@@ -100,5 +119,21 @@
     "questionsTitle": "Fragen zu dieser Seite?",
     "questionsBody": "Unser Team hilft Ihnen gern – nehmen Sie Kontakt auf und wir melden uns bei Ihnen.",
     "contact": "Kontaktieren Sie uns"
+  },
+  "product": {
+    "priceNote": "Die Preise richten sich nach Ihrem Unternehmen – registrieren Sie Ihr Interesse und ein Spezialist sendet Ihnen ein persönliches Angebot.",
+    "speak": "Mit einem Spezialisten sprechen",
+    "highlights": "Paket-Highlights",
+    "specs": "Technische Daten",
+    "formIntro": "Erzählen Sie uns kurz von sich – wir melden uns mit Preisen, Finanzierungsoptionen und den nächsten Schritten.",
+    "viewPackage": "Paket ansehen",
+    "playVideo": "Video abspielen",
+    "videoTitle": "{name} – Video",
+    "prevImage": "Vorheriges Bild",
+    "nextImage": "Nächstes Bild",
+    "showImage": "Bild {n} anzeigen",
+    "openGallery": "Bildergalerie öffnen",
+    "closeGallery": "Galerie schließen",
+    "stickyCta": "Interesse registrieren"
   }
 }

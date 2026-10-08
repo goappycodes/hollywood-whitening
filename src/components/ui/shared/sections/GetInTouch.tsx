@@ -1,6 +1,7 @@
 import { Phone, Quote } from "lucide-react";
 import type { CommonContent } from "@/lib/content";
 import { countryOptions } from "@/lib/gf-countries";
+import type { EnquiryFormKey } from "@/lib/gf-forms";
 import { LOCALE_META, pageHref, type Locale } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
@@ -18,16 +19,21 @@ type Props = {
   };
   common: CommonContent;
   locale: Locale;
+  /** Gravity Form to post to — "interest" (form 7) on product pages. */
+  form?: EnquiryFormKey;
+  /** Anchor id the page links to. */
+  id?: string;
 };
 
 /**
- * Navy band with the live site's form 3 enquiry wizard ("Get in touch" on About,
- * "Contact Us" on Contact). The left column carries the intro plus phones or a quote.
+ * Navy band with the live site's enquiry wizard: form 3 ("Get in touch" on About,
+ * "Contact Us" on Contact) or form 7 ("Register Your Interest" on product pages).
+ * The left column carries the intro plus phones or a quote.
  */
-export function GetInTouch({ content, common, locale }: Props) {
+export function GetInTouch({ content, common, locale, form = "contact", id = "get-in-touch" }: Props) {
   return (
     <section
-      id="get-in-touch"
+      id={id}
       className="relative isolate scroll-mt-24 overflow-hidden bg-navy py-16 text-white sm:py-24 lg:py-28"
     >
       <div
@@ -94,6 +100,7 @@ export function GetInTouch({ content, common, locale }: Props) {
           <div className="rounded-[1.75rem] bg-white p-5 text-ink shadow-[0_40px_80px_-30px_rgb(0_0_0/0.6)] sm:p-8">
             <EnquiryForm
               t={common.enquiryForm}
+              form={form}
               countries={countryOptions(LOCALE_META[locale].htmlLang)}
               privacyHref={pageHref(locale, "privacy")}
             />

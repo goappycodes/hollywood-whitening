@@ -1,9 +1,12 @@
 "use client";
 
 /**
- * "Get in touch" enquiry form — a 2-step wizard over Gravity Forms **form 3**, the
- * form the live /about-us/ page embeds. The step split matches the live form's page
- * break (fields 1–21 | 20 onwards). Pattern follows allwhitelaser-next's EnquiryForm.
+ * Enquiry form — a 2-step wizard over one of two Gravity Forms, as allwhitelaser-next's
+ * EnquiryForm does:
+ *
+ *   - `contact`  → form 3 "Get in touch" (About, Contact). Page break after field 21.
+ *   - `interest` → form 7 "Register Your Interest" (product pages). Page break after
+ *                  Location; no message, no privacy checkbox, adds "How soon".
  *
  * Posts friendly field names to /api/enquiry, which maps them to GF ids server-side
  * (the API key never reaches the browser). Choice values are always the English GF
@@ -15,7 +18,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { fill, type EnquiryFormContent } from "@/lib/content";
 import type { CountryOption } from "@/lib/gf-countries";
-import { GF_ENQUIRY_CHOICES, RECAPTCHA_SITE_KEY } from "@/lib/gf-forms";
+import { GF_ENQUIRY_CHOICES, GF_INTEREST_CHOICES, RECAPTCHA_SITE_KEY, type EnquiryFormKey } from "@/lib/gf-forms";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Recaptcha } from "./Recaptcha";
@@ -31,18 +34,21 @@ type Field =
   | "companyName"
   | "helpWith"
   | "describes"
-  | "message";
+  | "message"
+  | "howSoon";
 
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field | "privacy" | "captcha", string>>;
 
-const STEPS: { fields: Field[]; required: Field[] }[] = [
-  {
-    fields: ["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country", "companyName", "helpWith"],
-    required: ["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country", "helpWith"],
-  },
-  { fields: ["describes", "message"], required: ["describes", "message"] },
-];
+/** Required fields per step — the live forms' page breaks. */
+const REQUIRED: Record<EnquiryFormKey, Field[][]> = {
+  contact: [
+    ["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country", "helpWith"],
+    ["describes", "message"],
+  ],
+  interest: [["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country"], ["describes"]],
+};
+const STEP_COUNT = 2;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -58,6 +64,7 @@ const EMPTY: Values = {
   helpWith: GF_ENQUIRY_CHOICES.helpWith[0],
   describes: "",
   message: "",
+  howSoon: "",
 };
 
 const control =
@@ -67,10 +74,14 @@ type Props = {
   t: EnquiryFormContent;
   /** From countryOptions() on the server — English GF values, localised labels. */
   countries: CountryOption[];
-  privacyHref: string;
+  /** Which Gravity Form to submit to. Product pages pass "interest". */
+  form?: EnquiryFormKey;
+  /** Form 3 only — the privacy page its consent checkbox links to. */
+  privacyHref?: string;
 };
 
-export function EnquiryForm({ t, countries, privacyHref }: Props) {
+export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/privacy/" }: Props) {
+  const interest = form === "interest";
   const [step, setStep] = useState(0);
   const [values, setValues] = useState<Values>(EMPTY);
   const [privacy, setPrivacy] = useState(false);
@@ -87,14 +98,14 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
 
   function validate(i: number): Errors {
     const next: Errors = {};
-    for (const f of STEPS[i].required) if (!values[f].trim()) next[f] = t.errors.required;
+    for (const f of REQUIRED[form][i]) if (!values[f].trim()) next[f] = t.errors.required;
     if (i === 0) {
       if (values.email && !EMAIL_RE.test(values.email.trim())) next.email = t.errors.email;
       if (values.confirmEmail && values.confirmEmail.trim().toLowerCase() !== values.email.trim().toLowerCase())
         next.confirmEmail = t.errors.emailMatch;
     }
     if (i === 1) {
-      if (!privacy) next.privacy = t.errors.privacy;
+      if (!interest && !privacy) next.privacy = t.errors.privacy;
       if (RECAPTCHA_SITE_KEY && !token) next.captcha = t.errors.captcha;
     }
     return next;
@@ -128,8 +139,11 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          form,
           ...values,
           privacy,
+          // Google Ads click id, when the visitor arrived from an ad (form 7 records it).
+          gclid: new URLSearchParams(window.location.search).get("gclid") ?? "",
           recaptchaToken: token,
           website: honeypot,
           sourceUrl: window.location.href,
@@ -168,11 +182,14 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
       {/* progress */}
       <div className="flex items-center justify-between gap-4">
         <p className="text-xs font-semibold tracking-[0.14em] text-brand uppercase">
-          {fill(t.step, { n: step + 1, total: STEPS.length })}
+          {fill(t.step, { n: step + 1, total: STEP_COUNT })}
         </p>
         <div className="flex gap-1.5" aria-hidden>
-          {STEPS.map((_, i) => (
-            <span key={i} className={cn("h-1.5 w-8 rounded-full transition-colors", i <= step ? "bg-brand" : "bg-line")} />
+          {Array.from({ length: STEP_COUNT }, (_, i) => (
+            <span
+              key={i}
+              className={cn("h-1.5 w-8 rounded-full transition-colors", i <= step ? "bg-brand" : "bg-line")}
+            />
           ))}
         </div>
       </div>
@@ -196,28 +213,44 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
           <Row label={t.email} htmlFor="enq-email" error={err("email")} errorId="enq-email-error">
             <input {...field("email")} type="email" autoComplete="email" className={control} />
           </Row>
-          <Row label={t.confirmEmail} htmlFor="enq-confirmEmail" error={err("confirmEmail")} errorId="enq-confirmEmail-error">
+          <Row
+            label={t.confirmEmail}
+            htmlFor="enq-confirmEmail"
+            error={err("confirmEmail")}
+            errorId="enq-confirmEmail-error"
+          >
             <input {...field("confirmEmail")} type="email" autoComplete="email" className={control} />
           </Row>
-          <Row label={t.phone} htmlFor="enq-phone" error={err("phone")} errorId="enq-phone-error">
+          <Row
+            label={interest ? t.interest.phone : t.phone}
+            htmlFor="enq-phone"
+            error={err("phone")}
+            errorId="enq-phone-error"
+          >
             <input {...field("phone")} type="tel" autoComplete="tel" className={control} />
           </Row>
-          <Row
-            label={
-              <>
-                {t.companyName} <span className="font-normal text-muted">({t.optional})</span>
-              </>
-            }
-            htmlFor="enq-companyName"
-            required={false}
-          >
-            <input {...field("companyName")} autoComplete="organization" className={control} />
-          </Row>
+          {!interest && (
+            <Row
+              label={
+                <>
+                  {t.companyName} <span className="font-normal text-muted">({t.optional})</span>
+                </>
+              }
+              htmlFor="enq-companyName"
+              required={false}
+            >
+              <input {...field("companyName")} autoComplete="organization" className={control} />
+            </Row>
+          )}
           <Row label={t.city} htmlFor="enq-city" error={err("city")} errorId="enq-city-error">
             <input {...field("city")} autoComplete="address-level2" className={control} />
           </Row>
           <Row label={t.country} htmlFor="enq-country" error={err("country")} errorId="enq-country-error">
-            <select {...field("country")} autoComplete="country-name" className={cn(control, "appearance-none pr-10 select-chevron")}>
+            <select
+              {...field("country")}
+              autoComplete="country-name"
+              className={cn(control, "appearance-none pr-10 select-chevron")}
+            >
               <option value="" disabled>
                 {t.countryPlaceholder}
               </option>
@@ -229,29 +262,31 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
             </select>
           </Row>
 
-          <fieldset className="sm:col-span-2">
-            <legend className="mb-2 text-sm font-semibold text-ink">
-              {t.helpWith} <span className="text-brand">*</span>
-            </legend>
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {GF_ENQUIRY_CHOICES.helpWith.map((value, i) => (
-                <label
-                  key={value}
-                  className="flex cursor-pointer items-center gap-3 rounded-xl border border-line bg-pearl px-4 py-3 text-sm font-medium text-ink transition-colors has-checked:border-brand has-checked:bg-brand-sky/60 has-focus-visible:ring-4 has-focus-visible:ring-brand/15"
-                >
-                  <input
-                    type="radio"
-                    name="helpWith"
-                    value={value}
-                    checked={values.helpWith === value}
-                    onChange={set("helpWith")}
-                    className="size-4 shrink-0 accent-brand"
-                  />
-                  {t.helpWithChoices[i]}
-                </label>
-              ))}
-            </div>
-          </fieldset>
+          {!interest && (
+            <fieldset className="sm:col-span-2">
+              <legend className="mb-2 text-sm font-semibold text-ink">
+                {t.helpWith} <span className="text-brand">*</span>
+              </legend>
+              <div className="grid gap-2.5 sm:grid-cols-2">
+                {GF_ENQUIRY_CHOICES.helpWith.map((value, i) => (
+                  <label
+                    key={value}
+                    className="flex cursor-pointer items-center gap-3 rounded-xl border border-line bg-pearl px-4 py-3 text-sm font-medium text-ink transition-colors has-checked:border-brand has-checked:bg-brand-sky/60 has-focus-visible:ring-4 has-focus-visible:ring-brand/15"
+                  >
+                    <input
+                      type="radio"
+                      name="helpWith"
+                      value={value}
+                      checked={values.helpWith === value}
+                      onChange={set("helpWith")}
+                      className="size-4 shrink-0 accent-brand"
+                    />
+                    {t.helpWithChoices[i]}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          )}
         </div>
       ) : (
         <div className="mt-6 grid gap-4">
@@ -260,43 +295,77 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
               <option value="" disabled>
                 {t.select}
               </option>
-              {GF_ENQUIRY_CHOICES.describes.map((value, i) => (
+              {(interest ? GF_INTEREST_CHOICES.describes : GF_ENQUIRY_CHOICES.describes).map((value, i) => (
                 <option key={value} value={value}>
-                  {t.describesChoices[i]}
+                  {(interest ? t.interest.describesChoices : t.describesChoices)[i]}
                 </option>
               ))}
             </select>
           </Row>
-          <Row label={t.message} htmlFor="enq-message" error={err("message")} errorId="enq-message-error">
-            <textarea {...field("message")} rows={4} placeholder={t.messagePlaceholder} className={cn(control, "resize-y")} />
-          </Row>
 
-          <div>
-            <p className="text-xs leading-relaxed text-muted">
-              {t.privacyLead}{" "}
-              <Link href={privacyHref} className="font-semibold text-brand underline-offset-2 hover:underline">
-                {t.privacyLink}
-              </Link>
-              .
-            </p>
-            <label className="mt-3 flex cursor-pointer items-center gap-3 text-sm font-medium text-ink">
-              <input
-                type="checkbox"
-                checked={privacy}
-                onChange={(e) => {
-                  setPrivacy(e.target.checked);
-                  setErrors((er) => ({ ...er, privacy: undefined }));
-                }}
-                aria-invalid={!!errors.privacy}
-                aria-describedby={errors.privacy ? "enq-privacy-error" : undefined}
-                className="size-4.5 shrink-0 rounded accent-brand"
-              />
-              <span>
-                {t.privacyAccept} <span className="text-brand">*</span>
-              </span>
-            </label>
-            <FieldError id="enq-privacy-error" message={errors.privacy} />
-          </div>
+          {interest ? (
+            <>
+              <Row
+                label={
+                  <>
+                    {t.companyName} <span className="font-normal text-muted">({t.optional})</span>
+                  </>
+                }
+                htmlFor="enq-companyName"
+                required={false}
+              >
+                <input {...field("companyName")} autoComplete="organization" className={control} />
+              </Row>
+              <Row label={t.interest.howSoon} htmlFor="enq-howSoon" required={false}>
+                <select {...field("howSoon")} className={cn(control, "appearance-none pr-10 select-chevron")}>
+                  <option value="">{t.select}</option>
+                  {GF_INTEREST_CHOICES.howSoon.map((value, i) => (
+                    <option key={value} value={value}>
+                      {t.interest.howSoonChoices[i]}
+                    </option>
+                  ))}
+                </select>
+              </Row>
+            </>
+          ) : (
+            <>
+              <Row label={t.message} htmlFor="enq-message" error={err("message")} errorId="enq-message-error">
+                <textarea
+                  {...field("message")}
+                  rows={4}
+                  placeholder={t.messagePlaceholder}
+                  className={cn(control, "resize-y")}
+                />
+              </Row>
+
+              <div>
+                <p className="text-xs leading-relaxed text-muted">
+                  {t.privacyLead}{" "}
+                  <Link href={privacyHref} className="font-semibold text-brand underline-offset-2 hover:underline">
+                    {t.privacyLink}
+                  </Link>
+                  .
+                </p>
+                <label className="mt-3 flex cursor-pointer items-center gap-3 text-sm font-medium text-ink">
+                  <input
+                    type="checkbox"
+                    checked={privacy}
+                    onChange={(e) => {
+                      setPrivacy(e.target.checked);
+                      setErrors((er) => ({ ...er, privacy: undefined }));
+                    }}
+                    aria-invalid={!!errors.privacy}
+                    aria-describedby={errors.privacy ? "enq-privacy-error" : undefined}
+                    className="size-4.5 shrink-0 rounded accent-brand"
+                  />
+                  <span>
+                    {t.privacyAccept} <span className="text-brand">*</span>
+                  </span>
+                </label>
+                <FieldError id="enq-privacy-error" message={errors.privacy} />
+              </div>
+            </>
+          )}
 
           {RECAPTCHA_SITE_KEY && (
             <div className="max-w-full overflow-x-auto">
@@ -347,7 +416,7 @@ export function EnquiryForm({ t, countries, privacyHref }: Props) {
             </>
           ) : (
             <>
-              {step === 0 ? t.next : t.send}
+              {step === 0 ? t.next : interest ? t.interest.send : t.send}
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
             </>
           )}

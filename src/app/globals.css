@@ -52,6 +52,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: only light;
   }
   body {
     background: var(--color-snow);
@@ -138,6 +139,16 @@ html.js [data-reveal] {
 html.js [data-reveal][data-shown] {
   opacity: 1;
   transform: none;
+}
+
+/* Product gallery image swap. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Above-the-fold entrance: pure CSS so the hero paints without waiting for hydration. */

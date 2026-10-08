@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Máquina Blanqueadora de Dientes Star One ► Hollywood Whitening™",
+    "description": "Descubre la máquina de blanqueamiento dental Star One, la más completa del mercado. Únete hoy a Hollywood Whitening y sé parte del negocio del blanqueamiento dental."
+  },
+  "name": "Paquete completo Star One™",
+  "category": "Negocio de blanqueamiento dental",
+  "rating": {
+    "value": 5,
+    "count": 9
+  },
+  "callForPrice": "Solicitar precio",
+  "videoId": "eU5sWc1mkUE",
+  "intro": [
+    {
+      "type": "p",
+      "html": "El sistema Star One™, con ajustes de sensibilidad adicionales, es ideal para técnicos móviles gracias a su tamaño compacto. Está fabricado en metal, es de calidad, resistente y duradero, por lo que no tendrá problemas para moverlo de un lugar a otro. Si tiene una clínica fija, le recomendamos que consulte nuestras otras opciones."
+    },
+    {
+      "type": "p",
+      "html": "Las imágenes son solo para fines ilustrativos, los detalles del paquete completo y la descripción se enumeran en la pestaña a continuación."
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/images/products/star-one/Star-1-Landscape.jpg",
+      "alt": "Máquina de blanqueamiento dental Star One"
+    },
+    {
+      "src": "/images/products/star-one/Star-1-Full-Kit.jpg",
+      "alt": "Máquina de blanqueamiento dental Star-1"
+    },
+    {
+      "src": "/images/products/star-one/3.jpg",
+      "alt": "Star One™ Complete Package - Imagen 3"
+    },
+    {
+      "src": "/images/products/star-one/4.jpg",
+      "alt": "Star One™ Complete Package - Imagen 4"
+    }
+  ],
+  "formTitle": "Registre su interés",
+  "sections": [
+    {
+      "kind": "description",
+      "heading": "Descripción",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "Descripción del Producto"
+        },
+        {
+          "type": "h",
+          "text": "Máquina de blanqueamiento dental Star-1"
+        },
+        {
+          "type": "p",
+          "html": "Si eres nuevo en el sector, necesitarás un paquete completo. Este paquete incluye todo lo necesario para 20 a 80 sesiones (según el paquete). No es necesario volver a pedir materiales como geles blanqueadores dentales hasta entonces."
+        },
+        {
+          "type": "p",
+          "html": "El nivel de resultados que alcanzamos es extraordinario, por eso somos “<a href=\"/es/\">Hollywood Whitening™</a>Para mantener este nivel de calidad, Hollywood Whitening continúa mejorando sus sistemas para estar a la vanguardia del mercado en constante evolución."
+        },
+        {
+          "type": "p",
+          "html": "Un paquete completo es técnicamente una franquicia sin los costos donde los clientes pueden contactarlo en nuestros sitios web buscando su ubicación más cercana, obtendrá negocios directos gratuitos por teléfono o correo electrónico. <em>(Sujeto a lo siguiente*) </em>Haga clic en la pestaña Paquete completo para ver qué más incluye este paquete completo.<em><br> </em>"
+        },
+        {
+          "type": "p",
+          "html": "<strong>*Condiciones de listado de ubicación:</strong><em> Como parte de este exitoso programa de recomendaciones comerciales, tenemos el derecho de elegir a quiénes incluimos en nuestro sitio web y de encontrar una página de ubicación. El centro de referencia está disponible para todos los que compran nuestros sistemas, pero si no es profesional, nos reservamos el derecho de no incluirlo.</em>"
+        },
+        {
+          "type": "h",
+          "text": "Star One™ – Sistema de blanqueamiento dental LED"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Voltaje de entrada",
+              "CA 110~240 V 50/60 Hz"
+            ],
+            [
+              "Voltaje de salida",
+              "4,7 V"
+            ],
+            [
+              "Potencia",
+              "33VA"
+            ],
+            [
+              "Longitud de onda (azul)",
+              "460-490 nm"
+            ],
+            [
+              "Densidad",
+              "150-250 mW/cm2"
+            ]
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Tamaños y dimensiones"
+        },
+        {
+          "type": "p",
+          "html": "<strong>Caja de la máquina:</strong> 72×60×24cm - 12kg<br> <strong>Caja de materiales:</strong>30 x 15 x 25 cm - 4 kg"
+        }
+      ]
+    },
+    {
+      "kind": "delivery",
+      "heading": "Entrega",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "<strong>Entrega del producto:</strong> Una vez procesados los pagos, el producto se enviará directamente a su domicilio. El envío se calcula automáticamente en su carrito de compras con la empresa de transporte adecuada según su ubicación. Una vez recibidos sus artículos, inspeccione el envío en un plazo de 7 días para detectar posibles daños durante el transporte."
+        },
+        {
+          "type": "p",
+          "html": "Los artículos se envían diariamente si el pedido se realiza antes de las 13:00 h de lunes a viernes, excepto festivos nacionales. Si no recibe sus artículos en un plazo de 3 días, por favor, notifíquenoslo por mensaje en la página de contacto para que podamos rastrear su envío. No podemos rastrear los artículos después de varias semanas y podrían perderse si tarda demasiado."
+        },
+        {
+          "type": "p",
+          "html": "Existe un pequeño porcentaje de envíos que no llegarán a tiempo debido a diversas razones de la empresa de mensajería. No tenemos control sobre esto y rastrearemos sus artículos según corresponda."
+        },
+        {
+          "type": "p",
+          "html": "Puede pagar el envío a una empresa de envío específica al finalizar la compra, pero nos reservamos el derecho de elegir la empresa de mensajería disponible el día del envío. Solo elegiremos un servicio similar al que usted haya pagado."
+        }
+      ]
+    }
+  ],
+  "related": {
+    "title": "Productos relacionados",
+    "items": [
+      "comet-2"
+    ]
+  }
+}

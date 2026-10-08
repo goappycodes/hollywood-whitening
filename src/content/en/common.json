@@ -92,7 +92,26 @@
       "failed": "We couldn't send your enquiry just now. Please try again, or call us on {phone}."
     },
     "successTitle": "Thank you!",
-    "successBody": "Your enquiry has been sent — a member of our team will be in touch shortly."
+    "successBody": "Your enquiry has been sent — a member of our team will be in touch shortly.",
+    "interest": {
+      "phone": "Mobile Phone",
+      "describesChoices": [
+        "Dentist/Orthodontist",
+        "Dental Nurse/Assistant/Hygienist",
+        "Dental Student",
+        "Salon Owner/Manager",
+        "Aesthetician",
+        "Other"
+      ],
+      "howSoon": "How Soon Are You Looking to Buy?",
+      "howSoonChoices": [
+        "0 - 3 Months",
+        "3 - 6 Months",
+        "6+ Months",
+        "Just Enquiring"
+      ],
+      "send": "Submit"
+    }
   },
   "legal": {
     "eyebrow": "Legal",
@@ -100,5 +119,21 @@
     "questionsTitle": "Questions about this page?",
     "questionsBody": "Our team is happy to help — get in touch and we'll come back to you.",
     "contact": "Contact Us"
+  },
+  "product": {
+    "priceNote": "Prices are tailored to your business — register your interest and a specialist will send you a personal quote.",
+    "speak": "Speak to a specialist",
+    "highlights": "Package highlights",
+    "specs": "Specifications",
+    "formIntro": "Tell us a little about you and we'll come back with pricing, finance options and next steps.",
+    "viewPackage": "View package",
+    "playVideo": "Play video",
+    "videoTitle": "{name} — video",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "showImage": "Show image {n}",
+    "openGallery": "Open image gallery",
+    "closeGallery": "Close gallery",
+    "stickyCta": "Register interest"
   }
 }

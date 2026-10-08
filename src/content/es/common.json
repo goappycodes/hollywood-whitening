@@ -92,7 +92,26 @@
       "failed": "No hemos podido enviar tu consulta. Inténtalo de nuevo o llámanos al {phone}."
     },
     "successTitle": "¡Gracias!",
-    "successBody": "Tu consulta se ha enviado: un miembro de nuestro equipo se pondrá en contacto contigo en breve."
+    "successBody": "Tu consulta se ha enviado: un miembro de nuestro equipo se pondrá en contacto contigo en breve.",
+    "interest": {
+      "phone": "Teléfono móvil",
+      "describesChoices": [
+        "Dentista/Ortodoncista",
+        "Enfermera dental/asistente/higienista",
+        "Estudiante de odontología",
+        "Propietario/Gerente del salón",
+        "Esteticista",
+        "Otro"
+      ],
+      "howSoon": "¿Qué tan pronto planeas comprar?",
+      "howSoonChoices": [
+        "0 - 3 meses",
+        "3 - 6 meses",
+        "6+ meses",
+        "Solo estoy consultando"
+      ],
+      "send": "Enviar"
+    }
   },
   "legal": {
     "eyebrow": "Legal",
@@ -100,5 +119,21 @@
     "questionsTitle": "¿Preguntas sobre esta página?",
     "questionsBody": "Nuestro equipo estará encantado de ayudarte: ponte en contacto y te responderemos.",
     "contact": "Contáctenos"
+  },
+  "product": {
+    "priceNote": "Los precios se adaptan a tu negocio: registra tu interés y un especialista te enviará un presupuesto personalizado.",
+    "speak": "Habla con un especialista",
+    "highlights": "Lo más destacado del paquete",
+    "specs": "Especificaciones",
+    "formIntro": "Cuéntanos un poco sobre ti y te responderemos con precios, opciones de financiación y los siguientes pasos.",
+    "viewPackage": "Ver paquete",
+    "playVideo": "Reproducir vídeo",
+    "videoTitle": "{name}: vídeo",
+    "prevImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "showImage": "Mostrar imagen {n}",
+    "openGallery": "Abrir la galería de imágenes",
+    "closeGallery": "Cerrar la galería",
+    "stickyCta": "Registrar interés"
   }
 }

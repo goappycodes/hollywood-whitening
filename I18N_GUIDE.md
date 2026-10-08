@@ -20,7 +20,7 @@ Four locales, mirroring the live WordPress site and following the allwhitelaser-
 | Header / footer / UI strings (hand-maintained) | `src/content/<locale>/common.json` |
 | Locale-independent data (images, ratings, nav structure) | `src/lib/site.ts` |
 | Localised catch-all route | `src/app/[[...lang]]/page.tsx` |
-| Scrapers | `scripts/localize-scrape.mjs` (home), `scripts/legal-scrape.mjs` (privacy, terms, warranty) |
+| Scrapers | `scripts/localize-scrape.mjs` (home), `scripts/legal-scrape.mjs` (privacy, terms, warranty), `scripts/product-scrape.mjs` (packages); shared helpers in `scripts/lib/wp-html.mjs` |
 | Language switcher (flags, same page in each locale) / `<html lang>` sync | `src/components/site/LanguageSwitcher.tsx`, `Flag.tsx`, `HtmlLang.tsx` |
 | Instagram section (live `aw3/v1/instagram` → snapshot fallback) | `src/lib/instagram.ts`, `src/components/ui/shared/sections/InstagramFeed.tsx` |
 | "Get in touch" enquiry form (Gravity Forms form 3) | `src/components/site/EnquiryForm.tsx` → `src/app/api/enquiry/route.ts`; field ids `src/lib/gf-forms.ts`, countries `src/lib/gf-countries.ts`; labels `common.json → enquiryForm` |
@@ -59,6 +59,42 @@ locales. The script restores the brand where live machine translation broke it (
 in meta titles) and decodes Cloudflare-obfuscated email addresses. Inline HTML is reduced to
 a/strong/em/br at scrape time; the page renders it with `dangerouslySetInnerHTML`, so only feed it
 content from this script.
+
+## Product (package) pages
+
+Built the way allwhitelaser-next builds its machine pages: **static and enquiry-led** — no price,
+quantity or basket. The live "Call for Price" becomes a price-on-application card leading to the
+page's "Register Your Interest" form (Gravity Forms **form 7**, `form="interest"` on `EnquiryForm`).
+
+```bash
+node scripts/product-scrape.mjs            # all packages
+node scripts/product-scrape.mjs star-one   # one
+```
+
+The scraper writes `src/content/<locale>/products/<key>.json` and downloads the gallery to
+`public/images/products/<key>/`. Package highlights (badge, treatments, features, rating) reuse the
+homepage card data (`home.json → packages.items`, `PACKAGES` in `site.ts`). To build another package:
+run the scraper for it, add its four JSON imports and key in `src/lib/content.ts` (`ProductKey`,
+`PRODUCTS`), add the key to `BUILT_PAGES` and render it in the catch-all like `star-one`.
+
+**Buying stays on WordPress.** Staff send customers a product link with a POA parameter
+(`?poa=…`, `?rent_poa=…`); the `poa_url` plugin on WordPress then shows that customer's price and an
+add-to-cart. `src/proxy.ts` redirects any `/product/…` request whose query has a key containing
+"poa" (or `add-to-cart` / `wc-*`) to the same URL on `NEXT_PUBLIC_WP_URL`. While that is
+www.hollywoodwhitening.com — the origin the Next site will eventually take — the proxy skips the
+redirect if it would point at itself; switch it to the WordPress host (e.g. a `business.` subdomain,
+as allwhitelaser does) once WordPress moves.
+
+Built: Star One™, Comet 2™, Galaxy™. Each live product-footer section gets a `kind` from its
+**English** heading (applied by position to the other locales, which share the template), which picks
+the layout: `description` (copy + spec card), `package` (checklist), `training` / `about` (long-form
+text), `faq` (accordion), `delivery` (cards, or one text card when there are more than four
+paragraphs). The live Galaxy™ page has no enquiry form, so its page borrows Star One™'s form 7 title.
+
+Live translation fixes in the product scraper: the spec label "Power" (es "Fuerza" → "Potencia",
+ru "Власть" → "Мощность"), trailing colons on spec labels, plus the shared brand fixes (which now also
+cover Galaxy™'s "Hollywood-Zahnaufhellung", "blanqueamiento Hollywood", "голливудские процедуры"). Form 7 labels come from the live pages;
+`common.json → product` strings (price note, highlights, buttons) are new translations.
 
 ## Refreshing the Instagram feed
 

@@ -59,6 +59,9 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#050b1a",
+  // The design is light-only. "only light" also opts out of browsers' automatic
+  // dark mode, which otherwise darkens sections that have no background of their own.
+  colorScheme: "only light",
 };
 
 const orgJsonLd = {
