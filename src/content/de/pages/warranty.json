@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Garantie | Hollywood Whitening",
+    "description": "Von Zahnaufhellung bis hin zu Laserbehandlungen – Hollywood Whitening ist gekommen, um zu bleiben, und die dafür verwendeten Geräte werden mit der Zeit immer ausgefeilter. Hier finden Sie Informationen zu den Garantiebedingungen und zukünftigen Serviceoptionen für diese Geräte."
+  },
+  "title": "Maschinengarantie und zukünftiger Service",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "Sollte es ein Problem mit Ihrem Artikel geben, müssen Sie uns unverzüglich innerhalb von <strong>7 Tage</strong> Nach Erhalt Ihres Produkts gelten die Garantiebedingungen. Garantieleistungen werden ausschließlich von unserem Serviceunternehmen erbracht. Unsere strengen Qualitätskontrollen prüfen Ihre Artikel sorgfältig, bevor wir sie versenden. Bitte prüfen Sie Ihr Produkt vor der Annahme durch den Kurierdienst auf eventuelle optische Mängel. Nehmen Sie das Produkt bei optischen Mängeln nicht an, da wir hierfür keine Haftung übernehmen können."
+    },
+    {
+      "type": "p",
+      "html": "Die Garantie unterliegt einer Prüfung innerhalb von 48 Stunden, bevor eine Rückmeldung erfolgen kann. Kunden tragen die Kosten für Hin- und Rückversand. Die Garantie wird direkt vom Hersteller gewährt; Vertreter, Händler oder Partner können während der Garantiezeit Unterstützung leisten."
+    },
+    {
+      "type": "p",
+      "html": "Die unten aufgeführten Preise sind auf dem Stand vom 30.08.2015."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Wichtig:</strong> Wir benötigen Bilder und Videos des Problems, bevor wir Ihnen weitere Ratschläge geben können. Bitte dokumentieren Sie die Probleme genau, um Missverständnisse zu vermeiden. Unser Support-Team arbeitet eng mit unseren Technikern zusammen, um Probleme schnellstmöglich zu lösen. Befolgen Sie am besten deren Anweisungen und Empfehlungen, um Ihr Gerät zügig wieder einsatzbereit zu machen. In den meisten Fällen können Probleme per Fernwartung diagnostiziert und behoben werden, sofern kein tatsächlicher Defekt vorliegt."
+    },
+    {
+      "type": "p",
+      "html": "Technischer Support wird ausschließlich von unserem Support-Team und unseren Ingenieuren bearbeitet. Bitte wenden Sie sich bei Fragen zu Maschinen oder Garantieansprüchen nicht an unsere Vertriebsmitarbeiter, Trainer, Manager oder Geschäftsführer, da diese nicht für die Behebung von Maschinenfehlern geschult sind. Dadurch kann sich die Bearbeitung Ihres Problems unnötig verzögern, da die Informationen nicht korrekt erfasst werden. Wir verstehen, wie ärgerlich es ist, wenn es Probleme mit Ihrer Maschine oder Ihren Produkten gibt, und wir werden versuchen, diese so schnell wie möglich zu beheben. Für Verdienstausfälle oder Geschäftsverluste aufgrund von Produktproblemen übernehmen wir keine Haftung. Bitte senden Sie uns zunächst ein Video oder Fotos des Fehlers per E-Mail an <a href=\"mailto:support@hollywoodwhitening.com\">support@hollywoodwhitening.com</a>."
+    },
+    {
+      "type": "h",
+      "text": "Während der Garantiezeit"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Nach Erhalt und Prüfung Ihres Geräts bemühen wir uns, es innerhalb von 1-2 Werktagen zu reparieren. Während der Reparatur können wir Ihnen leider kein Ersatzgerät zur Verfügung stellen.",
+        "Die Garantie deckt keine Schäden durch Unfälle, Verschleiß oder Bruch von Teilen ab.",
+        "Manche Zahnaufhellungslampen haben zwar eine lange Lebensdauer, fallen aber nach 14 Tagen nicht mehr unter die Garantie. Aufgrund ihrer Beschaffenheit sind die Lampen zerbrechlich und können jederzeit durchbrennen.",
+        "Verschleißteile wie Adapter, Netzkabel und andere Verbrauchsmaterialien sind von der Garantie ausgeschlossen. Dies liegt an Faktoren wie Stromstärke, Nutzung und der Beschaffenheit der Artikel. Diese Teile können nur innerhalb von 14 Tagen ersetzt werden; Unfallschäden sind nicht abgedeckt."
+      ]
+    },
+    {
+      "type": "h",
+      "text": "Nach Ablauf der Garantiezeit"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Wenn Sie eine Garantieverlängerung abgeschlossen haben, wird Ihr Problem priorisiert und innerhalb von 1–2 Tagen behoben, sofern Ihr Maschinenmodell noch produziert wird. Ohne Garantieverlängerung kann die Reparatur je nach Auslastung der Techniker, Produktionsstatus und Art des Defekts 1–2 Wochen dauern. Wir sind bestrebt, Ihre Maschine so schnell wie möglich zu reparieren."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<strong>Weltweite Garantie</strong>Falls es in Ihrem Land keine Reparaturwerkstatt gibt, senden wir Ihnen die Ersatzteile zu, damit Ihr Elektriker sie mit unserer fachkundigen Anleitung und Unterstützung einbauen kann. Dies gilt unmittelbar nach Erhalt Ihres Geräts. Aufgrund der hohen internationalen Portokosten ist es nicht optimal, das Gerät an uns zurückzusenden."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Keiner unserer Mitarbeiter/Manager kann diese Garantiebestimmungen unter irgendwelchen Umständen außer Kraft setzen.</strong>"
+    }
+  ]
+}

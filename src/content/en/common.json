@@ -44,5 +44,96 @@
     "warranty": "Warranty",
     "sitemap": "Sitemap",
     "rights": "All Rights Reserved ©"
+  },
+  "breadcrumb": "Breadcrumb",
+  "enquiryForm": {
+    "step": "Step {n} of {total}",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "confirmEmail": "Confirm Email",
+    "city": "City",
+    "country": "Country",
+    "countryPlaceholder": "Select country",
+    "companyName": "Company Name",
+    "optional": "optional",
+    "helpWith": "How Can We Help?",
+    "helpWithChoices": [
+      "I'm Interested in Device & Training",
+      "I Need Customer Support"
+    ],
+    "describes": "What Best Describes You?",
+    "describesChoices": [
+      "Dentist",
+      "Dental Hygienist",
+      "Dental Nurse/Assistant",
+      "Orthodontist",
+      "Owner/Practice Manager",
+      "Dental Student",
+      "Other"
+    ],
+    "select": "Select…",
+    "message": "Your Message",
+    "messagePlaceholder": "Send a brief message of your enquiry",
+    "privacyLead": "To find out more about how and why we use personal information and who to contact if you have any queries, please accept our",
+    "privacyLink": "Privacy Terms & Consent",
+    "privacyAccept": "Accept Privacy Terms",
+    "next": "Next",
+    "previous": "Previous",
+    "send": "Send",
+    "sending": "Sending…",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email address.",
+      "emailMatch": "Your email addresses do not match.",
+      "privacy": "Please accept the privacy terms.",
+      "captcha": "Please confirm you're not a robot.",
+      "failed": "We couldn't send your enquiry just now. Please try again, or call us on {phone}."
+    },
+    "successTitle": "Thank you!",
+    "successBody": "Your enquiry has been sent — a member of our team will be in touch shortly.",
+    "interest": {
+      "phone": "Mobile Phone",
+      "describesChoices": [
+        "Dentist/Orthodontist",
+        "Dental Nurse/Assistant/Hygienist",
+        "Dental Student",
+        "Salon Owner/Manager",
+        "Aesthetician",
+        "Other"
+      ],
+      "howSoon": "How Soon Are You Looking to Buy?",
+      "howSoonChoices": [
+        "0 - 3 Months",
+        "3 - 6 Months",
+        "6+ Months",
+        "Just Enquiring"
+      ],
+      "send": "Submit"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "onThisPage": "On this page",
+    "questionsTitle": "Questions about this page?",
+    "questionsBody": "Our team is happy to help — get in touch and we'll come back to you.",
+    "contact": "Contact Us"
+  },
+  "product": {
+    "priceNote": "Prices are tailored to your business — register your interest and a specialist will send you a personal quote.",
+    "speak": "Speak to a specialist",
+    "highlights": "Package highlights",
+    "specs": "Specifications",
+    "formIntro": "Tell us a little about you and we'll come back with pricing, finance options and next steps.",
+    "viewPackage": "View package",
+    "playVideo": "Play video",
+    "videoTitle": "{name} — video",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "showImage": "Show image {n}",
+    "openGallery": "Open image gallery",
+    "closeGallery": "Close gallery",
+    "stickyCta": "Register interest"
   }
 }

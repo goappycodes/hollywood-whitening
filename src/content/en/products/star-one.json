@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Star One Teeth Whitening Machine ► Hollywood Whitening™",
+    "description": "Star One Teeth Whitening Machine offers the most comprehensive teeth whitening business in the industry. Be part of Hollywood Whitening today."
+  },
+  "name": "Star One™ Complete Package",
+  "category": "Teeth Whitening Business",
+  "rating": {
+    "value": 5,
+    "count": 9
+  },
+  "callForPrice": "Call for Price",
+  "videoId": "eU5sWc1mkUE",
+  "intro": [
+    {
+      "type": "p",
+      "html": "The Star One™ system with added sensitivity adjustments is suitable for mobile technicians due to it’s compact size. It is metal constructed, quality built, strong and durable so you will have no problem of moving the machine from place to place. For those setting up fixed locations/clinics, it is advisable to look at the other options that we offer."
+    },
+    {
+      "type": "p",
+      "html": "Pictures are for illustration only, details of the complete package and the description is listed on the tab below."
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/images/products/star-one/Star-1-Landscape.jpg",
+      "alt": "Star One teeth whitening machine"
+    },
+    {
+      "src": "/images/products/star-one/Star-1-Full-Kit.jpg",
+      "alt": "Star-1 teeth whitening machine"
+    },
+    {
+      "src": "/images/products/star-one/3.jpg",
+      "alt": "Star One™ Complete Package - Image 3"
+    },
+    {
+      "src": "/images/products/star-one/4.jpg",
+      "alt": "Star One™ Complete Package - Image 4"
+    }
+  ],
+  "formTitle": "Register Your Interest",
+  "sections": [
+    {
+      "kind": "description",
+      "heading": "Description",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "Product Description"
+        },
+        {
+          "type": "h",
+          "text": "Star-1 Teeth Whitening Machine"
+        },
+        {
+          "type": "p",
+          "html": "If you are new to the business, you will need a complete package. This package provides all you require for 20-80 sessions (Depending on the package). No need to reorder materials like teeth whitening gels until then."
+        },
+        {
+          "type": "p",
+          "html": "The level of results we achieve is extraordinary, hence we are “<a href=\"/\">Hollywood Whitening™</a>“. To keep this level of quality, Hollywood Whitening continues to improve our systems to be ahead of the fast-moving market."
+        },
+        {
+          "type": "p",
+          "html": "A complete package is technically a franchise without the costs where customers can contact you on our websites by searching for their nearest location, you will get free direct business via phone or email <em>(Subject to below*) </em>Click on the Complete Package tab to see what else this full package includes.<em><br> </em>"
+        },
+        {
+          "type": "p",
+          "html": "<strong>*Location Listing Terms:</strong><em> As part of this successful business referral scheme, we have the right to choose who we list on our website and find a location page. Centre listing is available for everyone who buys our systems, but if you lack professionalism, we have the right not to list you.</em>"
+        },
+        {
+          "type": "h",
+          "text": "Star One™ – LED Teeth Whitening System"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Input Voltage",
+              "AC 110~240V 50/60Hz"
+            ],
+            [
+              "Output Voltage",
+              "4.7V"
+            ],
+            [
+              "Power",
+              "33VA"
+            ],
+            [
+              "Wavelength (Blue)",
+              "460-490nm"
+            ],
+            [
+              "Density",
+              "150-250mW/cm2"
+            ]
+          ]
+        },
+        {
+          "type": "h",
+          "text": "Sizes and Dimensions"
+        },
+        {
+          "type": "p",
+          "html": "<strong>Machine Box:</strong> 72×60×24cm- 12kg<br> <strong>Material box:</strong>30 x 15 x 25cm- 4kg"
+        }
+      ]
+    },
+    {
+      "kind": "delivery",
+      "heading": "Delivery",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "<strong>Product Delivery:</strong> Once payments are cleared, the product will be shipped directly to your door. Postage are automatically calculated in your shopping cart with a suitable delivery company depending on your location. Once you have receive your items, do inspect within 7 days in case of any damage in transit."
+        },
+        {
+          "type": "p",
+          "html": "Items are sent out daily if the order is placed before 13.00pm Monday- Friday except national holidays. If you do not receive your items within 3 days, please notify us via message on the contact page so we can track your item. We cannot track items after many weeks and your items maybe lost if you leave it too long."
+        },
+        {
+          "type": "p",
+          "html": "There is a very small percentage of delivery that will not arrive on time due to various reasons with the courier company. We do not have control over this and will track your items accordingly."
+        },
+        {
+          "type": "p",
+          "html": "You may pay postage for a particular delivery company at check out but we have the right to choose which ever courier that is available on the day of shipping your item. We will only choose a like for like service that you have paid for."
+        }
+      ]
+    }
+  ],
+  "related": {
+    "title": "Related products",
+    "items": [
+      "comet-2"
+    ]
+  }
+}

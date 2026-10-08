@@ -44,5 +44,96 @@
     "warranty": "Garantía",
     "sitemap": "Mapa del sitio",
     "rights": "Todos los derechos reservados ©"
+  },
+  "breadcrumb": "Ruta de navegación",
+  "enquiryForm": {
+    "step": "Paso {n} de {total}",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "phone": "Número de teléfono",
+    "email": "Correo electrónico",
+    "confirmEmail": "Confirmar email",
+    "city": "Ciudad",
+    "country": "País",
+    "countryPlaceholder": "Selecciona un país",
+    "companyName": "Nombre de la empresa",
+    "optional": "opcional",
+    "helpWith": "¿Cómo podemos ayudar?",
+    "helpWithChoices": [
+      "Estoy interesado en el dispositivo y la capacitación",
+      "Necesito soporte al cliente"
+    ],
+    "describes": "¿Qué te describe mejor?",
+    "describesChoices": [
+      "Dentista",
+      "Higienista dental",
+      "Enfermera/Asistente Dental",
+      "Ortodoncista",
+      "Propietario/Gerente de práctica",
+      "Estudiante de odontología",
+      "Otro"
+    ],
+    "select": "Selecciona…",
+    "message": "Tu mensaje",
+    "messagePlaceholder": "Envíe un breve mensaje de su consulta",
+    "privacyLead": "Para obtener más información sobre cómo y por qué usamos la información personal y con quién comunicarse si tiene alguna consulta, acepte nuestros",
+    "privacyLink": "Términos de privacidad y consentimiento",
+    "privacyAccept": "Aceptar términos de privacidad",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "email": "Introduce un correo electrónico válido.",
+      "emailMatch": "Los correos electrónicos no coinciden.",
+      "privacy": "Acepta los términos de privacidad.",
+      "captcha": "Confirma que no eres un robot.",
+      "failed": "No hemos podido enviar tu consulta. Inténtalo de nuevo o llámanos al {phone}."
+    },
+    "successTitle": "¡Gracias!",
+    "successBody": "Tu consulta se ha enviado: un miembro de nuestro equipo se pondrá en contacto contigo en breve.",
+    "interest": {
+      "phone": "Teléfono móvil",
+      "describesChoices": [
+        "Dentista/Ortodoncista",
+        "Enfermera dental/asistente/higienista",
+        "Estudiante de odontología",
+        "Propietario/Gerente del salón",
+        "Esteticista",
+        "Otro"
+      ],
+      "howSoon": "¿Qué tan pronto planeas comprar?",
+      "howSoonChoices": [
+        "0 - 3 meses",
+        "3 - 6 meses",
+        "6+ meses",
+        "Solo estoy consultando"
+      ],
+      "send": "Enviar"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "onThisPage": "En esta página",
+    "questionsTitle": "¿Preguntas sobre esta página?",
+    "questionsBody": "Nuestro equipo estará encantado de ayudarte: ponte en contacto y te responderemos.",
+    "contact": "Contáctenos"
+  },
+  "product": {
+    "priceNote": "Los precios se adaptan a tu negocio: registra tu interés y un especialista te enviará un presupuesto personalizado.",
+    "speak": "Habla con un especialista",
+    "highlights": "Lo más destacado del paquete",
+    "specs": "Especificaciones",
+    "formIntro": "Cuéntanos un poco sobre ti y te responderemos con precios, opciones de financiación y los siguientes pasos.",
+    "viewPackage": "Ver paquete",
+    "playVideo": "Reproducir vídeo",
+    "videoTitle": "{name}: vídeo",
+    "prevImage": "Imagen anterior",
+    "nextImage": "Imagen siguiente",
+    "showImage": "Mostrar imagen {n}",
+    "openGallery": "Abrir la galería de imágenes",
+    "closeGallery": "Cerrar la galería",
+    "stickyCta": "Registrar interés"
   }
 }

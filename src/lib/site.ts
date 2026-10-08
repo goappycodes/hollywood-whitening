@@ -113,3 +113,51 @@ export const POST_IMAGES = [
 ];
 
 export const PROVIDER_IMAGE = "/images/smile-banner.jpg";
+
+/* ------------------------------------------------------------------ */
+/* About page media                                                    */
+/* ------------------------------------------------------------------ */
+
+export const ABOUT_MEDIA = {
+  /** Live /about-us/ banner (wp-content/uploads/2022/04/Hollywood-Banner-7.jpg). */
+  hero: "/images/about/hollywood-banner.jpg",
+  /** Josefine Kristensen, credited with the page's "Your smile is our business…" line. */
+  analyst: "/images/about/josefine.jpg",
+};
+
+/** "Thousands" of businesses set up worldwide (About → Who We Are). */
+export const BUSINESSES_VALUE = "1000s";
+
+/* ------------------------------------------------------------------ */
+/* Contact page                                                        */
+/* ------------------------------------------------------------------ */
+
+export const CONTACT_MEDIA = {
+  /** Live /contact/ banner (wp-content/uploads/2015/09/smile-girl-rightHollywoodCopyright.jpg). */
+  hero: "/images/contact/hero.jpg",
+};
+
+/**
+ * Offices from the live /contact/ page, in its order. Names and addresses are
+ * localised in contact.json → offices.items (same order).
+ */
+export const OFFICES = [
+  {
+    flag: "gb",
+    phone: { display: "+44 (0)20 3137 2502", href: "tel:+442031372502" },
+    map: "207 Regent Street, London W1B 3HH, United Kingdom",
+  },
+  {
+    flag: "us",
+    phone: { display: "+1 650 515 3583", href: "tel:+16505153583" },
+    map: "200 Rhode Island St, San Francisco, CA 94103, USA",
+  },
+  {
+    flag: "au",
+    phone: { display: "+61 448 195 967", href: "tel:+61448195967" },
+    map: "126 Phillip Street, Sydney NSW 2000, Australia",
+  },
+] as const satisfies readonly { flag: import("@/components/site/Flag").FlagCode; phone: { display: string; href: string }; map: string }[];
+
+export const mapsUrl = (query: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;

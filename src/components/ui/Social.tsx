@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { SITE } from "@/lib/site";
 
 // Brand marks are hand-rolled: lucide-react no longer ships brand icons.
 
@@ -33,5 +34,31 @@ export function WhatsappIcon(props: SVGProps<SVGSVGElement>) {
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
       <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z" />
     </svg>
+  );
+}
+
+const SOCIAL = [
+  { href: SITE.social.instagram, label: "Instagram", Icon: InstagramIcon },
+  { href: SITE.social.facebook, label: "Facebook", Icon: FacebookIcon },
+  { href: SITE.social.youtube, label: "YouTube", Icon: YoutubeIcon },
+];
+
+/** Round social buttons for dark backgrounds (footer, contact band). */
+export function SocialLinks({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex gap-3 ${className}`}>
+      {SOCIAL.map(({ href, label, Icon }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={label}
+          className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand hover:bg-brand hover:text-white"
+        >
+          <Icon className="size-4.5" />
+        </a>
+      ))}
+    </div>
   );
 }

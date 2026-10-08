@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Conoce Hollywood Whitening - Descubre Nuestros Servicios",
+    "description": "Hollywood Whitening - Transforma tu sonrisa con más de 15 años de experiencia en servicios premium de blanqueamiento dental."
+  },
+  "hero": {
+    "eyebrow": "Sobre Hollywood Whitening",
+    "titleBold": "Tu sonrisa es",
+    "titleLight": "nuestro negocio…",
+    "subtitle": "¡Consiguiendo resultados extraordinarios como ningún otro sistema!",
+    "quoteName": "Josefine Kristensen",
+    "quoteRole": "Analista de investigación de Hollywood Whitening",
+    "imageAlt": "Proveedora de Hollywood Whitening con la lámpara blanqueadora",
+    "cta": "Ponte en contacto"
+  },
+  "who": {
+    "eyebrow": "Quiénes somos",
+    "title": "A la vanguardia del blanqueamiento dental",
+    "body": "Hollywood Whitening, una marca de renombre internacional con oficinas en Europa, Asia y Norteamérica, ofrece la tecnología más innovadora y se encuentra a la vanguardia de la industria del blanqueamiento dental. En las últimas dos décadas, la compañía ha creado miles de negocios de blanqueamiento dental en todo el mundo, lo que ha convertido a Hollywood Whitening en la marca líder en blanqueamiento dental.",
+    "cta": "Contáctenos",
+    "businesses": "Negocios de blanqueamiento creados en todo el mundo",
+    "regions": [
+      "Europa",
+      "Asia",
+      "Norteamérica"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Ponte en contacto con nosotros",
+    "title": "¡Empiece hoy, no mañana!",
+    "body": "Cuéntanos un poco sobre ti y tus planes: nuestro equipo te responderá con todo lo que necesitas para empezar.",
+    "callUs": "¿Prefieres hablar? Llámanos"
+  },
+  "blog": {
+    "eyebrow": "Lee nuestro blog",
+    "title": "Noticias y tendencias",
+    "viewAll": "Ver todo"
+  }
+}

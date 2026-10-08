@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Warranty | Hollywood Whitening",
+    "description": "From teeth whitening to laser treatment, Hollywood Whitening is here to stay and the machines used for this are going to become more and more sophisticated over time. Find out the warranty terms and future service options for these machines here."
+  },
+  "title": "Machines warranty and future service",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "If there is a problem with your item, you must notify us immediately within <strong>7 days</strong> of receiving your product, after which the warranty terms is applied where warranty support can only be provided by our service company. We carefully check your items through our strict quality control team before shipping it to you. You must check for any cosmetic damages before accepting your product from any courier company. Please do not accept if there are cosmetic damages as we cannot hold any responsibility for this."
+    },
+    {
+      "type": "p",
+      "html": "Warranty is subject up to 48 hours inspection before advise can be given. Customers are liable for all post and packaging costs of both ways. The warranty is being provided directly from the manufacturer where agents, distributors, or affiliates are able to assist during the warranty period."
+    },
+    {
+      "type": "p",
+      "html": "Prices below are up to date as of 30/08/2015."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Important:</strong> We must receive pictures and videos of the problem before we can advise you further, where issues must be logged clearly to avoid miscommunication. The support department has an infrastructure working alongside engineers to solve problems as quickly as possible, it is best to follow their procedures and advice for a speedy recovery of your item. 90% of the time issues can be diagnosed and solved remotely unless there is an actual fault."
+    },
+    {
+      "type": "p",
+      "html": "Only the support team and engineers are able to deal with technical support. Please do not contact our sale staff, trainers, managers or directors with any machine support or warranty issue as they are not trained to deal with machine fault. Doing this can potentially prolong us to solve your problem even further as information is not correctly recorded. We understand that it is frustrating when there is a problem with your machine or products and we will try to solve it as soon as we could. We cannot be liable for any loss of earnings or loss of business when there is a problem with your product. The first step is email a video or pictures of the fault to <a href=\"mailto:support@hollywoodwhitening.com\">support@hollywoodwhitening.com</a>"
+    },
+    {
+      "type": "h",
+      "text": "During the warranty Period"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "On received and inspection, we aim to fix your machine within 1-2 working days , we are unable to offer courtesy machine during the repair.",
+        "Warranty does not cover accidental damage, wear and tear or breakage of parts.",
+        "Certain Teeth whitening light bulbs do last a long time, but are not covered under warranty after 14 days. Due to the nature of the bulbs itself it can be fragile and blow at any given time.",
+        "Consumable parts or other parts such as adapters, power cable, consumable products are not covered under warranty. Due to factors such as electric current, usage and the nature of the items which cannot be covered. These items can only be replaced within 14 days and does not cover accidental damage."
+      ]
+    },
+    {
+      "type": "h",
+      "text": "After the warranty period"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "If you have extended warranty cover, then your work will be a priority with a turn around in just 1-2 days if your machine model is still in production. If you do not have extended warranty, it may take up to 1-2 week for your machine to be repaired depending on engineer’s schedule, weather the machine is still in production and the actual fault. We aim to fix your machine ASAP."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<strong>Worldwide Warranty</strong>– If there is not a repair base in your country, we will send the parts for your electrician to fit with our professional guidance and support. This apply immediately after you have receive your machine. Due to high international postage costs, it is not ideal for the machine to be sent back to us."
+    },
+    {
+      "type": "p",
+      "html": "<strong>None of our staff/management can override this warranty policy in any circumstances.</strong>"
+    }
+  ]
+}

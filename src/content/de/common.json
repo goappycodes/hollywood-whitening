@@ -44,5 +44,96 @@
     "warranty": "Garantie",
     "sitemap": "Sitemap",
     "rights": "Alle Rechte vorbehalten ©"
+  },
+  "breadcrumb": "Brotkrumennavigation",
+  "enquiryForm": {
+    "step": "Schritt {n} von {total}",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefonnummer",
+    "email": "E-Mail",
+    "confirmEmail": "E-Mail bestätigen",
+    "city": "Ort",
+    "country": "Land",
+    "countryPlaceholder": "Land auswählen",
+    "companyName": "Name der Firma",
+    "optional": "optional",
+    "helpWith": "Wie können wir Ihnen helfen?",
+    "helpWithChoices": [
+      "Ich interessiere mich für Geräte und Schulungen",
+      "Ich benötige Kundensupport"
+    ],
+    "describes": "Was beschreibt Sie am besten?",
+    "describesChoices": [
+      "Zahnarzt",
+      "Dentalhygienikerin",
+      "Zahnarzthelferin",
+      "Kieferorthopäde",
+      "Inhaber/Praxismanager",
+      "Zahnmedizinstudent",
+      "Andere"
+    ],
+    "select": "Auswählen…",
+    "message": "Ihre Nachricht",
+    "messagePlaceholder": "Senden Sie eine kurze Nachricht mit Ihrer Anfrage.",
+    "privacyLead": "Um mehr darüber zu erfahren, wie und warum wir personenbezogene Daten verwenden und an wen Sie sich bei Fragen wenden können, akzeptieren Sie bitte unsere",
+    "privacyLink": "Datenschutzbestimmungen und Einwilligung",
+    "privacyAccept": "Datenschutzbestimmungen akzeptieren",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "emailMatch": "Die E-Mail-Adressen stimmen nicht überein.",
+      "privacy": "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
+      "captcha": "Bitte bestätigen Sie, dass Sie kein Roboter sind.",
+      "failed": "Ihre Anfrage konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an: {phone}."
+    },
+    "successTitle": "Vielen Dank!",
+    "successBody": "Ihre Anfrage wurde gesendet – ein Mitglied unseres Teams meldet sich in Kürze bei Ihnen.",
+    "interest": {
+      "phone": "Mobiltelefon",
+      "describesChoices": [
+        "Zahnarzt/Kieferorthopäde",
+        "Zahnarzthelfer/in/Zahnarzthygieniker/in",
+        "Zahnmedizinstudent",
+        "Saloninhaber/Manager",
+        "Kosmetikerin",
+        "Andere"
+      ],
+      "howSoon": "Wann möchten Sie kaufen?",
+      "howSoonChoices": [
+        "0 - 3 Monate",
+        "3 - 6 Monate",
+        "6+ Monate",
+        "Ich informiere mich nur"
+      ],
+      "send": "Absenden"
+    }
+  },
+  "legal": {
+    "eyebrow": "Rechtliches",
+    "onThisPage": "Auf dieser Seite",
+    "questionsTitle": "Fragen zu dieser Seite?",
+    "questionsBody": "Unser Team hilft Ihnen gern – nehmen Sie Kontakt auf und wir melden uns bei Ihnen.",
+    "contact": "Kontaktieren Sie uns"
+  },
+  "product": {
+    "priceNote": "Die Preise richten sich nach Ihrem Unternehmen – registrieren Sie Ihr Interesse und ein Spezialist sendet Ihnen ein persönliches Angebot.",
+    "speak": "Mit einem Spezialisten sprechen",
+    "highlights": "Paket-Highlights",
+    "specs": "Technische Daten",
+    "formIntro": "Erzählen Sie uns kurz von sich – wir melden uns mit Preisen, Finanzierungsoptionen und den nächsten Schritten.",
+    "viewPackage": "Paket ansehen",
+    "playVideo": "Video abspielen",
+    "videoTitle": "{name} – Video",
+    "prevImage": "Vorheriges Bild",
+    "nextImage": "Nächstes Bild",
+    "showImage": "Bild {n} anzeigen",
+    "openGallery": "Bildergalerie öffnen",
+    "closeGallery": "Galerie schließen",
+    "stickyCta": "Interesse registrieren"
   }
 }

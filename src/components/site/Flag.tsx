@@ -1,12 +1,13 @@
 /**
- * Small rounded flag icons for the language switcher (GB · ES · DE · RU).
+ * Small rounded flag icons for the language switcher (GB · ES · DE · RU) and the
+ * contact page's offices (US · AU).
  * The rounded, overflow-hidden wrapper clips the SVG so no per-flag clipPath
  * ids are needed (safe to render the same flag multiple times).
  */
 
 import { cn } from "@/lib/utils";
 
-export type FlagCode = "gb" | "es" | "de" | "ru";
+export type FlagCode = "gb" | "es" | "de" | "ru" | "us" | "au";
 
 function Union() {
   // Simplified Union Jack — the wrapper clips the diagonals to the rounded box.
@@ -18,6 +19,46 @@ function Union() {
       <path d="M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
       <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
       <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+    </svg>
+  );
+}
+
+function Usa() {
+  // Simplified Stars and Stripes: 7 red stripes + plain canton dotted with stars.
+  return (
+    <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
+      <rect width="60" height="30" fill="#fff" />
+      {Array.from({ length: 7 }).map((_, i) => (
+        <rect key={i} y={(30 / 13) * i * 2} width="60" height={30 / 13} fill="#B22234" />
+      ))}
+      <rect width="26" height={(30 / 13) * 7} fill="#3C3B6E" />
+      {Array.from({ length: 12 }).map((_, i) => (
+        <circle key={i} cx={3.5 + (i % 4) * 6.3} cy={3.2 + Math.floor(i / 4) * 5.3} r="1.1" fill="#fff" />
+      ))}
+    </svg>
+  );
+}
+
+function Australia() {
+  // Simplified: blue field, small Union in the canton, Commonwealth Star and Southern Cross.
+  return (
+    <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
+      <rect width="60" height="30" fill="#012169" />
+      <svg x="0" y="0" width="30" height="15" viewBox="0 0 60 30">
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="3" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+      </svg>
+      {[
+        [15, 23, 2.6],
+        [45, 6, 1.4],
+        [39, 14, 1.4],
+        [51, 12, 1.4],
+        [45, 25, 1.4],
+      ].map(([cx, cy, r]) => (
+        <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r={r} fill="#fff" />
+      ))}
     </svg>
   );
 }
@@ -42,6 +83,8 @@ const FLAGS: Record<FlagCode, React.ReactNode> = {
   es: <Bands colors={["#AA151B", "#F1BF00", "#F1BF00", "#AA151B"]} />, // approx red/yellow/red
   de: <Bands colors={["#000000", "#DD0000", "#FFCE00"]} />,
   ru: <Bands colors={["#ffffff", "#0039A6", "#D52B1E"]} />,
+  us: <Usa />,
+  au: <Australia />,
 };
 
 export function Flag({ code, className }: { code: FlagCode; className?: string }) {

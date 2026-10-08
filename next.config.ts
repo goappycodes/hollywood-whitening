@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "www.hollywoodwhitening.com" },
+      // Product video posters (ProductVideo).
+      { protocol: "https", hostname: "i.ytimg.com" },
     ],
   },
 };

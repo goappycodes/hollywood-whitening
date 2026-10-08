@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "About Us | Hollywood Whitening",
+    "description": "Hollywood Whitening is a company that has been giving people the best teeth whitening experience for over 15 years now."
+  },
+  "hero": {
+    "eyebrow": "About Hollywood Whitening",
+    "titleBold": "Your smile is",
+    "titleLight": "our business…",
+    "subtitle": "Achieving extraordinary results like no other systems!",
+    "quoteName": "Josefine Kristensen",
+    "quoteRole": "Hollywood Whitening Research Analyst",
+    "imageAlt": "Hollywood Whitening provider with the whitening light",
+    "cta": "Get in touch"
+  },
+  "who": {
+    "eyebrow": "Who We Are",
+    "title": "At the forefront of the teeth whitening industry",
+    "body": "Hollywood Whitening, an internationally renowned brand with offices in Europe, Asia and North America. The group offers the most innovative technology and is at the forefront of the teeth whitening industry today. The company have set up thousands of teeth whitening businesses worldwide within the last 2 decades, which have now made Hollywood Whitening into the greatest teeth whitening brand.",
+    "cta": "Contact Us",
+    "businesses": "Whitening businesses set up worldwide",
+    "regions": [
+      "Europe",
+      "Asia",
+      "North America"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Start today not tomorrow!",
+    "body": "Tell us a little about you and your plans — our team will come back to you with everything you need to get started.",
+    "callUs": "Prefer to talk? Call us"
+  },
+  "blog": {
+    "eyebrow": "Read our blog",
+    "title": "News & Trends",
+    "viewAll": "View all"
+  }
+}

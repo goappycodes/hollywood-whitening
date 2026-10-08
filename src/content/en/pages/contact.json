@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Contact Us | Hollywood Whitening",
+    "description": "Do you have any queries related to the teeth whitening business, machines, or training? Then don’t hesitate to contact us on the given details."
+  },
+  "hero": {
+    "eyebrow": "Contact Us",
+    "titleBold": "Most powerful brand",
+    "titleLight": "in teeth whitening!",
+    "subtitle": "Businesses are more successful with Hollywood Whitening.",
+    "cta": "Send us a message",
+    "imageAlt": "Smiling woman holding a Hollywood Whitening brochure"
+  },
+  "offices": {
+    "eyebrow": "Our offices",
+    "title": "Shipping & Training Worldwide",
+    "intro": "Wherever you are, our team is a call away — with offices in the UK, the USA and Australia.",
+    "tel": "Tel",
+    "directions": "Get directions",
+    "items": [
+      {
+        "name": "United Kingdom & EU",
+        "address": "207 Regent Street London W1B 3HH"
+      },
+      {
+        "name": "USA",
+        "address": "200 Rhode Island St, CA 94103"
+      },
+      {
+        "name": "Australia",
+        "address": "126 Phillip Street, Sydney, NSW 2000"
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Send us a message",
+    "title": "Contact Us",
+    "quote": {
+      "text": "“The key to success is to start before you’re ready”",
+      "author": "Marie Forleo"
+    }
+  }
+}

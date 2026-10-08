@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Kontakt | Hollywood Whitening",
+    "description": "Haben Sie Fragen zum Thema Zahnaufhellung, zu den Geräten oder zu Schulungen? Dann zögern Sie nicht, uns über die angegebenen Kontaktdaten zu kontaktieren."
+  },
+  "hero": {
+    "eyebrow": "Kontakt",
+    "titleBold": "Die stärkste Marke",
+    "titleLight": "in der Zahnaufhellung!",
+    "subtitle": "Unternehmen sind mit Hollywood Whitening erfolgreicher.",
+    "cta": "Nachricht senden",
+    "imageAlt": "Lächelnde Frau mit einer Hollywood Whitening Broschüre"
+  },
+  "offices": {
+    "eyebrow": "Unsere Standorte",
+    "title": "Weltweiter Versand & Schulung",
+    "intro": "Wo auch immer Sie sind, unser Team ist nur einen Anruf entfernt – mit Niederlassungen in Großbritannien, den USA und Australien.",
+    "tel": "Tel.",
+    "directions": "Route planen",
+    "items": [
+      {
+        "name": "Vereinigtes Königreich und EU",
+        "address": "207 Regent Street, London W1B 3HH"
+      },
+      {
+        "name": "USA",
+        "address": "200 Rhode Island St, CA 94103"
+      },
+      {
+        "name": "Australien",
+        "address": "126 Phillip Street, Sydney, NSW 2000"
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Schreiben Sie uns",
+    "title": "Kontaktieren Sie uns",
+    "quote": {
+      "text": "„Der Schlüssel zum Erfolg liegt darin, anzufangen, bevor man bereit ist.“",
+      "author": "Marie Forleo"
+    }
+  }
+}
