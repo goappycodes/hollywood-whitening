@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "La Ciencia y Tecnología detrás del Blanqueamiento Dental con Láser Moderno | Hollywood Whitening",
+    "description": "Explora la ciencia detrás del blanqueamiento dental con láser y cómo funciona para una sonrisa más brillante."
+  },
+  "title": {
+    "bold": "La ciencia y la tecnología detrás",
+    "light": "Blanqueamiento dental con láser moderno"
+  },
+  "quote": "“Existe una tendencia creciente de personas que buscan mejorar su apariencia a través de procedimientos dentales como el blanqueamiento dental con láser”.",
+  "lead": "Un tratamiento láser único es el procedimiento de blanqueamiento más efectivo y seguro disponible. Se realiza en menos de una hora. Utilizamos el sistema más eficaz y potente. Garantizamos un resultado inmediato en un solo procedimiento. En el espacio de su hora de almuerzo, podemos restaurar la superficie frontal superior e inferior de sus dientes hasta 14 tonos más brillantes.",
+  "benefits": {
+    "title": "Algunos beneficios potenciales del blanqueamiento dental con láser incluyen:",
+    "items": [
+      "Es seguro y sin dolor.",
+      "No es necesario utilizar anestesia ni sedación dental, lo que significa que usted puede continuar con su día mientras se realiza el tratamiento.",
+      "¡Los resultados son visibles de inmediato! La mayoría de las personas notan resultados notables a los pocos minutos de comenzar el tratamiento, lo que reduce la ansiedad incluso antes de que comience el proceso."
+    ]
+  },
+  "body": [
+    {
+      "type": "p",
+      "html": "El blanqueamiento dental con láser es una tendencia en rápido crecimiento y existen varios tipos de láseres que pueden utilizarse para este propósito."
+    },
+    {
+      "type": "p",
+      "html": "La luz del láser activa el gel blanqueador y oxida la pigmentación de los dientes a través de los túbulos dentinarios, devolviéndoles el color blanco."
+    },
+    {
+      "type": "p",
+      "html": "Sin embargo, ¿qué implica esta tecnología? ¿Y qué tan seguros son estos tratamientos?"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"/es/blanqueamiento-dental-con-laser/\">Blanqueamiento dental con láser</a> Utiliza la energía de una potente fuente de luz para eliminar manchas y decoloraciones de los dientes. La luz se manipula mediante láseres que emiten diferentes colores (como azul o infrarrojo cercano), lo que provoca que la mancha reaccione de diversas maneras. Esta reacción puede observarse y analizarse con un microscopio, lo que permite una planificación precisa del tratamiento y la aplicación exacta de la energía lumínica a la superficie dental."
+    }
+  ],
+  "laser": {
+    "title": "¿Cómo funciona un láser?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "Los láseres funcionan emitiendo haces de luz que interactúan con la superficie dental para disolver las manchas. Las longitudes de onda utilizadas en los láseres blanqueadores varían según el tipo de mancha a tratar (por ejemplo, las manchas oscuras contienen ondas más cortas que las zonas más claras)."
+      },
+      {
+        "type": "p",
+        "html": "Esta diferencia de longitud de onda hace que el Dispositivo de Eliminación de Manchas (SRD) dentro de Whitenacle o Clearlightlite emita diferentes cantidades de energía lumínica al incidir en las moléculas manchadas. Estas luces provocan reacciones químicas que dañan el color del diente y las capas superficiales responsables de las manchas."
+      }
+    ]
+  },
+  "srd": {
+    "title": "¿Qué es un SRD?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "Un SRD es un dispositivo especial que contiene lentes, espejos, circuitos electrónicos, fuentes de energía y otros componentes necesarios para una terapia de blanqueamiento efectiva con TECNOLOGÍA LÁSER FLASH/SOLAR Y LÁSER LED que se puede personalizar de acuerdo a las necesidades del paciente, por eso no todos los procedimientos se verán iguales."
+      },
+      {
+        "type": "p",
+        "html": "Los SRD también tienen aplicadores especialmente diseñados como lanzas cuyas puntas oscilan hacia adelante y hacia atrás a frecuencias muy altas entre 4000 y 10 000 Hz."
+      }
+    ]
+  },
+  "considerations": {
+    "title": "Hay varias consideraciones que se deben tener en cuenta al momento de elegir un procedimiento de blanqueamiento dental con láser:",
+    "items": [
+      "Tipo de láser utilizado",
+      "Potencia de salida",
+      "Longitud(es) de onda empleadas",
+      "Profundidad a la que se administrará el tratamiento",
+      "Número de sesiones administradas por año",
+      "Tono de piel del paciente, etnia, etc."
+    ]
+  },
+  "doubts": {
+    "title": "¿Aún tienes dudas?",
+    "body": "¡Rellene este formulario para que nuestros representantes se pongan en contacto con usted!"
+  },
+  "industries": [
+    {
+      "href": "/es/maquina-para-blanquear-los-dientes/salones/",
+      "label": "Industria de la belleza",
+      "image": "/images/science/operating-teeth-whitening-macihne.jpg"
+    },
+    {
+      "href": "/es/maquina-para-blanquear-los-dientes/blanqueamiento-dental-para-dentistas-de-la-industria-dental/",
+      "label": "Industria dental",
+      "image": "/images/science/machine.jpg"
+    },
+    {
+      "href": "/es/maquina-para-blanquear-los-dientes/blanqueamiento-dental-para-marcas-blancas/",
+      "label": "negocio de marca privada",
+      "image": "/images/science/teeth-whitening-machine.jpg"
+    },
+    {
+      "href": "/es/maquina-para-blanquear-los-dientes/soluciones-de-blanqueamiento-dental-para-franquiciados/",
+      "label": "negocio de franquicia",
+      "image": "/images/science/Star-1-Full-Kit.jpg"
+    }
+  ],
+  "images": {
+    "hero": "/images/science/TeethGuys.jpg",
+    "pen": "/images/science/whitening-pen.jpg",
+    "led": "/images/science/teeth-led.jpg",
+    "banner": "/images/science/A1-Banner-HWGroup-4.jpg"
+  }
+}

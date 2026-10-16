@@ -55,13 +55,13 @@ export function GetInTouch({ content, common, locale, form = "contact", id = "ge
             {content.title}
           </h2>
           {content.body && (
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/70 sm:text-lg">{content.body}</p>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/70 sm:text-lg">{content.body}</p>
           )}
 
           {content.quote && (
             <figure className="glass-dark mt-8 max-w-md rounded-2xl p-6">
               <Quote className="size-6 -scale-x-100 fill-cyan text-cyan" aria-hidden />
-              <blockquote className="mt-3 text-lg leading-snug font-light text-white sm:text-xl">
+              <blockquote className="mt-3 text-base leading-snug font-light text-white sm:text-xl">
                 {content.quote.text}
               </blockquote>
               <figcaption className="mt-4 font-script text-2xl text-cyan">{content.quote.author}</figcaption>

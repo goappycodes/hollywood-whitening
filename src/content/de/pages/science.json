@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Die Wissenschaft und Technologie hinter der modernen Laser-Zahnaufhellung | Hollywood Whitening",
+    "description": "Erhalten Sie alle Antworten zu den wissenschaftlichen und technologischen Grundlagen der Laser-Zahnaufhellung. Erfahren Sie, wie all das funktioniert."
+  },
+  "title": {
+    "bold": "Die Wissenschaft und Technologie dahinter",
+    "light": "Moderne Laser-Zahnaufhellung"
+  },
+  "quote": "„Es gibt einen wachsenden Trend, dass Menschen ihr Aussehen durch zahnärztliche Eingriffe wie die Laserzahnaufhellung verbessern möchten.“",
+  "lead": "Eine einmalige Laserbehandlung ist die effektivste und sicherste Methode zur Zahnaufhellung und dauert weniger als eine Stunde. Wir verwenden ein hochmodernes und leistungsstarkes System und garantieren Ihnen ein sofortiges Ergebnis nach nur einer Behandlung. In Ihrer Mittagspause können wir Ihre oberen und unteren Frontzähne um bis zu 14 Farbtöne aufhellen.",
+  "benefits": {
+    "title": "Zu den potenziellen Vorteilen der Laser-Zahnaufhellung gehören:",
+    "items": [
+      "Es ist sicher und schmerzlos.",
+      "Eine Anästhesie oder Sedierung ist nicht erforderlich, sodass Sie Ihren Tag während der Behandlung wie gewohnt fortsetzen können.",
+      "Die Ergebnisse sind sofort sichtbar! Die meisten Menschen bemerken bereits innerhalb weniger Minuten nach Behandlungsbeginn deutliche Ergebnisse, was die Angstzustände schon vor dem eigentlichen Prozess verringert."
+    ]
+  },
+  "body": [
+    {
+      "type": "p",
+      "html": "Die Laserzahnaufhellung ist ein schnell wachsender Trend, und es gibt verschiedene Lasertypen, die zu diesem Zweck eingesetzt werden können."
+    },
+    {
+      "type": "p",
+      "html": "Das Laserlicht aktiviert das Bleichgel und oxidiert die Pigmentierung der Zähne über die Dentinkanälchen, wodurch diese wieder weiß werden."
+    },
+    {
+      "type": "p",
+      "html": "Doch was genau steckt hinter dieser Technologie? Und wie sicher sind diese Behandlungen?"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"/de/laser-zahnaufhellung/\">Laser-Zahnaufhellung</a> Mithilfe der Energie einer leistungsstarken Lichtquelle werden Verfärbungen und Flecken von den Zähnen entfernt. Das Licht wird durch Laser manipuliert, die verschiedene Farben (wie Blau oder Nahinfrarot) emittieren. Dadurch reagiert der Fleck auf unterschiedliche Weise. Diese Reaktion kann anschließend mikroskopisch beobachtet und analysiert werden, was eine präzise Behandlungsplanung und die exakte Applikation der Lichtenergie auf die Zahnoberfläche ermöglicht."
+    }
+  ],
+  "laser": {
+    "title": "Wie funktioniert ein Laser?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "Laser wirken, indem sie Lichtstrahlen aussenden, die mit der Zahnoberfläche interagieren und so Verfärbungen abbauen. Die Wellenlängen, die bei der Zahnaufhellung mit Lasern verwendet werden, variieren je nach Art der zu behandelnden Verfärbung (z. B. weisen dunkle Flecken auf den Zähnen kürzere Wellenlängen auf als hellere Bereiche)."
+      },
+      {
+        "type": "p",
+        "html": "Durch diesen Unterschied in der Wellenlänge gibt das Fleckenentfernungsgerät (SRD) im Whitenacle oder Clearlightlite beim Auftreffen auf einzelne Fleckenmoleküle unterschiedliche Mengen an Lichtenergie ab. Diese Lichtenergie löst dann chemische Reaktionen aus, die die Zahnfarbe und die für die Verfärbung verantwortlichen Oberflächenschichten schädigen."
+      }
+    ]
+  },
+  "srd": {
+    "title": "Was ist ein SRD?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "Ein SRD ist ein Spezialgerät, das Linsen, Spiegel, elektronische Schaltkreise, Stromquellen und andere Komponenten enthält, die für eine effektive Zahnaufhellungstherapie mit FLASH-/SOLAR-LASERN UND LED-LASERTECHNOLOGIE benötigt werden. Die Behandlung kann individuell an die Bedürfnisse des Patienten angepasst werden, weshalb nicht jede Behandlung gleich aussieht!"
+      },
+      {
+        "type": "p",
+        "html": "SRDs verfügen außerdem über speziell konstruierte Applikatoren, die wie Lanzen funktionieren und deren Spitzen mit sehr hohen Frequenzen zwischen 4000 und 10 000 Hz hin und her schwingen."
+      }
+    ]
+  },
+  "considerations": {
+    "title": "Bei der Wahl einer Laser-Zahnaufhellungsmethode müssen verschiedene Aspekte berücksichtigt werden:",
+    "items": [
+      "Verwendeter Lasertyp",
+      "Ausgangsleistung",
+      "Verwendete Wellenlänge(n)",
+      "Tiefe, in der die Behandlung durchgeführt wird",
+      "Anzahl der pro Jahr durchgeführten Sitzungen",
+      "Hautton/ethnische Zugehörigkeit des Patienten usw."
+    ]
+  },
+  "doubts": {
+    "title": "Noch Zweifel?",
+    "body": "Füllen Sie dieses Formular aus, damit sich unsere Mitarbeiter mit Ihnen in Verbindung setzen können!"
+  },
+  "industries": [
+    {
+      "href": "/de/zahnaufhellungsgerat/salons/",
+      "label": "Schönheitsindustrie",
+      "image": "/images/science/operating-teeth-whitening-macihne.jpg"
+    },
+    {
+      "href": "/de/zahnaufhellungsgerat/zahnaufhellung-fur-zahnarzte-und-die-dentalindustrie/",
+      "label": "Zahnindustrie",
+      "image": "/images/science/machine.jpg"
+    },
+    {
+      "href": "/de/zahnaufhellungsgerat/zahnaufhellung-fur-eigenmarken/",
+      "label": "Private-Label-Geschäft",
+      "image": "/images/science/teeth-whitening-machine.jpg"
+    },
+    {
+      "href": "/de/zahnaufhellungsgerat/zahnaufhellungslosungen-fur-franchise-unternehmen/",
+      "label": "Franchise-Unternehmen",
+      "image": "/images/science/Star-1-Full-Kit.jpg"
+    }
+  ],
+  "images": {
+    "hero": "/images/science/TeethGuys.jpg",
+    "pen": "/images/science/whitening-pen.jpg",
+    "led": "/images/science/teeth-led.jpg",
+    "banner": "/images/science/A1-Banner-HWGroup-4.jpg"
+  }
+}

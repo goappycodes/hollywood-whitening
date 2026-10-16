@@ -37,7 +37,8 @@ type Props = {
   image: { src: string; alt: string; subject: keyof typeof SIDE };
   eyebrow: string;
   titleBold: string;
-  titleLight: string;
+  /** Optional second, light-weight line. */
+  titleLight?: string;
   subtitle: string;
   cta: { label: string; href: string };
   /** Optional row under the CTAs (e.g. a quote credit). */
@@ -107,12 +108,14 @@ export function PageHero({ locale, common, current, image, eyebrow, titleBold, t
             style={rise(0.1)}
           >
             <span className="block font-bold">{titleBold}</span>
-            <span className="block font-light">
-              <span className="text-cyan-gradient">{titleLight}</span>
-            </span>
+            {titleLight && (
+              <span className="block font-light">
+                <span className="text-cyan-gradient">{titleLight}</span>
+              </span>
+            )}
           </h1>
 
-          <p className="rise mt-5 max-w-lg text-[15px] leading-relaxed font-light text-white/80 sm:text-lg" style={rise(0.18)}>
+          <p className="rise mt-5 max-w-lg text-sm leading-relaxed font-light text-white/80 sm:text-lg" style={rise(0.18)}>
             {subtitle}
           </p>
 

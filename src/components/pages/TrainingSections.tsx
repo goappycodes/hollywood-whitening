@@ -125,8 +125,8 @@ function Comparison({ content }: { content: TrainingContent }) {
           {comparison.advantages.map((a, i) => (
             <Reveal as="li" key={i} delay={Math.min(i, 6) * 0.04}>
               <div className="flex h-full items-start gap-3 rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand text-white">
-                  <Check className="size-3.5" strokeWidth={3} aria-hidden />
+                <span className="mt-0.5 grid size-[18px] shrink-0 place-items-center rounded-full bg-brand text-white sm:size-6">
+                  <Check className="size-2.5 sm:size-3.5" strokeWidth={3} aria-hidden />
                 </span>
                 <span className="text-sm leading-relaxed text-white/85" dangerouslySetInnerHTML={{ __html: a }} />
               </div>
@@ -210,7 +210,7 @@ export function TrainingSections({ locale }: { locale: Locale }) {
                   <ShieldCheck className="size-6 text-cyan" aria-hidden />
                   {c.safe.title}
                 </p>
-                <div className="mt-4 text-[15px] leading-relaxed text-white/75 [&_a]:text-cyan [&_a]:underline">
+                <div className="mt-4 text-sm leading-relaxed text-white/75 sm:text-[15px] [&_a]:text-cyan [&_a]:underline">
                   {c.safe.blocks.map(
                     (b, i) =>
                       b.type === "p" && (
@@ -281,7 +281,7 @@ export function TrainingSections({ locale }: { locale: Locale }) {
                   <BadgeCheck className="size-5" aria-hidden />
                 </span>
                 <p
-                  className="text-[15px] leading-relaxed text-ink [&_strong]:font-medium"
+                  className="text-sm leading-relaxed text-ink sm:text-[15px] [&_strong]:font-medium"
                   dangerouslySetInnerHTML={{ __html: p.html }}
                 />
               </div>
@@ -320,7 +320,7 @@ export function TrainingSections({ locale }: { locale: Locale }) {
                   className="group rounded-2xl border border-line bg-white transition-colors open:border-brand/25 open:shadow-soft"
                   open={i === 0}
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-[15px] font-semibold text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold sm:text-[15px] text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
                     {f.q}
                     <ChevronDown
                       className="size-4 shrink-0 text-brand transition-transform duration-300 group-open:rotate-180"
@@ -337,7 +337,7 @@ export function TrainingSections({ locale }: { locale: Locale }) {
             ))}
             {c.faq.closing && (
               <Reveal>
-                <p className="pt-6 text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                <p className="pt-6 text-base leading-snug font-semibold text-balance text-ink sm:text-xl">
                   {c.faq.closing}
                 </p>
               </Reveal>

@@ -104,7 +104,7 @@ export function LegalSections({ page, locale }: { page: LegalPage; locale: Local
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="container-x grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14 xl:gap-20">
           {toc.length > 2 && (
             <>

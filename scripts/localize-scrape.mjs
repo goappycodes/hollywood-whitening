@@ -159,7 +159,7 @@ const DESIGN = {
     packagesIntro: "Everything you need to launch — the machine, treatments, branding and training — in one complete package.",
     mostPopular: "Most Popular", completePackage: "Complete Package",
     ratingCount: "{n} ratings", ratingAria: "Rated {r} out of 5 based on {n} customer ratings",
-    results: "{n}/10 Results", getStartedWith: "Get Started with {name}",
+    results: "{n}/10 Results", getStartedWith: "Get Started with {name}", getStarted: "Get Started",
     techTitle: ["Perfected product.", "Beautiful design.", "Extraordinary results."],
     techHighlights: [
       ["Innovative Technology", "Refined by intuitive equipment functionality."],
@@ -205,7 +205,7 @@ const DESIGN = {
     packagesIntro: "Alles für Ihren Start – Gerät, Behandlungen, Branding und Schulung – in einem Komplettpaket.",
     mostPopular: "Am beliebtesten", completePackage: "Komplettpaket",
     ratingCount: "{n} Bewertungen", ratingAria: "Bewertet mit {r} von 5, basierend auf {n} Kundenbewertungen",
-    results: "Ergebnis: {n}/10", getStartedWith: "Mit {name} starten",
+    results: "Ergebnis: {n}/10", getStartedWith: "Mit {name} starten", getStarted: "Jetzt starten",
     techTitle: ["Perfektioniertes Produkt.", "Ansprechendes Design.", "Außergewöhnliche Ergebnisse."],
     techHighlights: [
       ["Innovative Technologie", "Durch intuitive Gerätebedienung verfeinert."],
@@ -251,7 +251,7 @@ const DESIGN = {
     packagesIntro: "Todo lo necesario para empezar — la máquina, los tratamientos, la marca y la formación — en un paquete completo.",
     mostPopular: "Más popular", completePackage: "Paquete completo",
     ratingCount: "{n} valoraciones", ratingAria: "Valorado con {r} de 5 en base a {n} valoraciones de clientes",
-    results: "Resultados {n}/10", getStartedWith: "Empezar con {name}",
+    results: "Resultados {n}/10", getStartedWith: "Empezar con {name}", getStarted: "Empezar",
     techTitle: ["Producto perfeccionado.", "Diseño atractivo.", "Resultados extraordinarios."],
     techHighlights: [
       ["Tecnología innovadora", "Perfeccionada con un funcionamiento intuitivo del equipo."],
@@ -297,7 +297,7 @@ const DESIGN = {
     packagesIntro: "Всё для старта — аппарат, процедуры, брендинг и обучение — в одном полном пакете.",
     mostPopular: "Самый популярный", completePackage: "Полный пакет",
     ratingCount: "оценок: {n}", ratingAria: "Рейтинг {r} из 5 на основе {n} отзывов клиентов",
-    results: "Результаты {n}/10", getStartedWith: "Начать с {name}",
+    results: "Результаты {n}/10", getStartedWith: "Начать с {name}", getStarted: "Начать",
     techTitle: ["Совершенный продукт.", "Красивый дизайн.", "Исключительные результаты."],
     techHighlights: [
       ["Инновационные технологии", "Интуитивно понятное управление оборудованием."],
@@ -395,6 +395,7 @@ function build(locale, lines, links, pageMeta) {
       ratingAria: D.ratingAria,
       results: D.results,
       getStartedWith: D.getStartedWith,
+      getStarted: D.getStarted,
       callForPrice: L(LINE.callForPrice),
       items: { "star-one": pkg("star", 20, 0), "comet-2": pkg("comet", 40, 1), galaxy: pkg("galaxy", 50, 2) },
     },

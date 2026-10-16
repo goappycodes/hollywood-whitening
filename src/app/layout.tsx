@@ -42,6 +42,11 @@ const marck = Marck_Script({
 const home = getHomeContent("en");
 
 export const metadata: Metadata = {
+  // The design is light-only (see viewport.colorScheme). Dark Reader ignores
+  // color-scheme and mis-converts Tailwind's colours (dark titles on dark sections,
+  // white titles on light cards); this meta tells it to leave the site alone.
+  // (Dark Reader only checks the tag exists; an empty value would be dropped by Next.)
+  other: { "darkreader-lock": "true" },
   metadataBase: new URL(SITE.url),
   title: {
     default: home.meta.title,

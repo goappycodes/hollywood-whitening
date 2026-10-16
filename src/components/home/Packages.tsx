@@ -48,10 +48,10 @@ function PackageCard({ pkg, index, copy, locale }: CardProps) {
       className={`h-auto w-[86%] shrink-0 snap-center sm:w-[60%] lg:h-full lg:w-auto ${dark ? "lg:-my-8" : ""}`}
     >
       <article
-        className={`group relative flex h-full flex-col rounded-[1.75rem] p-6 transition-transform duration-500 hover:-translate-y-1.5 sm:p-7 ${
+        className={`group relative flex h-full flex-col rounded-[1.75rem] p-5 transition-transform duration-500 hover:-translate-y-1.5 sm:p-7 ${
           dark
-            ? "bg-gradient-to-b from-navy-2 to-navy text-white shadow-[0_30px_60px_-20px_rgb(5_11_26/0.6)] ring-1 ring-brand/60"
-            : "border border-line bg-pearl"
+            ? "bg-gradient-to-b from-navy-2 to-navy text-white shadow-[0_12px_24px_-14px_rgb(5_11_26/0.55)] ring-1 ring-brand/60 lg:shadow-[0_30px_60px_-20px_rgb(5_11_26/0.6)]"
+            : "border border-line bg-pearl text-ink"
         }`}
       >
         {dark && (
@@ -71,14 +71,14 @@ function PackageCard({ pkg, index, copy, locale }: CardProps) {
           </span>
         </div>
 
-        <h3 className="mt-4 text-3xl font-bold tracking-tight">{pkg.name}</h3>
+        <h3 className={`mt-3 text-2xl font-bold tracking-tight sm:mt-4 sm:text-3xl ${dark ? "text-white" : "text-ink"}`}>{pkg.name}</h3>
         <p className={`mt-1 text-sm ${dark ? "text-white/60" : "text-muted"}`}>{copy.completePackage}</p>
         <div className="mt-3">
           <Rating value={pkg.rating} reviews={pkg.reviews} dark={dark} copy={copy} />
         </div>
 
         <div
-          className={`relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl ${dark ? "bg-white" : "bg-white ring-1 ring-line"}`}
+          className={`relative mt-4 aspect-[16/9] overflow-hidden rounded-2xl sm:mt-6 ${dark ? "bg-white" : "bg-white ring-1 ring-line"}`}
         >
           <Image
             src={pkg.image}
@@ -87,24 +87,21 @@ function PackageCard({ pkg, index, copy, locale }: CardProps) {
             sizes="(min-width: 1024px) 30vw, 100vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
-
-        <div
-          className={`mt-4 flex flex-col items-start gap-2 rounded-2xl p-4 sm:flex-row sm:items-center sm:justify-between sm:gap-3 ${
-            dark ? "bg-white/[0.06] ring-1 ring-white/10" : "bg-white ring-1 ring-line"
-          }`}
-        >
-          <p className="text-[15px] font-bold sm:text-base">{text.treatments}</p>
-          <span
-            className={`shrink-0 rounded-md px-2 py-1 text-[11px] font-bold whitespace-nowrap ${
-              dark ? "bg-emerald-400/15 text-emerald-300" : "bg-emerald-50 text-emerald-700"
-            }`}
-          >
+          {/* Results score sits on the image, so the treatments line below keeps one line */}
+          <span className="absolute top-2.5 right-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold whitespace-nowrap text-emerald-700 shadow-soft ring-1 ring-emerald-500/20 backdrop-blur">
             {fill(copy.results, { n: pkg.results })}
           </span>
         </div>
 
-        <ul className="mt-5 space-y-3">
+        <p
+          className={`mt-3 rounded-2xl px-4 py-3 text-sm font-bold sm:mt-4 sm:p-4 sm:text-base ${
+            dark ? "bg-white/[0.06] text-white ring-1 ring-white/10" : "bg-white text-ink ring-1 ring-line"
+          }`}
+        >
+          {text.treatments}
+        </p>
+
+        <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
           {text.features.map((f) => (
             <li key={f} className={`flex items-center gap-3 text-sm ${dark ? "text-white/85" : "text-graphite"}`}>
               <span
@@ -119,20 +116,22 @@ function PackageCard({ pkg, index, copy, locale }: CardProps) {
           ))}
         </ul>
 
-        <div className="mt-auto space-y-2.5 pt-8">
+        <div className="mt-auto space-y-2 pt-6 sm:space-y-2.5 sm:pt-8">
           <Link
             href={pageHref(locale, pkg.slug)}
-            className={`flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold transition-all ${
+            // Visible label is short ("Get Started"); the accessible name keeps the package.
+            aria-label={fill(copy.getStartedWith, { name: pkg.name })}
+            className={`flex items-center justify-center gap-1.5 rounded-full px-4 py-3 text-[13px] font-semibold transition-all sm:gap-2 sm:py-3.5 sm:text-sm ${
               dark
                 ? "bg-gradient-to-r from-brand to-cyan text-white hover:opacity-90"
                 : "bg-navy text-white hover:bg-brand"
             }`}
           >
-            {fill(copy.getStartedWith, { name: pkg.name })} <ArrowRight className="size-4" aria-hidden />
+            {copy.getStarted} <ArrowRight className="size-4" aria-hidden />
           </Link>
           <a
             href={SITE.phones[0].href}
-            className={`flex items-center justify-center gap-2 rounded-full border py-3 text-sm font-semibold transition-colors ${
+            className={`flex items-center justify-center gap-1.5 rounded-full border px-4 py-2.5 text-[13px] font-semibold transition-colors sm:gap-2 sm:py-3 sm:text-sm ${
               dark ? "border-white/15 text-white/80 hover:bg-white/10" : "border-line bg-white text-ink hover:border-ink/30"
             }`}
           >
@@ -153,8 +152,10 @@ export function Packages({ content, locale }: { content: Copy; locale: Locale })
           title={content.title}
           intro={content.intro}
         />
-        {/* Phones/tablets: swipeable row (next card peeks). Desktop: three-column grid. */}
-        <div className="-mx-5 mt-8 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-5 pt-5 pb-6 [scrollbar-width:none] sm:-mx-8 sm:mt-12 sm:px-8 lg:mx-0 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 xl:gap-8 [&::-webkit-scrollbar]:hidden">
+        {/* Phones/tablets: swipeable row (next card peeks). Desktop: three-column grid.
+            The row scrolls, so it clips anything outside it: below lg the featured card gets a
+            small shadow that fits inside the bottom padding (the large one would end in a hard edge). */}
+        <div className="-mx-5 mt-8 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-5 pt-5 pb-8 [scrollbar-width:none] sm:-mx-8 sm:mt-12 sm:px-8 lg:mx-0 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 xl:gap-8 [&::-webkit-scrollbar]:hidden">
           {PACKAGES.map((pkg, i) => (
             <PackageCard key={pkg.slug} pkg={pkg} index={i} copy={content} locale={locale} />
           ))}

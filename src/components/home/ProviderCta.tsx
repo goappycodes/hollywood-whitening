@@ -26,10 +26,10 @@ export function ProviderCta({ content, locale }: { content: HomeContent["provide
           <h2 className="mt-6 text-[2rem] leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
             {content.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-white/80 sm:mt-6 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/80 sm:mt-6 sm:text-lg">
             {content.body[0]}
           </p>
-          <p className="mx-auto mt-3 max-w-2xl text-white/65">{content.body[1]}</p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/65 sm:text-base">{content.body[1]}</p>
           <div className="mt-10 grid gap-3 sm:flex sm:flex-wrap sm:justify-center">
             <Link
               href={pageHref(locale, "contact")}

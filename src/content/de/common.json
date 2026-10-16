@@ -135,5 +135,11 @@
     "openGallery": "Bildergalerie öffnen",
     "closeGallery": "Galerie schließen",
     "stickyCta": "Interesse registrieren"
+  },
+  "science": {
+    "industries": "Für jede Art von Unternehmen",
+    "treatmentGuide": "Behandlungsleitfaden",
+    "criteria": "Kriterium",
+    "outOf": "von 10"
   }
 }

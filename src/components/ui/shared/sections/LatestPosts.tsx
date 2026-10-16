@@ -35,9 +35,10 @@ export function LatestPosts({ eyebrow, title, viewAll, posts, locale, limit = 3 
           </Reveal>
         </div>
 
-        <ul className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+        {/* Phones: a CSS scroll-snap row (~1.3 cards visible) running edge to edge; sm+: grid. */}
+        <ul className="-mx-5 mt-8 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {items.map((post, i) => (
-            <Reveal as="li" key={post.href} delay={i * 0.06} className={i === 2 ? "sm:hidden lg:block" : undefined}>
+            <Reveal as="li" key={post.href} delay={i * 0.06} className={`w-[77%] shrink-0 snap-start sm:w-auto ${i === 2 ? "sm:hidden lg:block" : ""}`}>
               <Link
                 href={post.href}
                 className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-white transition-shadow hover:shadow-lift"

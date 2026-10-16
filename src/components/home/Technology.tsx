@@ -31,7 +31,7 @@ export function Technology({ content, locale }: { content: HomeContent["technolo
               <span className="text-cyan-gradient">{line3}</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1} className="mt-6 space-y-4 text-base leading-relaxed text-white/65 sm:text-lg">
+          <Reveal delay={0.1} className="mt-6 space-y-4 text-sm leading-relaxed text-white/65 sm:text-lg">
             {content.body.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
             ))}

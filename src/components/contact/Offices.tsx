@@ -23,7 +23,7 @@ export function Offices({ content }: { content: ContactContent["offices"] }) {
                     <h3 className="text-lg font-bold text-ink">{copy.name}</h3>
                   </div>
 
-                  <p className="mt-5 flex gap-2.5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 flex gap-2.5 text-sm leading-relaxed sm:text-[15px] text-muted">
                     <MapPin className="mt-1 size-4 shrink-0 text-brand" aria-hidden />
                     {copy.address}
                   </p>

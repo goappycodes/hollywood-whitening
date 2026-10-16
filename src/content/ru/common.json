@@ -135,5 +135,11 @@
     "openGallery": "Открыть галерею",
     "closeGallery": "Закрыть галерею",
     "stickyCta": "Оставить заявку"
+  },
+  "science": {
+    "industries": "Для любого бизнеса",
+    "treatmentGuide": "Руководство по процедуре",
+    "criteria": "Критерий",
+    "outOf": "из 10"
   }
 }

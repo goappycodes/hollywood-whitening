@@ -25,7 +25,7 @@ export function Prose({
   return (
     <div
       className={cn(
-        sm ? "text-sm" : "text-[15px] sm:text-base",
+        sm ? "text-sm" : "text-sm sm:text-base",
         "leading-relaxed text-muted [&_a]:font-medium [&_a]:text-brand [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-brand-deep [&_strong]:font-semibold [&_strong]:text-ink",
         className,
       )}

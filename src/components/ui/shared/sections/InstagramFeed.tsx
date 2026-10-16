@@ -91,7 +91,7 @@ export async function InstagramFeed({ locale }: { locale: Locale }) {
             <h2 className="mt-4 text-[1.75rem] leading-[1.12] font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
               {t.titleLead} <span className="font-script font-semibold text-brand">{t.titleAccent}</span>
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">{t.body}</p>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted sm:text-lg">{t.body}</p>
           </div>
           <a
             href={SITE.social.instagram}

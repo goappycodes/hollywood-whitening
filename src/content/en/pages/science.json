@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "The Science & Technology behind Modern Laser Teeth Whitening | Hollywood Whitening",
+    "description": "Get all the answers related to the science and technology used behind laser teeth whitening. know how does all these stuff work"
+  },
+  "title": {
+    "bold": "The Science & Technology behind",
+    "light": "Modern Laser Teeth Whitening"
+  },
+  "quote": "“There is a growing trend of people seeking to improve their appearance through dental procedures such as laser teeth whitening.”",
+  "lead": "A one off laser treatment is the most effective and safest whitening procedure available, this is done in less than 1 hour. Using the most effective and powerful system. We can guarantee an instant result in 1 single procedure. In the space of your lunch break; we can restore your top and bottom front surface of teeth up to 14 shades brighter.",
+  "benefits": {
+    "title": "Some potential benefits of laser teeth whitening include:",
+    "items": [
+      "It’s safe and painless.",
+      "There is no need for anesthesia or dental sedation, which means you can go about your day while your treatment takes place.",
+      "The Results Are Visible Immediately! Most people see noticeable results within minutes of their treatment beginning, which lessens anxiety levels before the process even begins."
+    ]
+  },
+  "body": [
+    {
+      "type": "p",
+      "html": "Laser teeth whitening is a rapidly growing trend, and there are several types of lasers that can be used for this purpose."
+    },
+    {
+      "type": "p",
+      "html": "The Laser light activates the whitening gel and oxidises the pigmentation of the teeth through the dentin tubules, restoring them to white."
+    },
+    {
+      "type": "p",
+      "html": "However, what goes into this technology? And how safe are these treatments?"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"/laser-teeth-whitening/\">Laser teeth whitening</a> uses the energy from a powerful light source to remove stains and discolorations from the teeth. The light is manipulated using lasers that emit different colours (such as blue or near-infrared), which cause the stain to react in various ways. This reaction can then be observed and analysed using microscopic equipment, allowing for accurate treatment planning and exact delivery of light energy to the tooth surface."
+    }
+  ],
+  "laser": {
+    "title": "How does a laser work?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "Lasers work by emitting beams of light that interact with tooth surfaces to break down stains. The wavelengths used in whitening lasers vary depending on the type of stain being treated (e.g., dark spots on teeth contain shorter waves than lighter areas)."
+      },
+      {
+        "type": "p",
+        "html": "This difference in wavelength causes the Stain Removal Device (SRD) inside the Whitenacle or Clearlightlite to emit different amounts of light energy as it hits individual stained molecules. These lights then cause chemical reactions that damage tooth colour and surface layering responsible for staining."
+      }
+    ]
+  },
+  "srd": {
+    "title": "What is an SRD?",
+    "blocks": [
+      {
+        "type": "p",
+        "html": "An SRD is a special device that contains lenses, mirrors, electronic circuitry, power sources and other components needed for effective whitening therapy with FLASH/SOLAR LASERS AND LED LASERS TECHNOLOGY can be customised according to patient needs as well so therefor why every procedure will not look alike!"
+      },
+      {
+        "type": "p",
+        "html": "SRDs also have applicators specially designed like lances whose tips oscillate back-and-forth at very high frequencies between 4000 – 10 000 Hz."
+      }
+    ]
+  },
+  "considerations": {
+    "title": "There are several considerations that must be taken into account when choosing a Laser Teeth Whitening Procedure:",
+    "items": [
+      "Type of laser used",
+      "Power output",
+      "Wavelength(s) employed",
+      "Depth at which treatment will be delivered",
+      "Number of sessions administered per year",
+      "Patient’s own skin tone/ ethnicity etc…"
+    ]
+  },
+  "doubts": {
+    "title": "Still got doubts ?",
+    "body": "Fill out this form to have our representatives get in touch with you !"
+  },
+  "industries": [
+    {
+      "href": "/teeth-whitening-machine/salons/",
+      "label": "Beauty Industry",
+      "image": "/images/science/operating-teeth-whitening-macihne.jpg"
+    },
+    {
+      "href": "/teeth-whitening-machine/teeth-whitening-for-dentists-dental-industry/",
+      "label": "Dental industry",
+      "image": "/images/science/machine.jpg"
+    },
+    {
+      "href": "/teeth-whitening-machine/teeth-whitening-for-private-label/",
+      "label": "private label business",
+      "image": "/images/science/teeth-whitening-machine.jpg"
+    },
+    {
+      "href": "/teeth-whitening-machine/teeth-whitening-solutions-for-franchisee-businesses/",
+      "label": "franchisee business",
+      "image": "/images/science/Star-1-Full-Kit.jpg"
+    }
+  ],
+  "images": {
+    "hero": "/images/science/TeethGuys.jpg",
+    "pen": "/images/science/whitening-pen.jpg",
+    "led": "/images/science/teeth-led.jpg",
+    "banner": "/images/science/A1-Banner-HWGroup-4.jpg"
+  }
+}

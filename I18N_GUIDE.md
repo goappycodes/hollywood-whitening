@@ -112,6 +112,23 @@ shares the slug, so the Russian training page can't be reached. Keep it in step 
 have it reviewed by a native speaker. When the Next site takes over, our page serves that Russian URL;
 the product stays on WordPress under `/ru/product/…`.
 
+## Science & Laser Teeth Whitening pages
+
+```bash
+node scripts/science-scrape.mjs
+```
+
+Writes `src/content/<locale>/pages/{science,laser}.json` (all four locales) and images into
+`public/images/science/`. Both pages are split at their headings by position; the laser page's
+info tabs, FAQ accordion and comparison/price table are read from their markup. Fixes on top of the
+live text: the price table's column titles and prices use the English (live translation mangled the
+treatment names and spelled prices out), "Power" in es/ru, and the shared brand fixes. The science
+page's industry links point at `/teeth-whitening-machine/…` pages that aren't built yet.
+
+`scripts/lib/wp-html.mjs` closes unclosed `<p>` tags (the live builder leaves some open, which made
+paragraphs swallow following images/headings) — every scraper benefits; re-running the others gave
+identical content.
+
 ## Refreshing the Instagram feed
 
 ```bash
