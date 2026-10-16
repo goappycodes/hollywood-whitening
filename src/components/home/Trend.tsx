@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Trend({ content }: { content: HomeContent["trend"] }) {
   return (
-    <section className="pb-16 sm:pb-24 lg:pb-32">
+    <section className="bg-white pb-16 sm:pb-24 lg:pb-32">
       <div className="container-x">
         <Reveal>
           <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] bg-gradient-to-r from-brand-sky via-[#e8f9ff] to-[#eef3f8] p-6 sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:p-16">
@@ -15,7 +15,7 @@ export function Trend({ content }: { content: HomeContent["trend"] }) {
                 {content.title}
               </h2>
               <figure className="mt-6 max-w-xl">
-                <blockquote className="text-base leading-relaxed text-graphite italic sm:text-lg">“{content.quote}”</blockquote>
+                <blockquote className="text-[15px] leading-relaxed text-graphite italic sm:text-lg">“{content.quote}”</blockquote>
                 <figcaption className="mt-3 text-xs font-bold tracking-[0.2em] text-muted uppercase">
                   — {content.attribution}
                 </figcaption>

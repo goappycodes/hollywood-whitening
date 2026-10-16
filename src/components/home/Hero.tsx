@@ -44,7 +44,7 @@ export function Hero({ content, common, locale }: Props) {
               </span>{" "}
               <span className="block text-[0.8em] font-extralight tracking-[-0.02em] text-white/90">{hero.titleLight}</span>
             </h1>
-            <p className="rise mt-5 max-w-xl text-[15px] leading-relaxed font-light text-white/80 sm:mt-6 sm:text-lg" style={rise(0.16)}>
+            <p className="rise mt-5 max-w-xl text-sm leading-relaxed font-light text-white/80 sm:mt-6 sm:text-lg" style={rise(0.16)}>
               {hero.body}
             </p>
 
@@ -97,17 +97,17 @@ export function Hero({ content, common, locale }: Props) {
 
       {/* Stats band */}
       <section aria-label={stats.label} className="border-b border-line bg-white">
-        <dl className="container-x grid grid-cols-2 gap-x-4 gap-y-7 py-8 lg:grid-cols-4 lg:py-10">
+        <dl className="container-x grid grid-cols-2 gap-x-3 gap-y-5 py-6 sm:gap-x-4 sm:gap-y-7 sm:py-8 lg:grid-cols-4 lg:py-10">
           {STAT_VALUES.map((s, i) => {
             const Icon = STAT_ICONS[s.icon];
             return (
-              <div key={s.icon} className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
-                <span className="inline-flex size-10 shrink-0 sm:size-12 items-center justify-center rounded-2xl bg-brand-sky text-brand">
-                  <Icon className={`size-5 ${s.icon === "star" ? "fill-star text-star" : ""}`} aria-hidden />
+              <div key={s.icon} className="flex min-w-0 items-center gap-2.5 sm:gap-4">
+                <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl bg-brand-sky text-brand sm:size-12 sm:rounded-2xl">
+                  <Icon className={`size-4 sm:size-5 ${s.icon === "star" ? "fill-star text-star" : ""}`} aria-hidden />
                 </span>
                 <div className="flex min-w-0 flex-col-reverse">
-                  <dt className="mt-0.5 text-xs leading-snug break-words hyphens-auto text-muted sm:text-[11px] sm:font-semibold sm:tracking-[0.12em] sm:uppercase">{stats.items[i]}</dt>
-                  <dd className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">{s.value}</dd>
+                  <dt className="text-[11px] leading-tight break-words hyphens-auto text-muted sm:mt-0.5 sm:font-semibold sm:tracking-[0.12em] sm:uppercase">{stats.items[i]}</dt>
+                  <dd className="text-xl leading-tight font-bold tracking-tight text-ink sm:text-3xl">{s.value}</dd>
                 </div>
               </div>
             );

@@ -22,7 +22,7 @@ export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; 
   const posts = content.posts.map((p, i) => ({ ...p, image: POST_IMAGES[i] }));
   const [featured, ...rest] = posts;
   return (
-    <section id="faq" className="scroll-mt-24 py-16 sm:py-24 lg:py-32">
+    <section id="faq" className="scroll-mt-24 bg-white py-16 sm:py-24 lg:py-32">
       <div className="container-x grid gap-12 sm:gap-16 lg:grid-cols-[1fr_1.35fr] lg:gap-14">
         {/* News & Tips */}
         <div>
@@ -91,7 +91,7 @@ export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; 
         <div>
           <Reveal>
             <Heading eyebrow={content.faqEyebrow} title={content.faqTitle} />
-            <p className="mt-3 text-muted">
+            <p className="mt-3 text-sm text-muted sm:text-base">
               {content.faqIntro}
             </p>
           </Reveal>
@@ -102,7 +102,7 @@ export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; 
                   className="group rounded-2xl border border-line bg-pearl transition-colors open:border-brand/25 open:bg-white open:shadow-soft"
                   open={i === 0}
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-[15px] font-semibold text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold sm:text-[15px] text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
                     {f.q}
                     <ChevronDown
                       className="size-4 shrink-0 text-brand transition-transform duration-300 group-open:rotate-180"

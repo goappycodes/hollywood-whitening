@@ -82,7 +82,12 @@ async function gallery(html, key) {
 }
 
 function product(html, key, images, locale) {
-  const main = clean(html.slice(html.indexOf("<main"), html.indexOf("</main>")));
+  const raw = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  const videoId = raw.match(/youtube-player" data-id="([^"]+)"/)?.[1] ?? null;
+  // The lazy YouTube player <div> sits inside the short description's first <p>. Drop it
+  // (videoId is read above) BEFORE clean(), which would otherwise close the <p> at the div
+  // and cut the paragraph's text off.
+  const main = clean(raw.replace(/<div class="youtube-player-outer">[\s\S]*?<\/div>\s*<\/div>/g, ""));
 
   const name = fixBrand(textOf(main.match(/<h1[^>]*product_title[^>]*>([\s\S]*?)<\/h1>/)?.[1] ?? ""));
   const category = fixBrand(textOf(main.match(/woocommerce-breadcrumb[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/)?.[1] ?? ""));
@@ -94,7 +99,6 @@ function product(html, key, images, locale) {
 
   // Short description — up to the embedded enquiry form.
   const short = between(main, 'class="product-short-description"', ["gform_wrapper", "</form>", 'class="cart"']);
-  const videoId = short.match(/youtube-player" data-id="([^"]+)"/)?.[1] ?? null;
   const intro = parseBlocks(short);
 
   const formTitle = fixBrand(textOf(main.match(/class="gform_title">([\s\S]*?)<\/h2>/)?.[1] ?? ""));

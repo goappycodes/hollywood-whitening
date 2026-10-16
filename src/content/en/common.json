@@ -135,5 +135,11 @@
     "openGallery": "Open image gallery",
     "closeGallery": "Close gallery",
     "stickyCta": "Register interest"
+  },
+  "science": {
+    "industries": "Built for every kind of business",
+    "treatmentGuide": "Treatment guide",
+    "criteria": "Criteria",
+    "outOf": "out of 10"
   }
 }

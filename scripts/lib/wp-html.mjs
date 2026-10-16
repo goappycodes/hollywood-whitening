@@ -43,6 +43,7 @@ const BRAND_FIXES = [
   [/услуг по голливудскому отбеливанию зубов/g, `услуг ${BRAND}`],
   [/[Гг]олливудское отбеливание( зубов)?/g, BRAND],
   [/голливудские процедуры/g, `процедуры ${BRAND}`],
+  [/методика голливудского отбеливания/g, `методика ${BRAND}`],
 ];
 export const fixBrand = (s) => BRAND_FIXES.reduce((acc, [re, to]) => acc.replace(re, to), s);
 
@@ -107,10 +108,29 @@ function cfDecode(hex) {
   return out;
 }
 
+/**
+ * The live editor/builder output leaves some <p> unclosed (a <style> sat inside it), so
+ * a lazy `<p>…</p>` match would swallow the following images and headings. Close an open
+ * <p> wherever the next block element starts — the same thing the HTML parser does.
+ */
+function closeParagraphs(html) {
+  let open = false;
+  return html.replace(/<(\/?)(p|div|h[1-6]|ul|ol|table|section)\b[^>]*>/gi, (tag, slash, name) => {
+    const isP = name.toLowerCase() === "p";
+    if (isP && slash) {
+      if (!open) return ""; // stray </p>
+      open = false;
+      return tag;
+    }
+    const prefix = open ? "</p>" : "";
+    open = isP && !slash;
+    return prefix + tag;
+  });
+}
+
 /** Strips scripts/styles/comments and restores Cloudflare-protected email addresses. */
 export function clean(html) {
-  return html
-    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, "")
+  return closeParagraphs(html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, ""))
     .replace(/<a[^>]*data-cfemail="([0-9a-f]+)"[^>]*>[\s\S]*?<\/a>/gi, (_, hex) => {
       const email = cfDecode(hex);
       return `<a href="mailto:${email}">${email}</a>`;

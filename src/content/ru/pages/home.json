@@ -59,6 +59,7 @@
     "ratingAria": "Рейтинг {r} из 5 на основе {n} отзывов клиентов",
     "results": "Результаты {n}/10",
     "getStartedWith": "Начать с {name}",
+    "getStarted": "Начать",
     "callForPrice": "Цена по запросу",
     "items": {
       "star-one": {

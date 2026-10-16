@@ -45,6 +45,12 @@ export const PAGE_SLUGS = {
     de: "die-wissenschaft-und-technologie-hinter-der-modernen-laser-zahnaufhellung",
     ru: "наука-технология-за-современным-лазе",
   },
+  laser: {
+    en: "laser-teeth-whitening",
+    es: "blanqueamiento-dental-con-laser",
+    de: "laser-zahnaufhellung",
+    ru: "лазерное-отбеливание-зубов",
+  },
   faq: {
     en: "laser-teeth-whitening",
     es: "blanqueamiento-dental-con-laser",
@@ -95,6 +101,8 @@ export const BUILT_PAGES = [
   "about",
   "contact",
   "training",
+  "science",
+  "laser",
   "privacy",
   "terms",
   "warranty",

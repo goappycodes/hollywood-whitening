@@ -59,6 +59,7 @@
     "ratingAria": "Valorado con {r} de 5 en base a {n} valoraciones de clientes",
     "results": "Resultados {n}/10",
     "getStartedWith": "Empezar con {name}",
+    "getStarted": "Empezar",
     "callForPrice": "Solicitar precio",
     "items": {
       "star-one": {

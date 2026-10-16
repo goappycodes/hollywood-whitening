@@ -135,5 +135,11 @@
     "openGallery": "Abrir la galería de imágenes",
     "closeGallery": "Cerrar la galería",
     "stickyCta": "Registrar interés"
+  },
+  "science": {
+    "industries": "Pensado para todo tipo de negocio",
+    "treatmentGuide": "Guía del tratamiento",
+    "criteria": "Criterio",
+    "outOf": "de 10"
   }
 }

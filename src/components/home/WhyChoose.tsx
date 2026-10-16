@@ -15,7 +15,7 @@ const ICONS: Record<(typeof PILLAR_ICONS)[number], { Icon: LucideIcon; tone: str
 
 export function WhyChoose({ content, locale }: { content: HomeContent["why"]; locale: Locale }) {
   return (
-    <section className="py-16 sm:py-24 lg:py-32">
+    <section className="bg-white py-16 sm:py-24 lg:py-32">
       <div className="container-x">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading align="left" eyebrow={content.eyebrow} title={content.title} className="max-w-3xl" />
@@ -23,7 +23,7 @@ export function WhyChoose({ content, locale }: { content: HomeContent["why"]; lo
             <Button href={pageHref(locale, "contact")}>{content.cta}</Button>
           </Reveal>
         </div>
-        <Reveal delay={0.1} className="mt-6 grid gap-4 text-base leading-relaxed text-muted lg:grid-cols-2 lg:gap-12">
+        <Reveal delay={0.1} className="mt-6 grid gap-4 text-sm leading-relaxed sm:text-base text-muted lg:grid-cols-2 lg:gap-12">
           {content.body.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}

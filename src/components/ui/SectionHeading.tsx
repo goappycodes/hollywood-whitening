@@ -28,7 +28,7 @@ export function SectionHeading({ eyebrow, title, intro, align = "center", tone =
         {title}
       </h2>
       {intro && (
-        <p className={`mt-5 text-base leading-relaxed sm:text-lg ${tone === "light" ? "text-white/70" : "text-muted"}`}>
+        <p className={`mt-5 text-sm leading-relaxed sm:text-lg ${tone === "light" ? "text-white/70" : "text-muted"}`}>
           {intro}
         </p>
       )}

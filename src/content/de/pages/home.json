@@ -59,6 +59,7 @@
     "ratingAria": "Bewertet mit {r} von 5, basierend auf {n} Kundenbewertungen",
     "results": "Ergebnis: {n}/10",
     "getStartedWith": "Mit {name} starten",
+    "getStarted": "Jetzt starten",
     "callForPrice": "Preis auf Anfrage",
     "items": {
       "star-one": {

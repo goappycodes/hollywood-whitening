@@ -150,11 +150,11 @@ export function ProductPackage({ section }: { section: Section }) {
           {items.map((html, i) => (
             <Reveal as="li" key={i} delay={Math.min(i, 8) * 0.03}>
               <div className="flex h-full items-start gap-3 rounded-2xl border border-line bg-white p-4">
-                <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-sky text-brand">
-                  <Check className="size-3.5" strokeWidth={3} aria-hidden />
+                <span className="mt-0.5 grid size-[18px] shrink-0 place-items-center rounded-full bg-brand-sky text-brand sm:size-6">
+                  <Check className="size-2.5 sm:size-3.5" strokeWidth={3} aria-hidden />
                 </span>
                 <span
-                  className="min-w-0 text-[15px] leading-snug text-ink"
+                  className="min-w-0 text-sm leading-snug sm:text-[15px] text-ink"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
               </div>
@@ -212,7 +212,7 @@ export function ProductFaq({ section }: { section: Section }) {
                 className="group rounded-2xl border border-line bg-pearl transition-colors open:border-brand/25 open:bg-white open:shadow-soft"
                 open={i === 0}
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-[15px] font-semibold text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold sm:text-[15px] text-ink sm:px-6 [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <ChevronDown
                     className="size-4 shrink-0 text-brand transition-transform duration-300 group-open:rotate-180"

@@ -42,6 +42,16 @@ import trainingEs from "@/content/es/pages/training.json";
 import trainingDe from "@/content/de/pages/training.json";
 import trainingRu from "@/content/ru/pages/training.json";
 
+// Science + Laser Teeth Whitening pages (scripts/science-scrape.mjs).
+import scienceEn from "@/content/en/pages/science.json";
+import scienceEs from "@/content/es/pages/science.json";
+import scienceDe from "@/content/de/pages/science.json";
+import scienceRu from "@/content/ru/pages/science.json";
+import laserEn from "@/content/en/pages/laser.json";
+import laserEs from "@/content/es/pages/laser.json";
+import laserDe from "@/content/de/pages/laser.json";
+import laserRu from "@/content/ru/pages/laser.json";
+
 // Product pages (scripts/product-scrape.mjs).
 import starOneEn from "@/content/en/products/star-one.json";
 import starOneEs from "@/content/es/products/star-one.json";
@@ -99,6 +109,20 @@ export type TrainingContent = Omit<typeof trainingEn, "intro" | "safe" | "techni
   technique: { title: string; blocks: ContentBlock[] };
 };
 
+type ParagraphBlock = Extract<ContentBlock, { type: "p" }>;
+
+/** "The Science & Technology behind Modern Laser Teeth Whitening" — scripts/science-scrape.mjs. */
+export type ScienceContent = Omit<typeof scienceEn, "body" | "laser" | "srd"> & {
+  body: ParagraphBlock[];
+  laser: { title: string; blocks: ParagraphBlock[] };
+  srd: { title: string; blocks: ParagraphBlock[] };
+};
+
+/** "Laser Teeth Whitening" treatment guide — scripts/science-scrape.mjs. */
+export type LaserContent = Omit<typeof laserEn, "info"> & {
+  info: { title: string; tabs: { label: string; blocks: ContentBlock[] }[] };
+};
+
 export type ProductSectionKind = "description" | "package" | "training" | "about" | "faq" | "delivery" | "other";
 /** Products with a built page. Add a key (and its four JSON imports) as each is built. */
 export type ProductKey = "star-one" | "comet-2" | "galaxy";
@@ -120,6 +144,8 @@ const PRODUCTS = {
   galaxy: { en: galaxyEn, es: galaxyEs, de: galaxyDe, ru: galaxyRu },
 } as Record<ProductKey, Record<Locale, ProductContent>>;
 const TRAINING = { en: trainingEn, es: trainingEs, de: trainingDe, ru: trainingRu } as Record<Locale, TrainingContent>;
+const SCIENCE = { en: scienceEn, es: scienceEs, de: scienceDe, ru: scienceRu } as Record<Locale, ScienceContent>;
+const LASER = { en: laserEn, es: laserEs, de: laserDe, ru: laserRu } as Record<Locale, LaserContent>;
 const COMMON: Record<Locale, CommonContent> = { en: commonEn, es: commonEs, de: commonDe, ru: commonRu };
 
 export const getHomeContent = (locale: Locale): HomeContent => HOME[locale];
@@ -128,6 +154,8 @@ export const getContactContent = (locale: Locale): ContactContent => CONTACT[loc
 export const getLegalContent = (page: LegalPage, locale: Locale): LegalContent => LEGAL[page][locale];
 export const getProductContent = (key: ProductKey, locale: Locale): ProductContent => PRODUCTS[key][locale];
 export const getTrainingContent = (locale: Locale): TrainingContent => TRAINING[locale];
+export const getScienceContent = (locale: Locale): ScienceContent => SCIENCE[locale];
+export const getLaserContent = (locale: Locale): LaserContent => LASER[locale];
 export const getCommonContent = (locale: Locale): CommonContent => COMMON[locale];
 
 /** Instagram snapshot (scripts/instagram-snapshot.mjs) — same posts in every locale. */

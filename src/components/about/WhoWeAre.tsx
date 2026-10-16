@@ -23,7 +23,7 @@ export function WhoWeAre({ content, stats, locale }: Props) {
         <div>
           <SectionHeading align="left" eyebrow={content.eyebrow} title={content.title} />
           <Reveal delay={0.08}>
-            <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">{content.body}</p>
+            <p className="mt-6 text-sm leading-relaxed text-muted sm:text-lg">{content.body}</p>
             <Button href={pageHref(locale, "contact")} className="mt-8 w-full sm:w-auto">
               {content.cta}
             </Button>

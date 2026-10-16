@@ -29,7 +29,7 @@ export function Testimonials({ content }: { content: HomeContent["testimonials"]
                     </div>
                     <Quote className="size-7 text-brand/15" aria-hidden />
                   </div>
-                  <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-graphite">“{t.quote}”</blockquote>
+                  <blockquote className="mt-5 flex-1 text-sm leading-relaxed sm:text-[15px] text-graphite">“{t.quote}”</blockquote>
                   <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
                     <span
                       className={`inline-flex size-10 items-center justify-center rounded-full text-sm font-bold text-white ${AVATAR_TONES[i % AVATAR_TONES.length]}`}
