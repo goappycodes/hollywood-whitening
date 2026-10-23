@@ -37,6 +37,22 @@ export function WhatsappIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M6.9 8.8H3.6V20h3.3V8.8ZM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.4 13.4c0-3-.7-5-4-5a3.5 3.5 0 0 0-3.1 1.7V8.8h-3.2V20h3.3v-5.5c0-1.5.3-2.9 2.1-2.9s1.8 1.7 1.8 3V20h3.3l-.2-6.6Z" />
+    </svg>
+  );
+}
+
+export function XIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M17.8 3h3.1l-6.8 7.7 8 10.3h-6.2l-4.9-6.3L5.4 21H2.3l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z" />
+    </svg>
+  );
+}
+
 const SOCIAL = [
   { href: SITE.social.instagram, label: "Instagram", Icon: InstagramIcon },
   { href: SITE.social.facebook, label: "Facebook", Icon: FacebookIcon },

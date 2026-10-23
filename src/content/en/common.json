@@ -141,5 +141,34 @@
     "treatmentGuide": "Treatment guide",
     "criteria": "Criteria",
     "outOf": "out of 10"
+  },
+  "blog": {
+    "metaTitle": "Hollywood Whitening Blogs | Get The Best Teeth Whitening Blogs!",
+    "metaDescription": "Hollywood Whitening offers a wide range of laser teeth whitening services that make your teeth look their best. Keep reading to know more!",
+    "eyebrow": "Check Out Our Blog",
+    "title": "News & Tips",
+    "intro": "Guides on professional teeth whitening, aftercare advice and ideas for growing a whitening business, from the Hollywood Whitening team.",
+    "page": "Page {n}",
+    "pagination": "Blog pages",
+    "previous": "Previous",
+    "next": "Next",
+    "readArticle": "Read article",
+    "minRead": "{n} min read",
+    "updated": "Updated",
+    "inThisArticle": "In this article",
+    "share": "Share this article",
+    "relatedEyebrow": "Keep reading",
+    "relatedTitle": "You may also like",
+    "allArticles": "All articles",
+    "empty": "No articles yet — check back soon.",
+    "category": "Teeth Whitening",
+    "ctaTitle": "Ready to start your teeth whitening business?",
+    "ctaBody": "Explore our complete packages — machine, products and full training included.",
+    "ctaButton": "Explore Packages",
+    "categories": {
+      "teeth-whitening": "Teeth Whitening",
+      "teeth-whitening-pen": "Teeth Whitening Pen",
+      "whitening": "Whitening"
+    }
   }
 }

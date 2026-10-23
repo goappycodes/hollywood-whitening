@@ -141,5 +141,34 @@
     "treatmentGuide": "Behandlungsleitfaden",
     "criteria": "Kriterium",
     "outOf": "von 10"
+  },
+  "blog": {
+    "metaTitle": "Hollywood Whitening Blog | Die besten Artikel zur Zahnaufhellung!",
+    "metaDescription": "Hollywood Whitening bietet eine breite Palette an Laser-Zahnaufhellungsbehandlungen für ein strahlend weißes Lächeln. Lesen Sie weiter, um mehr zu erfahren!",
+    "eyebrow": "Besuchen Sie unseren Blog",
+    "title": "Neuigkeiten & Tipps",
+    "intro": "Ratgeber zur professionellen Zahnaufhellung, Pflegetipps für danach und Ideen für Ihr Zahnaufhellungsgeschäft – vom Hollywood Whitening Team.",
+    "page": "Seite {n}",
+    "pagination": "Blogseiten",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "readArticle": "Artikel lesen",
+    "minRead": "{n} Min. Lesezeit",
+    "updated": "Aktualisiert",
+    "inThisArticle": "In diesem Artikel",
+    "share": "Artikel teilen",
+    "relatedEyebrow": "Weiterlesen",
+    "relatedTitle": "Das könnte Sie auch interessieren",
+    "allArticles": "Alle Artikel",
+    "empty": "Noch keine Artikel – schauen Sie bald wieder vorbei.",
+    "category": "Zahnaufhellung",
+    "ctaTitle": "Bereit für Ihr eigenes Zahnaufhellungsgeschäft?",
+    "ctaBody": "Entdecken Sie unsere Komplettpakete – Gerät, Produkte und vollständige Schulung inklusive.",
+    "ctaButton": "Pakete ansehen",
+    "categories": {
+      "teeth-whitening": "Zahnaufhellung",
+      "teeth-whitening-pen": "Zahnaufhellungsstift",
+      "whitening": "Aufhellung"
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { getPostTeasers } from "@/lib/blog";
 import { getAboutContent, getCommonContent, getHomeContent } from "@/lib/content";
 import { absoluteUrl, LOCALE_META, type Locale } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
@@ -15,8 +16,9 @@ import { GetInTouch } from "@/components/ui/shared/sections/GetInTouch";
  * "Why choose" sections reused between them.
  * Copy: src/content/<locale>/pages/about.json (+ home.json for the shared parts).
  */
-export function AboutSections({ locale }: { locale: Locale }) {
+export async function AboutSections({ locale }: { locale: Locale }) {
   const content = getAboutContent(locale);
+  const teasers = await getPostTeasers(locale, 3);
   const home = getHomeContent(locale);
   const common = getCommonContent(locale);
 
@@ -50,6 +52,7 @@ export function AboutSections({ locale }: { locale: Locale }) {
         title={content.blog.title}
         viewAll={content.blog.viewAll}
         posts={home.blogFaq}
+        teasers={teasers}
         locale={locale}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

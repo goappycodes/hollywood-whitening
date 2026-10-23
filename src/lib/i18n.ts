@@ -166,6 +166,28 @@ export function resolvePathname(pathname: string): { locale: Locale; page: PageK
   return { locale: isLocale(first) ? first : DEFAULT_LOCALE, page: "home" };
 }
 
+/* ------------------------------------------------------------------ */
+/* Blog routes — /blog/, /blog/page/N/, /blog/<slug>/ (paths: lib/blog-locale.ts) */
+/* ------------------------------------------------------------------ */
+
+export type BlogRoute =
+  /** `paged`: the URL spelled out /page/N/ (so /page/1/ can redirect to the root). */
+  | { locale: Locale; kind: "index"; page: number; paged?: boolean }
+  | { locale: Locale; kind: "post"; slug: string };
+
+/** Catch-all segments → a blog route, or null if the path is not under the blog. */
+export function resolveBlogSegments(segments: readonly string[] = []): BlogRoute | null {
+  const parts = segments.map(decodeSegment).filter(Boolean);
+  if (parts[0] === DEFAULT_LOCALE) return null;
+  const prefixed = isLocale(parts[0]);
+  const locale: Locale = prefixed ? (parts[0] as Locale) : DEFAULT_LOCALE;
+  const [root, a, b, ...extra] = prefixed ? parts.slice(1) : parts;
+  if (root !== PAGE_SLUGS.blog[locale] || extra.length) return null;
+  if (a === undefined) return { locale, kind: "index", page: 1 };
+  if (a === "page") return b !== undefined && /^[1-9]\d*$/.test(b) ? { locale, kind: "index", page: Number(b), paged: true } : null;
+  return b === undefined ? { locale, kind: "post", slug: a } : null;
+}
+
 /** `generateStaticParams` for the catch-all: every built page in every locale. */
 export function catchAllStaticParams(): { lang: string[] }[] {
   return BUILT_PAGES.flatMap((page) =>

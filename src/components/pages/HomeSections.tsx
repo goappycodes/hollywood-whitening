@@ -1,3 +1,4 @@
+import { getPostTeasers } from "@/lib/blog";
 import { getCommonContent, getHomeContent } from "@/lib/content";
 import { absoluteUrl, LOCALE_META, type Locale } from "@/lib/i18n";
 import { PACKAGES } from "@/lib/site";
@@ -13,10 +14,11 @@ import { BlogFaq } from "@/components/home/BlogFaq";
 import { InstagramFeed } from "@/components/ui/shared/sections/InstagramFeed";
 import { ProviderCta } from "@/components/home/ProviderCta";
 
-/** The homepage in any locale. Copy comes from src/content/<locale>/pages/home.json. */
-export function HomeSections({ locale }: { locale: Locale }) {
+/** The homepage in any locale. Copy comes from src/content/<locale>/pages/home.json; the blog strip from WordPress. */
+export async function HomeSections({ locale }: { locale: Locale }) {
   const content = getHomeContent(locale);
   const common = getCommonContent(locale);
+  const posts = await getPostTeasers(locale, 5);
 
   const jsonLd = [
     {
@@ -56,7 +58,7 @@ export function HomeSections({ locale }: { locale: Locale }) {
       <Trend content={content.trend} />
       <Testimonials content={content.testimonials} />
       <InstagramFeed locale={locale} />
-      <BlogFaq content={content.blogFaq} locale={locale} />
+      <BlogFaq content={content.blogFaq} posts={posts} locale={locale} />
       <ProviderCta content={content.provider} locale={locale} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>

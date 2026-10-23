@@ -141,5 +141,34 @@
     "treatmentGuide": "Guía del tratamiento",
     "criteria": "Criterio",
     "outOf": "de 10"
+  },
+  "blog": {
+    "metaTitle": "Blog de Hollywood Whitening | ¡Los mejores artículos sobre blanqueamiento dental!",
+    "metaDescription": "Hollywood Whitening ofrece una amplia gama de servicios de blanqueamiento dental con láser que le darán a sus dientes el mejor aspecto. ¡Siga leyendo para saber más!",
+    "eyebrow": "Visita nuestro blog",
+    "title": "Noticias y consejos",
+    "intro": "Guías sobre blanqueamiento dental profesional, consejos de cuidado posterior e ideas para hacer crecer tu negocio de blanqueamiento, del equipo de Hollywood Whitening.",
+    "page": "Página {n}",
+    "pagination": "Páginas del blog",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "readArticle": "Leer artículo",
+    "minRead": "{n} min de lectura",
+    "updated": "Actualizado",
+    "inThisArticle": "En este artículo",
+    "share": "Compartir este artículo",
+    "relatedEyebrow": "Sigue leyendo",
+    "relatedTitle": "También te puede interesar",
+    "allArticles": "Todos los artículos",
+    "empty": "Todavía no hay artículos. ¡Vuelve pronto!",
+    "category": "Blanqueamiento dental",
+    "ctaTitle": "¿Listo para empezar tu negocio de blanqueamiento dental?",
+    "ctaBody": "Descubre nuestros paquetes completos: máquina, productos y formación completa incluidos.",
+    "ctaButton": "Ver paquetes",
+    "categories": {
+      "teeth-whitening": "Blanqueamiento dental",
+      "teeth-whitening-pen": "Bolígrafo blanqueador",
+      "whitening": "Blanqueamiento"
+    }
   }
 }

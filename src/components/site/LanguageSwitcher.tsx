@@ -14,8 +14,22 @@ import { Flag } from "./Flag";
  *
  * Selecting a flag navigates to the SAME page in that language (e.g. `/de/` → `/es/`;
  * later `/de/uber-uns/` → `/es/sobre-nosotros/`), resolved from the pathname with the
- * same registry the [[...lang]] route uses. Unknown paths fall back to that locale's home.
+ * same registry the [[...lang]] route uses. Pages whose slugs are not in that registry
+ * (blog posts, whose translated slugs come from WordPress) are matched through the
+ * page's own hreflang alternates. Anything else falls back to that locale's home.
  */
+
+/** The current document's hreflang alternates as root-relative paths, by locale. */
+function readAlternates(): Partial<Record<Locale, string>> {
+  const out: Partial<Record<Locale, string>> = {};
+  for (const code of SWITCHER_ORDER) {
+    const link = document.head.querySelector<HTMLLinkElement>(
+      `link[rel="alternate"][hreflang="${LOCALE_META[code].htmlLang}"]`,
+    );
+    if (link?.href) out[code] = new URL(link.href).pathname;
+  }
+  return out;
+}
 export function LanguageSwitcher({
   tone = "dark",
   className,
@@ -31,6 +45,7 @@ export function LanguageSwitcher({
 }) {
   const { locale: current, page } = resolvePathname(usePathname() ?? "/");
   const [open, setOpen] = useState(false);
+  const [alternates, setAlternates] = useState<Partial<Record<Locale, string>>>({});
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -58,7 +73,11 @@ export function LanguageSwitcher({
     <div ref={ref} className={cn("relative", className)}>
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          // Read on open, so a client-side navigation's new <head> is picked up.
+          if (!open) setAlternates(readAlternates());
+          setOpen((v) => !v);
+        }}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={`${label}: ${meta.native}`}
@@ -89,7 +108,7 @@ export function LanguageSwitcher({
               return (
                 <li key={code}>
                   <Link
-                    href={localePath(code, page)}
+                    href={page === "home" && alternates[code] ? alternates[code] : localePath(code, page)}
                     role="option"
                     aria-selected={active}
                     hrefLang={m.htmlLang}

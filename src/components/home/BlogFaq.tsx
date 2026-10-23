@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
+import type { PostTeaser } from "@/lib/blog";
 import type { HomeContent } from "@/lib/content";
 import { pageHref, type Locale } from "@/lib/i18n";
-import { POST_IMAGES } from "@/lib/site";
 import { Reveal } from "@/components/ui/Reveal";
+import { PostImageFallback } from "@/components/blog/PostCard";
 
 function Heading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
@@ -18,8 +19,7 @@ function Heading({ eyebrow, title }: { eyebrow: string; title: string }) {
   );
 }
 
-export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; locale: Locale }) {
-  const posts = content.posts.map((p, i) => ({ ...p, image: POST_IMAGES[i] }));
+export function BlogFaq({ content, posts, locale }: { content: HomeContent["blogFaq"]; posts: PostTeaser[]; locale: Locale }) {
   const [featured, ...rest] = posts;
   return (
     <section id="faq" className="scroll-mt-24 bg-white py-16 sm:py-24 lg:py-32">
@@ -41,17 +41,22 @@ export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; 
               className="group block overflow-hidden rounded-[var(--radius-card)] bg-navy text-white shadow-lift"
             >
               <div className="relative aspect-[16/8] overflow-hidden">
-                <Image
-                  src={featured.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                {featured.image ? (
+                  <Image
+                    src={featured.image}
+                    alt=""
+                    fill
+                    referrerPolicy="no-referrer"
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <PostImageFallback />
+                )}
               </div>
               <div className="p-7">
                 <span className="rounded-md bg-brand px-2.5 py-1 text-[10px] font-bold tracking-[0.15em] uppercase">
-                  {content.category}
+                  {featured.category}
                 </span>
                 <h3 className="mt-4 text-2xl leading-snug font-bold">{featured.title}</h3>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan">
@@ -71,10 +76,14 @@ export function BlogFaq({ content, locale }: { content: HomeContent["blogFaq"]; 
                     className="group flex items-center gap-4 rounded-2xl border border-line bg-pearl p-3 pr-4 transition-colors hover:border-brand/30 hover:bg-white"
                   >
                     <div className="relative aspect-[4/3] w-20 shrink-0 overflow-hidden rounded-xl">
-                      <Image src={post.image} alt="" fill sizes="80px" className="object-cover" />
+                      {post.image ? (
+                        <Image src={post.image} alt="" fill referrerPolicy="no-referrer" sizes="80px" className="object-cover" />
+                      ) : (
+                        <PostImageFallback />
+                      )}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <span className="text-[10px] font-bold tracking-[0.18em] text-brand uppercase">{content.category}</span>
+                      <span className="text-[10px] font-bold tracking-[0.18em] text-brand uppercase">{post.category}</span>
                       <h3 className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold text-ink group-hover:text-brand-deep">
                         {post.title}
                       </h3>

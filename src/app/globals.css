@@ -182,3 +182,121 @@ html.js [data-reveal][data-shown] {
     transition: none;
   }
 }
+
+/*
+ * WordPress post bodies (components/pages/BlogPostSections.tsx). The HTML arrives
+ * cleaned by lib/blog-content.ts: no inline styles, tables wrapped in .blog-table,
+ * Flatsome banners turned into .blog-cta, <h2>s carrying anchor ids.
+ */
+@layer components {
+  .blog-prose {
+    @apply text-[15px] leading-[1.8] text-muted sm:text-base;
+  }
+  .blog-prose > * + * {
+    @apply mt-5;
+  }
+  .blog-prose h2 {
+    @apply mt-12 scroll-mt-28 text-2xl leading-snug font-bold tracking-tight text-ink sm:text-[1.7rem];
+  }
+  .blog-prose h3 {
+    @apply mt-9 text-xl leading-snug font-bold text-ink;
+  }
+  .blog-prose h4,
+  .blog-prose h5,
+  .blog-prose h6 {
+    @apply mt-7 text-lg leading-snug font-semibold text-ink;
+  }
+  .blog-prose :is(h2, h3, h4, h5, h6) + * {
+    @apply mt-3;
+  }
+  .blog-prose > :first-child {
+    @apply mt-0;
+  }
+  .blog-prose :is(b, strong) {
+    @apply font-semibold text-ink;
+  }
+  .blog-prose :is(h2, h3, h4, h5, h6) :is(b, strong) {
+    font-weight: inherit;
+  }
+  .blog-prose a {
+    @apply font-medium text-brand underline decoration-brand/30 underline-offset-[3px] transition-colors hover:text-brand-deep hover:decoration-brand-deep;
+  }
+  .blog-prose ul {
+    @apply space-y-2.5 pl-1;
+  }
+  .blog-prose ul > li {
+    @apply relative pl-6;
+  }
+  .blog-prose ul > li::before {
+    content: "";
+    @apply absolute top-[0.72em] left-1 size-1.5 rounded-full bg-brand;
+  }
+  .blog-prose ol {
+    @apply list-decimal space-y-2.5 pl-6 marker:font-semibold marker:text-brand;
+  }
+  .blog-prose ol > li {
+    @apply pl-1;
+  }
+  .blog-prose blockquote {
+    @apply rounded-r-2xl border-l-4 border-brand bg-brand-sky/50 px-6 py-4 text-ink italic;
+  }
+  .blog-prose img {
+    @apply h-auto max-w-full rounded-2xl;
+  }
+  .blog-prose figure figcaption {
+    @apply mt-2 text-center text-xs text-muted;
+  }
+  .blog-prose iframe {
+    @apply aspect-video h-auto w-full rounded-2xl;
+  }
+  .blog-prose hr {
+    @apply border-line;
+  }
+
+  .blog-prose .blog-table {
+    @apply overflow-x-auto rounded-2xl border border-line bg-white;
+  }
+  .blog-prose table {
+    @apply w-full min-w-[32rem] border-collapse text-left text-sm;
+  }
+  .blog-prose tr + tr {
+    @apply border-t border-line;
+  }
+  .blog-prose tr:nth-child(even) {
+    @apply bg-pearl/70;
+  }
+  .blog-prose td,
+  .blog-prose th {
+    @apply px-4 py-3 align-top;
+  }
+  /* The editor marks header rows with bold cells rather than <th>. */
+  .blog-prose tr:first-child :is(td, th) {
+    @apply bg-ink-soft font-semibold text-white;
+  }
+  .blog-prose tr:first-child :is(b, strong) {
+    @apply text-white;
+  }
+
+  /* Flatsome banner → photo + copy card */
+  .blog-prose .blog-cta {
+    @apply my-10 grid overflow-hidden rounded-[var(--radius-card)] bg-navy text-white sm:grid-cols-[2fr_3fr];
+  }
+  .blog-prose .blog-cta img {
+    @apply aspect-[16/10] h-full w-full rounded-none object-cover sm:aspect-auto;
+  }
+  .blog-prose .blog-cta-body {
+    @apply flex flex-col justify-center gap-2 p-6 sm:p-8;
+  }
+  .blog-prose .blog-cta-body > * {
+    @apply mt-0;
+  }
+  .blog-prose .blog-cta-title {
+    @apply text-lg leading-snug font-bold text-white sm:text-xl;
+  }
+  .blog-prose .blog-cta-body p:not(.blog-cta-title) {
+    @apply text-sm leading-relaxed text-white/75;
+  }
+  .blog-prose .blog-cta-button {
+    @apply mt-3 inline-flex w-fit items-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white no-underline transition-colors hover:bg-brand-deep hover:text-white;
+  }
+}
