@@ -18,7 +18,13 @@ import { useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { fill, type EnquiryFormContent } from "@/lib/content";
 import type { CountryOption } from "@/lib/gf-countries";
-import { GF_ENQUIRY_CHOICES, GF_INTEREST_CHOICES, RECAPTCHA_SITE_KEY, type EnquiryFormKey } from "@/lib/gf-forms";
+import {
+  enquiryStep2Field,
+  GF_ENQUIRY_CHOICES,
+  GF_INTEREST_CHOICES,
+  RECAPTCHA_SITE_KEY,
+  type EnquiryFormKey,
+} from "@/lib/gf-forms";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Recaptcha } from "./Recaptcha";
@@ -40,12 +46,12 @@ type Field =
 type Values = Record<Field, string>;
 type Errors = Partial<Record<Field | "privacy" | "captcha", string>>;
 
-/** Required fields per step — the live forms' page breaks. */
+/**
+ * Required fields per step — the live forms' page breaks. Form 3's page 2 is filled
+ * in at validation time from enquiryStep2Field (GF conditional logic).
+ */
 const REQUIRED: Record<EnquiryFormKey, Field[][]> = {
-  contact: [
-    ["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country", "helpWith"],
-    ["describes", "message"],
-  ],
+  contact: [["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country", "helpWith"], []],
   interest: [["firstName", "lastName", "phone", "email", "confirmEmail", "city", "country"], ["describes"]],
 };
 const STEP_COUNT = 2;
@@ -90,6 +96,8 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  /** Form 3's one visible page-2 field; form 7 always shows describes. */
+  const step2Field = interest ? "describes" : enquiryStep2Field(values.helpWith);
 
   const set = (field: Field) => (e: { target: { value: string } }) => {
     setValues((v) => ({ ...v, [field]: e.target.value }));
@@ -98,7 +106,8 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
 
   function validate(i: number): Errors {
     const next: Errors = {};
-    for (const f of REQUIRED[form][i]) if (!values[f].trim()) next[f] = t.errors.required;
+    const required = i === 1 && !interest ? [step2Field] : REQUIRED[form][i];
+    for (const f of required) if (!values[f].trim()) next[f] = t.errors.required;
     if (i === 0) {
       if (values.email && !EMAIL_RE.test(values.email.trim())) next.email = t.errors.email;
       if (values.confirmEmail && values.confirmEmail.trim().toLowerCase() !== values.email.trim().toLowerCase())
@@ -141,6 +150,8 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
         body: JSON.stringify({
           form,
           ...values,
+          // Don't send a value for the page-2 field GF's logic hides (typed before switching).
+          ...(!interest && { [step2Field === "message" ? "describes" : "message"]: "" }),
           privacy,
           // Google Ads click id, when the visitor arrived from an ad (form 7 records it).
           gclid: new URLSearchParams(window.location.search).get("gclid") ?? "",
@@ -290,18 +301,20 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
         </div>
       ) : (
         <div className="mt-6 grid gap-4">
-          <Row label={t.describes} htmlFor="enq-describes" error={err("describes")} errorId="enq-describes-error">
-            <select {...field("describes")} className={cn(control, "appearance-none pr-10 select-chevron")}>
-              <option value="" disabled>
-                {t.select}
-              </option>
-              {(interest ? GF_INTEREST_CHOICES.describes : GF_ENQUIRY_CHOICES.describes).map((value, i) => (
-                <option key={value} value={value}>
-                  {(interest ? t.interest.describesChoices : t.describesChoices)[i]}
+          {step2Field === "describes" && (
+            <Row label={t.describes} htmlFor="enq-describes" error={err("describes")} errorId="enq-describes-error">
+              <select {...field("describes")} className={cn(control, "appearance-none pr-10 select-chevron")}>
+                <option value="" disabled>
+                  {t.select}
                 </option>
-              ))}
-            </select>
-          </Row>
+                {(interest ? GF_INTEREST_CHOICES.describes : GF_ENQUIRY_CHOICES.describes).map((value, i) => (
+                  <option key={value} value={value}>
+                    {(interest ? t.interest.describesChoices : t.describesChoices)[i]}
+                  </option>
+                ))}
+              </select>
+            </Row>
+          )}
 
           {interest ? (
             <>
@@ -329,14 +342,16 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
             </>
           ) : (
             <>
-              <Row label={t.message} htmlFor="enq-message" error={err("message")} errorId="enq-message-error">
-                <textarea
-                  {...field("message")}
-                  rows={4}
-                  placeholder={t.messagePlaceholder}
-                  className={cn(control, "resize-y")}
-                />
-              </Row>
+              {step2Field === "message" && (
+                <Row label={t.message} htmlFor="enq-message" error={err("message")} errorId="enq-message-error">
+                  <textarea
+                    {...field("message")}
+                    rows={4}
+                    placeholder={t.messagePlaceholder}
+                    className={cn(control, "resize-y")}
+                  />
+                </Row>
+              )}
 
               <div>
                 <p className="text-xs leading-relaxed text-muted">

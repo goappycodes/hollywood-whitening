@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { submitToGravityForms } from "@/lib/gf";
 import {
+  enquiryStep2Field,
   GF_ENQUIRY,
   GF_ENQUIRY_CHOICES,
   GF_ENQUIRY_FORM_ID,
@@ -55,15 +56,24 @@ function rateLimited(ip: string): boolean {
 
 const oneOf = (list: readonly string[], v?: string) => !!v && list.includes(v);
 
+/** Form 3 adds describes OR message, whichever its conditional logic shows (enquiryStep2Field). */
 const REQUIRED: Record<EnquiryFormKey, (keyof Payload)[]> = {
-  contact: ["firstName", "lastName", "phone", "email", "city", "country", "helpWith", "describes", "message"],
+  contact: ["firstName", "lastName", "phone", "email", "city", "country", "helpWith"],
   interest: ["firstName", "lastName", "phone", "email", "city", "country", "describes"],
 };
+
+function requiredFields(form: EnquiryFormKey, b: Payload): (keyof Payload)[] {
+  return form === "contact" ? [...REQUIRED.contact, enquiryStep2Field(b.helpWith ?? "")] : REQUIRED[form];
+}
 
 /** Choice fields must carry a value GF stores, or GF rejects the whole entry. */
 function choicesValid(form: EnquiryFormKey, b: Payload): boolean {
   if (form === "contact")
-    return !!b.privacy && oneOf(GF_ENQUIRY_CHOICES.helpWith, b.helpWith) && oneOf(GF_ENQUIRY_CHOICES.describes, b.describes);
+    return (
+      !!b.privacy &&
+      oneOf(GF_ENQUIRY_CHOICES.helpWith, b.helpWith) &&
+      (enquiryStep2Field(b.helpWith ?? "") !== "describes" || oneOf(GF_ENQUIRY_CHOICES.describes, b.describes))
+    );
   return (
     oneOf(GF_INTEREST_CHOICES.describes, b.describes) && (!b.howSoon || oneOf(GF_INTEREST_CHOICES.howSoon, b.howSoon))
   );
@@ -118,7 +128,7 @@ export async function POST(req: Request) {
   if (body.website) return NextResponse.json({ ok: true, skipped: true });
 
   const form: EnquiryFormKey = body.form === "interest" ? "interest" : "contact";
-  const missing = REQUIRED[form].filter((k) => !String(body[k] ?? "").trim());
+  const missing = requiredFields(form, body).filter((k) => !String(body[k] ?? "").trim());
   if (missing.length || !choicesValid(form, body)) {
     return NextResponse.json({ ok: false, error: "invalid", missing }, { status: 400 });
   }

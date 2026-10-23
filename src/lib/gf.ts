@@ -12,8 +12,12 @@ import crypto from "node:crypto";
  * notifications and feeds, so the lead actually reaches someone.
  *
  * Needs the GF REST API enabled on Hollywood's WordPress (Forms → Settings → REST
- * API) and a key in GF_CONSUMER_KEY / GF_CONSUMER_SECRET. Until then every
- * submission fails and the form shows its "call us" fallback.
+ * API). `/submissions` is public in GF, so GF_CONSUMER_KEY / GF_CONSUMER_SECRET
+ * are optional: when set, requests are signed; when not, they go unsigned.
+ *
+ * Routes go through `?rest_route=` rather than `/wp-json/…`: on
+ * shop.hollywoodwhitening.com every `/wp-json/<route>` path answers a Cloudflare
+ * 502 while `?rest_route=` works, and the query form works on any WordPress.
  */
 
 const rfc3986 = (s: string) =>
@@ -25,23 +29,30 @@ function env(name: string): string {
   return v;
 }
 
-/** Signs a URL with OAuth 1.0a (HMAC-SHA1), the scheme GF v2 expects. */
-function signUrl(method: string, url: string): string {
-  const params: Record<string, string> = {
-    oauth_consumer_key: env("GF_CONSUMER_KEY"),
-    oauth_signature_method: "HMAC-SHA1",
-    oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
-    oauth_nonce: crypto.randomBytes(8).toString("hex"),
-  };
+/**
+ * Builds the request URL for `query`, signed with OAuth 1.0a (HMAC-SHA1) — the
+ * scheme GF v2 expects — when a key is configured. Query params (rest_route) are
+ * part of the signature base string, per RFC 5849.
+ */
+function signUrl(method: string, url: string, query: Record<string, string>): string {
+  const key = process.env.GF_CONSUMER_KEY;
+  const secret = process.env.GF_CONSUMER_SECRET;
+  const params: Record<string, string> = { ...query };
+  if (key && secret) {
+    Object.assign(params, {
+      oauth_consumer_key: key,
+      oauth_signature_method: "HMAC-SHA1",
+      oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
+      oauth_nonce: crypto.randomBytes(8).toString("hex"),
+    });
+  }
   const normalised = Object.keys(params)
     .sort()
     .map((k) => `${rfc3986(k)}=${rfc3986(params[k])}`)
     .join("&");
+  if (!key || !secret) return `${url}?${normalised}`;
   const base = [method.toUpperCase(), rfc3986(url), rfc3986(normalised)].join("&");
-  const signature = crypto
-    .createHmac("sha1", `${env("GF_CONSUMER_SECRET")}&`)
-    .update(base)
-    .digest("base64");
+  const signature = crypto.createHmac("sha1", `${secret}&`).update(base).digest("base64");
   return `${url}?${normalised}&oauth_signature=${rfc3986(signature)}`;
 }
 
@@ -53,10 +64,9 @@ function gateHeaders(): Record<string, string> {
   return { Authorization: "Basic " + Buffer.from(`${user}:${pass}`).toString("base64") };
 }
 
-function apiBase(): string {
-  // GF_API_URL may already include /wp-json/gf/v2 — normalise either form.
-  const raw = env("GF_API_URL").replace(/\/+$/, "");
-  return /\/wp-json\/gf\/v2$/.test(raw) ? raw : `${raw}/wp-json/gf/v2`;
+function siteRoot(): string {
+  // GF_API_URL may include /wp-json/gf/v2 — strip it back to the WordPress origin.
+  return `${env("GF_API_URL").replace(/\/+$/, "").replace(/\/wp-json\/gf\/v2$/, "")}/`;
 }
 
 export type GfSubmitResult =
@@ -69,8 +79,8 @@ export type GfSubmitResult =
  * the theme hooks and the Salesforce field mapping break silently.
  */
 export async function submitToGravityForms(formId: string | number, values: Record<string, string>): Promise<GfSubmitResult> {
-  const url = `${apiBase()}/forms/${formId}/submissions`;
-  const res = await fetch(signUrl("POST", url), {
+  const url = signUrl("POST", siteRoot(), { rest_route: `/gf/v2/forms/${formId}/submissions` });
+  const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", ...gateHeaders() },
     body: JSON.stringify(values),

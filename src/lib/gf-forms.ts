@@ -59,6 +59,16 @@ export const GF_ENQUIRY_CHOICES = {
   ],
 } as const;
 
+/**
+ * Form 3's conditional logic on page 2, keyed by the "How Can We Help?" answer:
+ * field 20 (describes) shows only for Device & Training, field 12 (message) only
+ * for Customer Support. GF drops values of fields its logic hides, so the Next
+ * form shows — and requires — just the one GF keeps.
+ */
+export function enquiryStep2Field(helpWith: string): "describes" | "message" {
+  return helpWith === GF_ENQUIRY_CHOICES.helpWith[1] ? "message" : "describes";
+}
+
 /* ------------------------------------------------------------------ */
 /* Form 7 — "Register Your Interest" (product pages)                   */
 /* ------------------------------------------------------------------ */
@@ -97,6 +107,10 @@ export const GF_INTEREST_CHOICES = {
   howSoon: ["0 - 3 Months", "3 - 6 Months", "6+ Months", "Just Enquiring"],
 } as const;
 
-/** Public reCAPTCHA v2 site key the live forms render (form 3 field 19, form 7 field 12). Public by design. */
+/**
+ * Public reCAPTCHA v2 site key of the backend WordPress (shop.hollywoodwhitening.com,
+ * Forms → Settings → reCAPTCHA). It must be the key GF is configured with there, or
+ * GF's captcha field rejects the token. Public by design.
+ */
 export const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LchmfkUAAAAAFtfH0L212KGtBHgmrAZwkmorO_o";
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
