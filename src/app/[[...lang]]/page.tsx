@@ -6,6 +6,7 @@ import {
   getHomeContent,
   getLegalContent,
   getLaserContent,
+  getLocatorContent,
   getProductContent,
   getScienceContent,
   getTrainingContent,
@@ -29,6 +30,7 @@ import { ProductSections } from "@/components/pages/ProductSections";
 import { TrainingSections } from "@/components/pages/TrainingSections";
 import { ScienceSections } from "@/components/pages/ScienceSections";
 import { LaserSections } from "@/components/pages/LaserSections";
+import { LocatorSections } from "@/components/pages/LocatorSections";
 
 /**
  * Localised catch-all, as in allwhitelaser-next: "/", "/es/", "/de/", "/ru/" (and,
@@ -58,6 +60,7 @@ const PAGE_META: Record<BuiltPage, (locale: Locale) => { title: string; descript
   home: (locale) => getHomeContent(locale).meta,
   about: (locale) => getAboutContent(locale).meta,
   contact: (locale) => getContactContent(locale).meta,
+  providers: (locale) => getLocatorContent(locale).meta,
   training: (locale) => getTrainingContent(locale).meta,
   science: (locale) => getScienceContent(locale).meta,
   laser: (locale) => getLaserContent(locale).meta,
@@ -91,6 +94,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[[...lang]]"
   const { locale, page } = await resolve(params);
   if (page === "about") return <AboutSections locale={locale} />;
   if (page === "contact") return <ContactSections locale={locale} />;
+  if (page === "providers") return <LocatorSections locale={locale} />;
   if (page === "training") return <TrainingSections locale={locale} />;
   if (page === "science") return <ScienceSections locale={locale} />;
   if (page === "laser") return <LaserSections locale={locale} />;

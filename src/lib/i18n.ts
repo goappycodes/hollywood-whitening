@@ -100,6 +100,7 @@ export const BUILT_PAGES = [
   "home",
   "about",
   "contact",
+  "providers",
   "training",
   "science",
   "laser",

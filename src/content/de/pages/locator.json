@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Standortsuche | Hollywood Whitening",
+    "description": "Sie suchen ausschließlich nach Vertriebs- und Behandlungszentren von Hollywood Whitening? Dann füllen Sie bitte das untenstehende Formular aus. Wir übernehmen keine Verantwortung für die Dienstleistungen, Behandlungen oder Produkte, die an anderen Standorten angeboten werden."
+  },
+  "hero": {
+    "eyebrow": "Filialsuche",
+    "titleBold": "Nur Vertriebs- und",
+    "titleLight": "Behandlungszentren",
+    "subtitle": "Kunden, die Fragen zu Produkten oder Dienstleistungen haben, wenden sich bitte direkt an das Zentrum, da Hollywood Whitening ausschließlich Geschäftskundenpakete verkauft.",
+    "cta": "Finden Sie unsere Filialen",
+    "imageAlt": "Lächelnde Frau mit weißen Zähnen"
+  },
+  "locator": {
+    "eyebrow": "Filialsuche",
+    "title": "Finden Sie unsere Filialen",
+    "searchPlaceholder": "Adresse/Stadt eingeben",
+    "searchButton": "Suchen",
+    "useMyPosition": "Nutze meine Position",
+    "viewAll": "Alle Filialen anzeigen",
+    "radiusLabel": "Radius",
+    "radiusOptions": [5, 10, 20, 50],
+    "km": "km",
+    "prompt": "Geben Sie Ihren Ort ein oder nutzen Sie Ihre Position, um Hollywood Whitening Zentren in Ihrer Nähe zu finden.",
+    "locating": "Ihr Standort wird ermittelt…",
+    "searching": "Suche läuft…",
+    "invalidAddress": "Bitte geben Sie eine gültige Adresse ein.",
+    "noResults": "In diesem Umkreis gibt es keine Zentren. Wählen Sie einen größeren Radius oder zeigen Sie alle Filialen an.",
+    "resultsNear": "{n} Zentren im Umkreis von {km} km",
+    "resultsAll": "{n} Zentren weltweit",
+    "away": "{km} km entfernt",
+    "directions": "Route planen",
+    "call": "Anrufen",
+    "email": "E-Mail",
+    "website": "Website",
+    "mapUnavailable": "Die Karte konnte nicht geladen werden. Die Liste der Zentren funktioniert weiterhin."
+  },
+  "notice": {
+    "title": "Ist das Ihr Zentrum?",
+    "body": "Falls Sie Inhaber eines hier aufgeführten Standorts sind und die Angaben fehlerhaft sind, füllen Sie bitte das Kontaktformular aus, damit wir diese korrigieren oder entfernen können. Hollywood Whitening übernimmt keine Kontrolle über die an diesen Standorten angebotenen Dienstleistungen, Behandlungen oder Produkte und haftet nicht dafür.",
+    "cta": "Kontaktieren Sie uns"
+  }
+}

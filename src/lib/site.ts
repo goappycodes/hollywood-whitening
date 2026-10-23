@@ -137,6 +137,11 @@ export const CONTACT_MEDIA = {
   hero: "/images/contact/hero.jpg",
 };
 
+export const LOCATOR_MEDIA = {
+  /** Live /location-finder/ banner (wp-content/uploads/2015/09/banner-girl-smile-scaled.jpg). */
+  hero: "/images/locator/hero.jpg",
+};
+
 /**
  * Offices from the live /contact/ page, in its order. Names and addresses are
  * localised in contact.json → offices.items (same order).

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Location Finder | Hollywood Whitening",
+    "description": "You are looking for Hollywood Whitening's distribution and treatment centers only, please fill out the form below. We take no responsibility for the services, treatments or products being offered at any other location."
+  },
+  "hero": {
+    "eyebrow": "Store Locator",
+    "titleBold": "Distribution & Treatment",
+    "titleLight": "Centres Only",
+    "subtitle": "Any customers wishing to query for products or services, please contact the centre directly as Hollywood Whitening only sell business packages.",
+    "cta": "Find our stores",
+    "imageAlt": "Smiling woman with white teeth"
+  },
+  "locator": {
+    "eyebrow": "Store Locator",
+    "title": "Find our stores",
+    "searchPlaceholder": "Enter address / city",
+    "searchButton": "Search",
+    "useMyPosition": "Use my position",
+    "viewAll": "View all stores",
+    "radiusLabel": "Radius",
+    "radiusOptions": [5, 10, 20, 50],
+    "km": "km",
+    "prompt": "Enter your town or city, or use your position, to find Hollywood Whitening centres near you.",
+    "locating": "Finding your location…",
+    "searching": "Searching…",
+    "invalidAddress": "Please enter a valid address",
+    "noResults": "No centres found within this radius. Try a wider radius or view all stores.",
+    "resultsNear": "{n} centres within {km} km",
+    "resultsAll": "{n} centres worldwide",
+    "away": "{km} km away",
+    "directions": "Get directions",
+    "call": "Call",
+    "email": "Email",
+    "website": "Website",
+    "mapUnavailable": "The map couldn't load. The list of centres still works."
+  },
+  "notice": {
+    "title": "Is this your centre?",
+    "body": "If you are the owner of a location listed here and there are incorrect details, please fill out the contact form for this to be adjusted or removed. Hollywood Whitening has no control or liability over the services, treatments or products being offered at these locations.",
+    "cta": "Contact us"
+  }
+}

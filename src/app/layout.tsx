@@ -90,11 +90,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${montserrat.variable} ${sora.variable} ${dancing.variable} ${marck.variable} antialiased`}
       suppressHydrationWarning
     >
-      <head>
+      {/* suppressHydrationWarning on <head>/<body>: browser extensions (ColorZilla, LocatorJS…)
+          add attributes to them before React hydrates. It covers only these two tags' own attributes. */}
+      <head suppressHydrationWarning>
         {/* Enables scroll-reveal hiding only when JS runs (see globals.css). */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body className="flex min-h-dvh flex-col">
+      <body className="flex min-h-dvh flex-col" suppressHydrationWarning>
         <HtmlLang />
         <Header />
         <main id="main" className="flex-1">

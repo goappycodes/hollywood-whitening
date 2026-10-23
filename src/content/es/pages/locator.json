@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Localizador de ubicaciones | Hollywood Whitening",
+    "description": "Si busca únicamente centros de distribución y tratamiento de Hollywood Whitening, complete el formulario a continuación. No nos responsabilizamos de los servicios, tratamientos ni productos que se ofrecen en otras ubicaciones."
+  },
+  "hero": {
+    "eyebrow": "Localizador de tiendas",
+    "titleBold": "Solo centros de distribución",
+    "titleLight": "y tratamiento",
+    "subtitle": "Cualquier cliente que desee consultar sobre productos o servicios, comuníquese directamente con el centro, ya que Hollywood Whitening solo vende paquetes comerciales.",
+    "cta": "Encuentra nuestras tiendas",
+    "imageAlt": "Mujer sonriente con dientes blancos"
+  },
+  "locator": {
+    "eyebrow": "Localizador de tiendas",
+    "title": "Encuentra nuestras tiendas",
+    "searchPlaceholder": "Introducir dirección/ciudad",
+    "searchButton": "Buscar",
+    "useMyPosition": "Usa mi posición",
+    "viewAll": "Ver todas las tiendas",
+    "radiusLabel": "Radio",
+    "radiusOptions": [5, 10, 20, 50],
+    "km": "km",
+    "prompt": "Introduce tu ciudad o usa tu posición para encontrar centros de Hollywood Whitening cerca de ti.",
+    "locating": "Buscando tu ubicación…",
+    "searching": "Buscando…",
+    "invalidAddress": "Por favor, introduce una dirección válida",
+    "noResults": "No hay centros dentro de este radio. Prueba con un radio mayor o ve todas las tiendas.",
+    "resultsNear": "{n} centros a menos de {km} km",
+    "resultsAll": "{n} centros en todo el mundo",
+    "away": "a {km} km",
+    "directions": "Cómo llegar",
+    "call": "Llamar",
+    "email": "Correo",
+    "website": "Sitio web",
+    "mapUnavailable": "No se pudo cargar el mapa. La lista de centros sigue funcionando."
+  },
+  "notice": {
+    "title": "¿Es su centro?",
+    "body": "Si usted es el propietario de un local de esta lista y hay datos incorrectos, complete el formulario de contacto para que se modifiquen o eliminen. Hollywood Whitening no tiene control ni responsabilidad sobre los servicios, tratamientos ni productos que se ofrecen en estos locales.",
+    "cta": "Contáctenos"
+  }
+}

@@ -22,6 +22,11 @@ import contactEs from "@/content/es/pages/contact.json";
 import contactDe from "@/content/de/pages/contact.json";
 import contactRu from "@/content/ru/pages/contact.json";
 
+import locatorEn from "@/content/en/pages/locator.json";
+import locatorEs from "@/content/es/pages/locator.json";
+import locatorDe from "@/content/de/pages/locator.json";
+import locatorRu from "@/content/ru/pages/locator.json";
+
 // Legal pages (scripts/legal-scrape.mjs) — one shape for all three.
 import privacyEn from "@/content/en/pages/privacy.json";
 import privacyEs from "@/content/es/pages/privacy.json";
@@ -76,6 +81,8 @@ import instagramFeed from "@/content/instagram.json";
 export type HomeContent = typeof homeEn;
 export type AboutContent = typeof aboutEn;
 export type ContactContent = typeof contactEn;
+/** Location Finder (/location-finder/) — copy from the live YITH locator page. */
+export type LocatorContent = typeof locatorEn;
 
 /** Scraped editor content — see scripts/lib/wp-html.mjs. */
 export type ContentBlock =
@@ -133,6 +140,7 @@ export type EnquiryFormContent = CommonContent["enquiryForm"];
 const HOME: Record<Locale, HomeContent> = { en: homeEn, es: homeEs, de: homeDe, ru: homeRu };
 const ABOUT: Record<Locale, AboutContent> = { en: aboutEn, es: aboutEs, de: aboutDe, ru: aboutRu };
 const CONTACT: Record<Locale, ContactContent> = { en: contactEn, es: contactEs, de: contactDe, ru: contactRu };
+const LOCATOR: Record<Locale, LocatorContent> = { en: locatorEn, es: locatorEs, de: locatorDe, ru: locatorRu };
 const LEGAL = {
   privacy: { en: privacyEn, es: privacyEs, de: privacyDe, ru: privacyRu },
   terms: { en: termsEn, es: termsEs, de: termsDe, ru: termsRu },
@@ -151,6 +159,7 @@ const COMMON: Record<Locale, CommonContent> = { en: commonEn, es: commonEs, de: 
 export const getHomeContent = (locale: Locale): HomeContent => HOME[locale];
 export const getAboutContent = (locale: Locale): AboutContent => ABOUT[locale];
 export const getContactContent = (locale: Locale): ContactContent => CONTACT[locale];
+export const getLocatorContent = (locale: Locale): LocatorContent => LOCATOR[locale];
 export const getLegalContent = (page: LegalPage, locale: Locale): LegalContent => LEGAL[page][locale];
 export const getProductContent = (key: ProductKey, locale: Locale): ProductContent => PRODUCTS[key][locale];
 export const getTrainingContent = (locale: Locale): TrainingContent => TRAINING[locale];
