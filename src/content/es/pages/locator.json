@@ -33,7 +33,8 @@
     "call": "Llamar",
     "email": "Correo",
     "website": "Sitio web",
-    "mapUnavailable": "No se pudo cargar el mapa. La lista de centros sigue funcionando."
+    "mapUnavailable": "No se pudo cargar el mapa. La lista de centros sigue funcionando.",
+    "feedUnavailable": "No se pudo cargar la lista de centros. Inténtalo de nuevo más tarde."
   },
   "notice": {
     "title": "¿Es su centro?",

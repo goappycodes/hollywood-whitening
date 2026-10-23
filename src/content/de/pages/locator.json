@@ -33,7 +33,8 @@
     "call": "Anrufen",
     "email": "E-Mail",
     "website": "Website",
-    "mapUnavailable": "Die Karte konnte nicht geladen werden. Die Liste der Zentren funktioniert weiterhin."
+    "mapUnavailable": "Die Karte konnte nicht geladen werden. Die Liste der Zentren funktioniert weiterhin.",
+    "feedUnavailable": "Die Liste der Zentren konnte nicht geladen werden. Bitte versuchen Sie es später erneut."
   },
   "notice": {
     "title": "Ist das Ihr Zentrum?",

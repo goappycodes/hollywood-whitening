@@ -33,7 +33,8 @@
     "call": "Call",
     "email": "Email",
     "website": "Website",
-    "mapUnavailable": "The map couldn't load. The list of centres still works."
+    "mapUnavailable": "The map couldn't load. The list of centres still works.",
+    "feedUnavailable": "The list of centres couldn’t load. Please try again later."
   },
   "notice": {
     "title": "Is this your centre?",

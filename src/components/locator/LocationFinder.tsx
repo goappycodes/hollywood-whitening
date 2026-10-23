@@ -406,7 +406,7 @@ export function LocationFinder({ t }: { t: LocatorContent["locator"] }) {
           ) : !query ? (
             <p className="p-8 text-center text-sm leading-relaxed text-muted">{t.prompt}</p>
           ) : failed ? (
-            <p className="p-8 text-center text-sm leading-relaxed text-muted">{t.mapUnavailable}</p>
+            <p className="p-8 text-center text-sm leading-relaxed text-muted">{t.feedUnavailable}</p>
           ) : stores.length === 0 ? (
             <p className="p-8 text-center text-sm leading-relaxed text-muted">{t.noResults}</p>
           ) : (

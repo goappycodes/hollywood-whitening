@@ -51,7 +51,9 @@ async function fetchAllProviders(url: string): Promise<Provider[]> {
   "use cache";
   cacheLife("hours");
 
-  const res = await fetch(url, { headers: gateHeaders() });
+  // Cloudflare in front of shop.hollywoodwhitening.com answers 403 to requests with no
+  // User-Agent, so name the client rather than rely on the runtime's default.
+  const res = await fetch(url, { headers: { "User-Agent": "HollywoodWhitening-Next/1.0", ...gateHeaders() } });
   if (!res.ok) throw new Error(`Providers feed answered ${res.status}`);
   const data = (await res.json()) as Provider[];
   if (!Array.isArray(data)) throw new Error("Providers feed is not an array");
