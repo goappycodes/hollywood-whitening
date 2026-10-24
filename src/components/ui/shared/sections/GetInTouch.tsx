@@ -21,6 +21,8 @@ type Props = {
   locale: Locale;
   /** Gravity Form to post to — "interest" (form 7) on product pages. */
   form?: EnquiryFormKey;
+  /** Form 7 only — the product, sent as the entry's "Form Name". */
+  productName?: string;
   /** Anchor id the page links to. */
   id?: string;
 };
@@ -30,7 +32,7 @@ type Props = {
  * "Contact Us" on Contact) or form 7 ("Register Your Interest" on product pages).
  * The left column carries the intro plus phones or a quote.
  */
-export function GetInTouch({ content, common, locale, form = "contact", id = "get-in-touch" }: Props) {
+export function GetInTouch({ content, common, locale, form = "contact", productName, id = "get-in-touch" }: Props) {
   return (
     <section
       id={id}
@@ -101,6 +103,7 @@ export function GetInTouch({ content, common, locale, form = "contact", id = "ge
             <EnquiryForm
               t={common.enquiryForm}
               form={form}
+              productName={productName}
               countries={countryOptions(LOCALE_META[locale].htmlLang)}
               privacyHref={pageHref(locale, "privacy")}
             />

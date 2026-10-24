@@ -91,6 +91,8 @@ export function ProductSections({ product, locale }: { product: ProductKey; loca
       <GetInTouch
         id="enquire"
         form="interest"
+        // English on every locale: the old site's entries carry the WP post title.
+        productName={getProductContent(product, "en").name}
         content={{ eyebrow: pkg.name, title: content.formTitle, body: t.formIntro, callUs: t.speak }}
         common={common}
         locale={locale}

@@ -84,9 +84,11 @@ type Props = {
   form?: EnquiryFormKey;
   /** Form 3 only — the privacy page its consent checkbox links to. */
   privacyHref?: string;
+  /** Form 7 only — the product the page is about, sent as the entry's "Form Name". */
+  productName?: string;
 };
 
-export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/privacy/" }: Props) {
+export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/privacy/", productName }: Props) {
   const interest = form === "interest";
   const [step, setStep] = useState(0);
   const [values, setValues] = useState<Values>(EMPTY);
@@ -155,6 +157,7 @@ export function EnquiryForm({ t, countries, form = "contact", privacyHref = "/pr
           privacy,
           // Google Ads click id, when the visitor arrived from an ad (form 7 records it).
           gclid: new URLSearchParams(window.location.search).get("gclid") ?? "",
+          productName,
           recaptchaToken: token,
           website: honeypot,
           sourceUrl: window.location.href,

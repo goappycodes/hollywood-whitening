@@ -90,9 +90,15 @@ export const GF_INTEREST = {
   howSoon: "input_15",
   /** Text field the live form hides; the plugin fills it from the ad-click URL. */
   gclid: "input_16",
-  // Hidden fields 9, 11 and 18 are filled by WordPress-side script whose purpose
-  // isn't visible in the rendered form (likely product / lead source / language).
-  // Map them once the GF REST API confirms what they hold.
+  /**
+   * Hidden "Form Name" — the product the enquiry is about. The old site fills it on
+   * the server from the product page being viewed (nothing in the page or the
+   * hollywood-wp repo sets it, so it's a DB-stored snippet); a REST submission has no
+   * page, so Next sends it. English post title, as TranslatePress stores it.
+   */
+  formName: "input_11",
+  // Hidden 9 "Lead Source" (parameter `ref`) and 18 "Language" (parameter `sitelang`)
+  // are left empty, as on the live pages.
 } as const;
 
 export const GF_INTEREST_CHOICES = {

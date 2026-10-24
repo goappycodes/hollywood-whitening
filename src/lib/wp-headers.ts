@@ -1,19 +1,25 @@
 /**
- * Headers for every server-side request this app makes to the WordPress host —
- * same as allwhitelaser-next's lib/wp-headers.ts.
+ * Headers for every server-side request to the WordPress backend (Gravity Forms,
+ * store feed, Instagram) — as allwhitelaser-next's lib/wp-headers.ts. Server-only:
+ * they carry secrets.
  *
- * - Basic auth for the nginx gate in front of staging (WP_BASIC_AUTH_USER/PASS).
- *   Absent in production, so nothing is sent there.
- * - `X-AWL-Internal` (WP_INTERNAL_KEY): lets the WordPress server exempt this app
- *   from per-IP rate limiting / firewall rules. Every visitor's blog request reaches
- *   WordPress from the app's few egress IPs, so the app is recognised by this secret
- *   instead of by address. Unset → not sent.
+ *   - User-Agent: Cloudflare on shop.hollywoodwhitening.com answers 403 to requests
+ *     without one.
+ *   - X-HW-Origin-Token (WP_ORIGIN_TOKEN): Cloudflare serves its "Just a moment…"
+ *     challenge to requests from Vercel's servers, which a server can't solve. A
+ *     Cloudflare custom rule that skips the challenge when this header matches lets
+ *     only this app through, without opening the API paths to every bot.
+ *   - Authorization (WP_BASIC_AUTH_USER/PASS): the nginx gate in front of a staging WP.
  */
 export function wpServerHeaders(): Record<string, string> {
-  const headers: Record<string, string> = {};
+  const headers: Record<string, string> = { "User-Agent": "HollywoodWhitening-Next/1.0" };
+
+  const token = process.env.WP_ORIGIN_TOKEN;
+  if (token) headers["X-HW-Origin-Token"] = token;
+
   const user = process.env.WP_BASIC_AUTH_USER;
   const pass = process.env.WP_BASIC_AUTH_PASS;
   if (user && pass) headers.Authorization = "Basic " + Buffer.from(`${user}:${pass}`).toString("base64");
-  if (process.env.WP_INTERNAL_KEY) headers["X-AWL-Internal"] = process.env.WP_INTERNAL_KEY;
+
   return headers;
 }

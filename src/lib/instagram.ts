@@ -15,6 +15,7 @@
  * 30-minute revalidate — the result stays part of the static prerender.
  */
 import { cacheLife } from "next/cache";
+import { wpServerHeaders } from "@/lib/wp-headers";
 
 const PUBLIC_MEDIA = (process.env.WP_PUBLIC_MEDIA_URL || "").replace(/\/+$/, "");
 
@@ -34,14 +35,6 @@ type RawResponse = {
 function wpBase(): string | null {
   const v = process.env.NEXT_PUBLIC_WP_URL;
   return v ? v.replace(/\/+$/, "") : null;
-}
-
-/** nginx basic-auth gate in front of staging (absent in production). */
-function gateHeaders(): Record<string, string> {
-  const user = process.env.WP_BASIC_AUTH_USER;
-  const pass = process.env.WP_BASIC_AUTH_PASS;
-  if (!user || !pass) return {};
-  return { Authorization: "Basic " + Buffer.from(`${user}:${pass}`).toString("base64") };
 }
 
 /**
@@ -64,7 +57,7 @@ export async function getInstagramPosts(limit = 12): Promise<InstagramPost[]> {
   const base = wpBase();
   if (!base) return [];
   try {
-    const res = await fetch(`${base}/wp-json/aw3/v1/instagram?limit=${limit}`, { headers: gateHeaders() });
+    const res = await fetch(`${base}/wp-json/aw3/v1/instagram?limit=${limit}`, { headers: wpServerHeaders() });
     if (!res.ok) return [];
     const data = (await res.json()) as RawResponse;
     if (!data?.ok || !Array.isArray(data.posts)) return [];

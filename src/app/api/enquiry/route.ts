@@ -36,6 +36,8 @@ type Payload = {
   privacy?: boolean;
   sourceUrl?: string;
   gclid?: string;
+  /** Form 7: the product page it was sent from → "Form Name". */
+  productName?: string;
   recaptchaToken?: string;
   /** Honeypot — real users never see it. */
   website?: string;
@@ -110,6 +112,8 @@ function mapInterest(b: Payload): Record<string, string> {
     [GF_INTEREST.companyName]: b.companyName ?? "",
     [GF_INTEREST.howSoon]: b.howSoon ?? "",
     [GF_INTEREST.gclid]: b.gclid ?? "",
+    // Plain text the client chose; capped so a forged request can't stuff the entry.
+    [GF_INTEREST.formName]: (b.productName ?? "").slice(0, 200),
   };
 }
 

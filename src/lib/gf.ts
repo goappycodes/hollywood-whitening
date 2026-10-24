@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import { wpServerHeaders } from "@/lib/wp-headers";
 
 /**
  * Server-only Gravity Forms REST v2 client (as in allwhitelaser-next).
@@ -56,14 +57,6 @@ function signUrl(method: string, url: string, query: Record<string, string>): st
   return `${url}?${normalised}&oauth_signature=${rfc3986(signature)}`;
 }
 
-/** The nginx gate in front of staging. Absent in production, so this is optional. */
-function gateHeaders(): Record<string, string> {
-  const user = process.env.WP_BASIC_AUTH_USER;
-  const pass = process.env.WP_BASIC_AUTH_PASS;
-  if (!user || !pass) return {};
-  return { Authorization: "Basic " + Buffer.from(`${user}:${pass}`).toString("base64") };
-}
-
 function siteRoot(): string {
   // GF_API_URL may include /wp-json/gf/v2 — strip it back to the WordPress origin.
   return `${env("GF_API_URL").replace(/\/+$/, "").replace(/\/wp-json\/gf\/v2$/, "")}/`;
@@ -82,7 +75,7 @@ export async function submitToGravityForms(formId: string | number, values: Reco
   const url = signUrl("POST", siteRoot(), { rest_route: `/gf/v2/forms/${formId}/submissions` });
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json", ...gateHeaders() },
+    headers: { "Content-Type": "application/json", ...wpServerHeaders() },
     body: JSON.stringify(values),
     cache: "no-store",
     // A confirmation set to "redirect" answers 302, not JSON; following it would fetch
