@@ -56,7 +56,8 @@ export function LocatorSections({ locale }: { locale: Locale }) {
         <div className="container-x">
           <SectionHeading eyebrow={content.locator.eyebrow} title={content.locator.title} />
           <Reveal className="mt-10 sm:mt-14">
-            <LocationFinder t={content.locator} />
+            {/* Server-only env var, handed to the client component (it loads the Maps JS API). */}
+            <LocationFinder t={content.locator} mapsKey={process.env.GOOGLE_MAPS_API_KEY} />
           </Reveal>
 
           <Reveal className="mt-6">

@@ -10,9 +10,10 @@
  * the chosen radius are fetched from /api/providers/. "View all stores" loads the
  * whole network.
  *
- * The Maps script is injected once at runtime, keyed by
- * NEXT_PUBLIC_GOOGLE_MAPS_API_KEY. Without a key (or if Google fails) the list
- * still works for "Use my position" and "View all stores".
+ * The Maps script is injected once at runtime, keyed by `mapsKey` — the
+ * GOOGLE_MAPS_API_KEY env var, read on the server by LocatorSections and passed
+ * down (a non-NEXT_PUBLIC_ variable never reaches client code). Without a key (or
+ * if Google fails) the list still works for "Use my position" and "View all stores".
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -31,7 +32,6 @@ declare global {
   }
 }
 
-const MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 /** Brand blue (--color-brand); the InfoWindow and pins are drawn outside Tailwind. */
 const BRAND = "#1e88e5";
 const UK = { center: { lat: 54.2, lng: -2.8 }, zoom: 5 };
@@ -111,7 +111,7 @@ type Point = { lat: number; lng: number };
 /** What the list currently shows: nothing yet, stores near a point, or every store. */
 type Query = { kind: "near"; at: Point } | { kind: "all" } | null;
 
-export function LocationFinder({ t }: { t: LocatorContent["locator"] }) {
+export function LocationFinder({ t, mapsKey }: { t: LocatorContent["locator"]; mapsKey?: string }) {
   const mapEl = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -131,7 +131,7 @@ export function LocationFinder({ t }: { t: LocatorContent["locator"] }) {
   const [failed, setFailed] = useState(false); // the feed request failed
   const [invalid, setInvalid] = useState(false); // typed address didn't geocode
   const [mapReady, setMapReady] = useState(false);
-  const [mapError, setMapError] = useState(!MAPS_KEY);
+  const [mapError, setMapError] = useState(!mapsKey);
   const [activeId, setActiveId] = useState<number | null>(null);
 
   /** Fetch the stores for a query; a newer search cancels the one in flight. */
@@ -160,9 +160,9 @@ export function LocationFinder({ t }: { t: LocatorContent["locator"] }) {
 
   /* ---- map + autocomplete, once ---- */
   useEffect(() => {
-    if (!MAPS_KEY) return;
+    if (!mapsKey) return;
     let cancelled = false;
-    loadGoogleMaps(MAPS_KEY)
+    loadGoogleMaps(mapsKey)
       .then((maps: G) => {
         if (cancelled || !mapEl.current || mapRef.current) return;
         mapsRef.current = maps;
@@ -195,7 +195,7 @@ export function LocationFinder({ t }: { t: LocatorContent["locator"] }) {
       cancelled = true;
     };
     // search() only touches refs and state setters, so the first render's copy stays correct.
-  }, []);
+  }, [mapsKey]);
 
   function changeRadius(km: number) {
     setRadius(km);

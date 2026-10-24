@@ -14,9 +14,9 @@
  *
  * Caching — the one deliberate difference from allwhitelaser. Hollywood runs Cache
  * Components, so instead of `fetch(..., { next: { revalidate: 600 } })` each request
- * is a `"use cache"` scope with the same 10-minute refresh. A failed request throws
- * INSIDE the scope (so a WordPress hiccup is never cached) and the exported
- * functions catch it and return null / empty, exactly like allwhitelaser's.
+ * is a `"use cache"` scope with the same 10-minute refresh. A failed request is
+ * cached for only a minute, and the exported functions return null / empty, exactly
+ * like allwhitelaser's — so a WordPress outage or 403 never fails a build.
  *
  * Server-only: a staging WP behind nginx basic auth needs credentials (wp-headers.ts).
  */
@@ -52,25 +52,37 @@ function restUrl(route: string): string {
   return `${wpBase()}/?rest_route=/${path}${query ? `&${query}` : ""}`;
 }
 
-/** GET a WordPress REST route, cached for 10 minutes. Throws on failure (never cached). */
-async function wpJsonCached<T>(route: string): Promise<T> {
+/**
+ * GET a WordPress REST route, cached. Never throws: an error thrown inside a
+ * `"use cache"` scope fails the prerender even when the caller catches it (a 403
+ * from WordPress broke a Vercel build). A good response is kept for 10 minutes; a
+ * failure only briefly (5 min is the shortest expiry that stays part of a static
+ * page), so the next request after a minute retries.
+ */
+async function wpJsonCached<T>(route: string): Promise<{ ok: true; data: T } | { ok: false }> {
   "use cache";
-  cacheLife({ stale: 300, revalidate: 600, expire: 86400 }); // refresh WP content every 10 min
-  const res = await fetch(restUrl(route), {
-    headers: wpServerHeaders(),
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (!res.ok) throw new Error(`WordPress ${res.status} for ${route}`);
-  return (await res.json()) as T;
+  try {
+    const res = await fetch(restUrl(route), {
+      headers: wpServerHeaders(),
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (res.ok) {
+      const data = (await res.json()) as T;
+      cacheLife({ stale: 300, revalidate: 600, expire: 86400 }); // refresh WP content every 10 min
+      return { ok: true, data };
+    }
+    console.error(`[blog] WordPress ${res.status} for ${route}`);
+  } catch (err) {
+    console.error(`[blog] WordPress request failed for ${route}:`, err);
+  }
+  cacheLife({ stale: 60, revalidate: 60, expire: 300 }); // retry soon
+  return { ok: false };
 }
 
-/** GET any `/wp-json/…` route (aw3/v1 or core wp/v2); null on any failure. */
+/** GET any WordPress REST route (aw3/v1 or core wp/v2); null on any failure. */
 async function wpJson<T>(route: string): Promise<T | null> {
-  try {
-    return await wpJsonCached<T>(route);
-  } catch {
-    return null;
-  }
+  const result = await wpJsonCached<T>(route);
+  return result.ok ? result.data : null;
 }
 
 /**
