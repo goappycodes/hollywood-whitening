@@ -241,6 +241,11 @@ export type BlogPostFull = BlogPost & {
   readMinutes: number;
   /** When the post was last edited in WordPress (ISO 8601); equals `date` if nothing newer. */
   modified: string;
+  /**
+   * Yoast's <title> and meta description, localised (blog-api.php `seo`), or null
+   * each when Yoast has none or the deployed API predates the field.
+   */
+  seo: { title: string | null; description: string | null };
 };
 
 /**
@@ -271,12 +276,21 @@ function laterIso(a: string, b: string | null | undefined): string {
  */
 export async function getPostBySlug(slug: string, lang?: Locale): Promise<BlogPostFull | null> {
   const q = lang && lang !== "en" ? `?lang=${encodeURIComponent(lang)}` : "";
-  const data = await aw3<RawPost & { content?: string }>(`post/${routeSegment(slug)}${q}`);
+  const data = await aw3<RawPost & { content?: string; seo?: { title?: string; description?: string } }>(
+    `post/${routeSegment(slug)}${q}`,
+  );
   if (!data || !data.slug) return null;
   const modified = await getPostModified(data.id);
   // Process the body: same-site links, Flatsome banners, scrollable tables, contents.
   const { html, toc } = processBlogContent(data.content ?? "");
-  return { ...normalisePost(data), content: html, toc, readMinutes: readingMinutes(html), modified: laterIso(data.date, modified) };
+  return {
+    ...normalisePost(data),
+    content: html,
+    toc,
+    readMinutes: readingMinutes(html),
+    modified: laterIso(data.date, modified),
+    seo: { title: data.seo?.title?.trim() || null, description: data.seo?.description?.trim() || null },
+  };
 }
 
 /**
