@@ -35,6 +35,7 @@ import { TrainingSections } from "@/components/pages/TrainingSections";
 import { ScienceSections } from "@/components/pages/ScienceSections";
 import { LaserSections } from "@/components/pages/LaserSections";
 import { LocatorSections } from "@/components/pages/LocatorSections";
+import { SitemapSections } from "@/components/pages/SitemapSections";
 import { BlogIndexSections } from "@/components/pages/BlogIndexSections";
 import { BlogPostSections } from "@/components/pages/BlogPostSections";
 import { getCommonContent } from "@/lib/content";
@@ -155,6 +156,10 @@ const PAGE_META: Record<BuiltPage, (locale: Locale) => { title: string; descript
   "star-one": (locale) => getProductContent("star-one", locale).meta,
   "comet-2": (locale) => getProductContent("comet-2", locale).meta,
   galaxy: (locale) => getProductContent("galaxy", locale).meta,
+  sitemap: (locale) => {
+    const { metaTitle: title, metaDescription: description } = getCommonContent(locale).sitemap;
+    return { title, description };
+  },
 };
 
 export async function generateMetadata({ params }: PageProps<"/[[...lang]]">): Promise<Metadata> {
@@ -187,6 +192,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[[...lang]]"
   if (page === "training") return <TrainingSections locale={locale} />;
   if (page === "science") return <ScienceSections locale={locale} />;
   if (page === "laser") return <LaserSections locale={locale} />;
+  if (page === "sitemap") return <SitemapSections locale={locale} />;
   if (page === "privacy" || page === "terms" || page === "warranty") return <LegalSections page={page} locale={locale} />;
   if (page === "star-one" || page === "comet-2" || page === "galaxy")
     return <ProductSections product={page} locale={locale} />;
