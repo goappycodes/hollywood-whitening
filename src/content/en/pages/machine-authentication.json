@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Machine Authentication | Hollywood Whitening",
+    "description": "Check your own Hollywood Whitening system is an official product. Enter the serial number to authenticate. If you have not registered or you are experiencing a problem, please contact us via the form on the contact page."
+  },
+  "title": "Machine Authentication",
+  "eyebrow": "Genuine Product Check",
+  "heading": "Machine Serial Number",
+  "intro": "Check your own Hollywood Whitening system is an official product. Enter the serial number to authenticate. If you have not registered or you are experiencing a problem, please contact us via the form on the contact page.",
+  "label": "Machine Serial Number",
+  "placeholder": "Enter your serial number",
+  "hint": "Enter it exactly as printed on your machine.",
+  "submit": "Submit",
+  "checking": "Checking…",
+  "errors": {
+    "empty": "Please enter your machine serial number.",
+    "failed": "We couldn’t run the check just now. Please try again."
+  },
+  "result": {
+    "positiveTitle": "This is a genuine product",
+    "positiveBody": "This serial number belongs to an official Hollywood Whitening system.",
+    "negativeTitle": "Serial number not recognised",
+    "negativeBody": "Incorrect number, may be counterfeit — contact us further to verify.",
+    "unknownTitle": "We couldn’t check right now",
+    "unknownBody": "Please try again in a moment, or contact us and we’ll verify it for you.",
+    "again": "Check another number"
+  },
+  "help": {
+    "title": "Not registered or having a problem?",
+    "body": "Get in touch through the form on our contact page and our team will help.",
+    "cta": "Contact Us"
+  }
+}

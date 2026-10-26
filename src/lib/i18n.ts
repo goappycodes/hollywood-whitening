@@ -91,6 +91,18 @@ export const PAGE_SLUGS = {
   },
   warranty: { en: "warranty", es: "garantia", de: "garantie", ru: "гарантия" },
   sitemap: { en: "sitemap", es: "mapa-del-sitio-2", de: "sitemap", ru: "карта-сайта" },
+  "machine-auth": {
+    en: "machine-authentication",
+    es: "autenticacion-de-maquina",
+    de: "maschinenauthentifizierung",
+    ru: "машинная-аутентификация",
+  },
+  "qualification-check": {
+    en: "qualification-check",
+    es: "verificacion-de-calificacion",
+    de: "qualifikationsprufung",
+    ru: "проверка-квалификации",
+  },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type PageKey = keyof typeof PAGE_SLUGS;
@@ -111,8 +123,17 @@ export const BUILT_PAGES = [
   "comet-2",
   "galaxy",
   "sitemap",
+  "machine-auth",
+  "qualification-check",
 ] as const satisfies readonly PageKey[];
 export type BuiltPage = (typeof BUILT_PAGES)[number];
+
+/**
+ * Built pages kept out of search, as on the live site (robots noindex there): utility
+ * pages with nothing to rank for. They get a noindex robots tag and are left out of
+ * sitemap.xml.
+ */
+export const NOINDEX_PAGES: readonly BuiltPage[] = ["machine-auth", "qualification-check"];
 
 /** Pages still served by WordPress — linked absolutely so they keep working. */
 const WP_ONLY_PAGES: readonly PageKey[] = ["account", "shop"];

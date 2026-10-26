@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Verificación de cualificación | Hollywood Whitening",
+    "description": "Compruebe si una persona está cualificada para utilizar los equipos de Hollywood Whitening o autorizada para distribuir el producto mediante su número de cualificación o certificación."
+  },
+  "title": "Verificación de cualificación",
+  "eyebrow": "Comprobación de certificación",
+  "heading": "Número de cualificación",
+  "intro": "Para verificar si la persona está calificada para operar el equipo o es un miembro autorizado para distribuir el producto, ingrese su número de calificación/certificación en el cuadro de búsqueda. La actualización de la nueva certificación puede tardar hasta 7 días.",
+  "label": "Número de cualificación",
+  "placeholder": "Introduzca el número de cualificación",
+  "hint": "Las nuevas certificaciones pueden tardar hasta 7 días en aparecer.",
+  "submit": "Enviar",
+  "checking": "Comprobando…",
+  "errors": {
+    "empty": "Introduzca un número de cualificación.",
+    "failed": "No hemos podido realizar la comprobación. Inténtelo de nuevo."
+  },
+  "result": {
+    "positiveTitle": "Cualificado",
+    "positiveBody": "Este número corresponde a una cualificación de Hollywood Whitening.",
+    "negativeTitle": "No cualificado",
+    "negativeBody": "No, no se trata de un representante cualificado.",
+    "unknownTitle": "No hemos podido comprobarlo ahora",
+    "unknownBody": "Inténtelo de nuevo en unos instantes. Si la certificación es reciente, puede tardar hasta 7 días en aparecer.",
+    "again": "Comprobar otro número"
+  },
+  "help": {
+    "title": "¿Quiere obtener la cualificación?",
+    "body": "Descubra qué incluye nuestra formación en blanqueamiento dental y cómo empezar.",
+    "cta": "Sobre la formación"
+  }
+}

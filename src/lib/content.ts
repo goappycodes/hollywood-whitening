@@ -27,6 +27,16 @@ import locatorEs from "@/content/es/pages/locator.json";
 import locatorDe from "@/content/de/pages/locator.json";
 import locatorRu from "@/content/ru/pages/locator.json";
 
+// Machine Authentication + Qualification Check — one shape for both (hand-written; intros from the live pages).
+import machineAuthEn from "@/content/en/pages/machine-authentication.json";
+import machineAuthEs from "@/content/es/pages/machine-authentication.json";
+import machineAuthDe from "@/content/de/pages/machine-authentication.json";
+import machineAuthRu from "@/content/ru/pages/machine-authentication.json";
+import qualCheckEn from "@/content/en/pages/qualification-check.json";
+import qualCheckEs from "@/content/es/pages/qualification-check.json";
+import qualCheckDe from "@/content/de/pages/qualification-check.json";
+import qualCheckRu from "@/content/ru/pages/qualification-check.json";
+
 // Legal pages (scripts/legal-scrape.mjs) — one shape for all three.
 import privacyEn from "@/content/en/pages/privacy.json";
 import privacyEs from "@/content/es/pages/privacy.json";
@@ -83,6 +93,9 @@ export type AboutContent = typeof aboutEn;
 export type ContactContent = typeof contactEn;
 /** Location Finder (/location-finder/) — copy from the live YITH locator page. */
 export type LocatorContent = typeof locatorEn;
+/** Machine Authentication and Qualification Check — a code lookup with a verdict. */
+export type VerifyContent = typeof machineAuthEn;
+export type VerifyPage = "machine-auth" | "qualification-check";
 
 /** Scraped editor content — see scripts/lib/wp-html.mjs. */
 export type ContentBlock =
@@ -154,6 +167,10 @@ const PRODUCTS = {
 const TRAINING = { en: trainingEn, es: trainingEs, de: trainingDe, ru: trainingRu } as Record<Locale, TrainingContent>;
 const SCIENCE = { en: scienceEn, es: scienceEs, de: scienceDe, ru: scienceRu } as Record<Locale, ScienceContent>;
 const LASER = { en: laserEn, es: laserEs, de: laserDe, ru: laserRu } as Record<Locale, LaserContent>;
+const VERIFY: Record<VerifyPage, Record<Locale, VerifyContent>> = {
+  "machine-auth": { en: machineAuthEn, es: machineAuthEs, de: machineAuthDe, ru: machineAuthRu },
+  "qualification-check": { en: qualCheckEn, es: qualCheckEs, de: qualCheckDe, ru: qualCheckRu },
+};
 const COMMON: Record<Locale, CommonContent> = { en: commonEn, es: commonEs, de: commonDe, ru: commonRu };
 
 export const getHomeContent = (locale: Locale): HomeContent => HOME[locale];
@@ -165,6 +182,7 @@ export const getProductContent = (key: ProductKey, locale: Locale): ProductConte
 export const getTrainingContent = (locale: Locale): TrainingContent => TRAINING[locale];
 export const getScienceContent = (locale: Locale): ScienceContent => SCIENCE[locale];
 export const getLaserContent = (locale: Locale): LaserContent => LASER[locale];
+export const getVerifyContent = (page: VerifyPage, locale: Locale): VerifyContent => VERIFY[page][locale];
 export const getCommonContent = (locale: Locale): CommonContent => COMMON[locale];
 
 /** Instagram snapshot (scripts/instagram-snapshot.mjs) — same posts in every locale. */

@@ -7,7 +7,7 @@ import { getCommonContent } from "@/lib/content";
 import { localePath, LOCALE_META, type Locale } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
 import { BlogHero } from "@/components/blog/BlogHero";
-import { formatPostDate, PostCard, PostImageFallback } from "@/components/blog/PostCard";
+import { formatPostDate, PostCard } from "@/components/blog/PostCard";
 import { Button } from "@/components/ui/Button";
 import { FacebookIcon, LinkedinIcon, WhatsappIcon, XIcon } from "@/components/ui/Social";
 import { Reveal } from "@/components/ui/Reveal";
@@ -115,14 +115,12 @@ export function BlogPostSections({
 
       <section className="bg-white pb-16 sm:pb-20 lg:pb-24">
         <div className="container-x">
-          {/* featured image */}
-          <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-pearl shadow-soft sm:mt-12 lg:mx-auto lg:max-w-5xl">
-            {post.image ? (
+          {/* featured image — left out entirely for the (older) posts that have none in WordPress */}
+          {post.image && (
+            <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-pearl shadow-soft sm:mt-12 lg:mx-auto lg:max-w-5xl">
               <Image src={post.image} alt={post.title} fill priority referrerPolicy="no-referrer" sizes="(min-width: 1024px) 64rem, 100vw" className="object-cover" />
-            ) : (
-              <PostImageFallback />
-            )}
-          </div>
+            </div>
+          )}
 
           <div className={hasToc ? "mt-10 grid gap-8 sm:mt-14 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14 xl:gap-20" : "mt-10 sm:mt-14"}>
             {hasToc && (

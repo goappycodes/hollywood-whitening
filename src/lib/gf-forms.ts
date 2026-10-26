@@ -113,6 +113,20 @@ export const GF_INTEREST_CHOICES = {
   howSoon: ["0 - 3 Months", "3 - 6 Months", "6+ Months", "Just Enquiring"],
 } as const;
 
+/* ------------------------------------------------------------------ */
+/* Forms 2 + 1 — Machine Authentication / Qualification Check           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * One text field each (`input_1`: "Machine Serial Number" / "Qualification Number")
+ * plus a CAPTCHA, read from the live forms (2026-10-26). Posted by
+ * /api/machine-authentication and /api/qualification-check (lib/verify.ts) so the
+ * checks are still logged as entries, as on WordPress.
+ */
+export const GF_MACHINE_AUTH_FORM_ID = 2;
+export const GF_QUAL_CHECK_FORM_ID = 1;
+export const GF_VERIFY_CODE_FIELD = "input_1";
+
 /**
  * Public reCAPTCHA v2 site key of the backend WordPress (shop.hollywoodwhitening.com,
  * Forms → Settings → reCAPTCHA). It must be the key GF is configured with there, or
