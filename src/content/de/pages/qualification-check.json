@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Qualifikationsprüfung | Hollywood Whitening",
+    "description": "Prüfen Sie anhand der Qualifikations- oder Zertifizierungsnummer, ob eine Person zur Bedienung der Hollywood Whitening Geräte berechtigt oder für den Vertrieb des Produkts zugelassen ist."
+  },
+  "title": "Qualifikationsprüfung",
+  "eyebrow": "Zertifikatsprüfung",
+  "heading": "Qualifikationsnummer",
+  "intro": "Um zu prüfen, ob die Person zur Bedienung des Geräts berechtigt ist oder ein zugelassenes Mitglied für den Vertrieb des Produkts ist, geben Sie bitte deren Qualifikations-/Zertifizierungsnummer in das Suchfeld ein. Die Aktualisierung einer neuen Zertifizierung kann bis zu 7 Tage dauern.",
+  "label": "Qualifikationsnummer",
+  "placeholder": "Qualifikationsnummer eingeben",
+  "hint": "Neue Zertifizierungen können bis zu 7 Tage brauchen, bis sie erscheinen.",
+  "submit": "Absenden",
+  "checking": "Wird geprüft…",
+  "errors": {
+    "empty": "Bitte geben Sie eine Qualifikationsnummer ein.",
+    "failed": "Die Prüfung ist gerade nicht möglich. Bitte versuchen Sie es erneut."
+  },
+  "result": {
+    "positiveTitle": "Qualifiziert",
+    "positiveBody": "Diese Nummer gehört zu einer Hollywood Whitening Qualifikation.",
+    "negativeTitle": "Nicht qualifiziert",
+    "negativeBody": "Nein, dies ist kein qualifizierter Vertreter.",
+    "unknownTitle": "Prüfung gerade nicht möglich",
+    "unknownBody": "Bitte versuchen Sie es gleich noch einmal. Neu ausgestellte Zertifizierungen können bis zu 7 Tage brauchen, bis sie erscheinen.",
+    "again": "Weitere Nummer prüfen"
+  },
+  "help": {
+    "title": "Sie möchten sich qualifizieren?",
+    "body": "Erfahren Sie, was unser Zahnaufhellungstraining umfasst und wie Sie starten.",
+    "cta": "Zum Training"
+  }
+}

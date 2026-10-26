@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Qualification Check | Hollywood Whitening",
+    "description": "Check whether a person is qualified to operate Hollywood Whitening equipment or approved to distribute the product, using their qualification or certification number."
+  },
+  "title": "Qualification Check",
+  "eyebrow": "Certification Check",
+  "heading": "Qualification Number",
+  "intro": "To check if the person is qualified to operate the equipment or an approved member to distribute the product, please enter their qualification/certification number in the search box. It may take up to 7 days for new certifications to be updated.",
+  "label": "Qualification Number",
+  "placeholder": "Enter the qualification number",
+  "hint": "New certifications can take up to 7 days to appear.",
+  "submit": "Submit",
+  "checking": "Checking…",
+  "errors": {
+    "empty": "Please enter a qualification number.",
+    "failed": "We couldn’t run the check just now. Please try again."
+  },
+  "result": {
+    "positiveTitle": "Qualified",
+    "positiveBody": "This number matches a Hollywood Whitening qualification.",
+    "negativeTitle": "Not qualified",
+    "negativeBody": "No, this is not a qualified representative.",
+    "unknownTitle": "We couldn’t check right now",
+    "unknownBody": "Please try again in a moment. If the certification was issued recently, it may take up to 7 days to appear.",
+    "again": "Check another number"
+  },
+  "help": {
+    "title": "Looking to get qualified?",
+    "body": "Find out what our teeth whitening training covers and how to get started.",
+    "cta": "About the Training"
+  }
+}

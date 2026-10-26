@@ -12,6 +12,7 @@ import {
   getProductContent,
   getScienceContent,
   getTrainingContent,
+  getVerifyContent,
 } from "@/lib/content";
 import {
   absoluteUrl,
@@ -20,6 +21,7 @@ import {
   languageAlternates,
   LOCALE_META,
   LOCALES,
+  NOINDEX_PAGES,
   resolveBlogSegments,
   resolveSegments,
   type BlogRoute,
@@ -36,6 +38,7 @@ import { ScienceSections } from "@/components/pages/ScienceSections";
 import { LaserSections } from "@/components/pages/LaserSections";
 import { LocatorSections } from "@/components/pages/LocatorSections";
 import { SitemapSections } from "@/components/pages/SitemapSections";
+import { VerifySections } from "@/components/pages/VerifySections";
 import { BlogIndexSections } from "@/components/pages/BlogIndexSections";
 import { BlogPostSections } from "@/components/pages/BlogPostSections";
 import { getCommonContent } from "@/lib/content";
@@ -160,6 +163,8 @@ const PAGE_META: Record<BuiltPage, (locale: Locale) => { title: string; descript
     const { metaTitle: title, metaDescription: description } = getCommonContent(locale).sitemap;
     return { title, description };
   },
+  "machine-auth": (locale) => getVerifyContent("machine-auth", locale).meta,
+  "qualification-check": (locale) => getVerifyContent("qualification-check", locale).meta,
 };
 
 export async function generateMetadata({ params }: PageProps<"/[[...lang]]">): Promise<Metadata> {
@@ -172,6 +177,7 @@ export async function generateMetadata({ params }: PageProps<"/[[...lang]]">): P
     title: { absolute: meta.title },
     description: meta.description,
     alternates: { canonical: url, languages: languageAlternates(page) },
+    ...(NOINDEX_PAGES.includes(page) && { robots: { index: false, follow: true } }),
     openGraph: {
       title: meta.title,
       description: meta.description,
@@ -193,6 +199,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[[...lang]]"
   if (page === "science") return <ScienceSections locale={locale} />;
   if (page === "laser") return <LaserSections locale={locale} />;
   if (page === "sitemap") return <SitemapSections locale={locale} />;
+  if (page === "machine-auth" || page === "qualification-check") return <VerifySections page={page} locale={locale} />;
   if (page === "privacy" || page === "terms" || page === "warranty") return <LegalSections page={page} locale={locale} />;
   if (page === "star-one" || page === "comet-2" || page === "galaxy")
     return <ProductSections product={page} locale={locale} />;

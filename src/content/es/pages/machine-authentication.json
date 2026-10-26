@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Autenticación de máquina | Hollywood Whitening",
+    "description": "Verifique que su sistema Hollywood Whitening sea un producto oficial. Ingrese el número de serie para autenticarlo. Si no se ha registrado o tiene algún problema, contáctenos a través del formulario en la página de contacto."
+  },
+  "title": "Autenticación de máquina",
+  "eyebrow": "Comprobación de producto original",
+  "heading": "Número de serie de la máquina",
+  "intro": "Verifique que su sistema Hollywood Whitening sea un producto oficial. Ingrese el número de serie para autenticarlo. Si no se ha registrado o tiene algún problema, contáctenos a través del formulario en la página de contacto.",
+  "label": "Número de serie de la máquina",
+  "placeholder": "Introduzca su número de serie",
+  "hint": "Introdúzcalo tal y como aparece impreso en su máquina.",
+  "submit": "Enviar",
+  "checking": "Comprobando…",
+  "errors": {
+    "empty": "Introduzca el número de serie de su máquina.",
+    "failed": "No hemos podido realizar la comprobación. Inténtelo de nuevo."
+  },
+  "result": {
+    "positiveTitle": "Este es un producto original",
+    "positiveBody": "Este número de serie pertenece a un sistema oficial de Hollywood Whitening.",
+    "negativeTitle": "Número de serie no reconocido",
+    "negativeBody": "Número incorrecto, puede tratarse de una falsificación: contáctenos para verificarlo.",
+    "unknownTitle": "No hemos podido comprobarlo ahora",
+    "unknownBody": "Inténtelo de nuevo en unos instantes o contáctenos y lo verificaremos por usted.",
+    "again": "Comprobar otro número"
+  },
+  "help": {
+    "title": "¿No se ha registrado o tiene algún problema?",
+    "body": "Escríbanos a través del formulario de nuestra página de contacto y nuestro equipo le ayudará.",
+    "cta": "Contacto"
+  }
+}

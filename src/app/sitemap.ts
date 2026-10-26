@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
 import { getAllBlogs } from "@/lib/blog";
 import { blogIndexPath, blogPostPath } from "@/lib/blog-locale";
-import { absoluteUrl, BUILT_PAGES, languageAlternates, LOCALE_META, LOCALES, type Locale } from "@/lib/i18n";
+import { absoluteUrl, BUILT_PAGES, languageAlternates, LOCALE_META, LOCALES, NOINDEX_PAGES, type Locale } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
 
 const hreflang = (pathOf: (locale: Locale) => string) =>
   Object.fromEntries(LOCALES.map((l) => [LOCALE_META[l].htmlLang, `${SITE.url}${pathOf(l)}`]));
 
-// Every built page in every locale, each with its full hreflang set, plus the blog
+// Every built (indexable) page in every locale, each with its full hreflang set, plus the blog
 // (listing root and every post) from WordPress. Paginated listing pages are left out.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const pages: MetadataRoute.Sitemap = BUILT_PAGES.flatMap((page) =>
+  const pages: MetadataRoute.Sitemap = BUILT_PAGES.filter((page) => !NOINDEX_PAGES.includes(page)).flatMap((page) =>
     LOCALES.map((locale) => ({
       url: absoluteUrl(locale, page),
       changeFrequency: "weekly" as const,

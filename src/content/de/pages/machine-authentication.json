@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Maschinenauthentifizierung | Hollywood Whitening",
+    "description": "Prüfen Sie, ob Ihr Hollywood Whitening System ein offizielles Produkt ist. Geben Sie die Seriennummer zur Authentifizierung ein. Falls Sie sich noch nicht registriert haben oder Probleme auftreten, kontaktieren Sie uns bitte über das Formular auf der Kontaktseite."
+  },
+  "title": "Maschinenauthentifizierung",
+  "eyebrow": "Echtheitsprüfung",
+  "heading": "Maschinenseriennummer",
+  "intro": "Prüfen Sie, ob Ihr Hollywood Whitening System ein offizielles Produkt ist. Geben Sie die Seriennummer zur Authentifizierung ein. Falls Sie sich noch nicht registriert haben oder Probleme auftreten, kontaktieren Sie uns bitte über das Formular auf der Kontaktseite.",
+  "label": "Maschinenseriennummer",
+  "placeholder": "Seriennummer eingeben",
+  "hint": "Geben Sie sie genau so ein, wie sie auf Ihrem Gerät steht.",
+  "submit": "Absenden",
+  "checking": "Wird geprüft…",
+  "errors": {
+    "empty": "Bitte geben Sie die Seriennummer Ihres Geräts ein.",
+    "failed": "Die Prüfung ist gerade nicht möglich. Bitte versuchen Sie es erneut."
+  },
+  "result": {
+    "positiveTitle": "Dies ist ein Originalprodukt",
+    "positiveBody": "Diese Seriennummer gehört zu einem offiziellen Hollywood Whitening System.",
+    "negativeTitle": "Seriennummer nicht erkannt",
+    "negativeBody": "Falsche Nummer, möglicherweise eine Fälschung – kontaktieren Sie uns zur Überprüfung.",
+    "unknownTitle": "Prüfung gerade nicht möglich",
+    "unknownBody": "Bitte versuchen Sie es gleich noch einmal oder kontaktieren Sie uns, damit wir die Nummer für Sie prüfen.",
+    "again": "Weitere Nummer prüfen"
+  },
+  "help": {
+    "title": "Nicht registriert oder ein Problem?",
+    "body": "Schreiben Sie uns über das Formular auf unserer Kontaktseite – unser Team hilft Ihnen gerne.",
+    "cta": "Kontakt"
+  }
+}

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { ChevronDown, ChevronRight, MessageCircle } from "lucide-react";
+import { ChevronDown, MessageCircle } from "lucide-react";
 import { getCommonContent, getLegalContent, type LegalPage } from "@/lib/content";
-import { absoluteUrl, localePath, LOCALE_META, pageHref, type Locale } from "@/lib/i18n";
+import { absoluteUrl, LOCALE_META, pageHref, type Locale } from "@/lib/i18n";
 import { Button } from "@/components/ui/Button";
 import { Prose } from "@/components/ui/Prose";
+import { CompactHero } from "@/components/ui/shared/sections/CompactHero";
 
 /**
  * Privacy, Terms and Warranty pages in any locale. The body is the live WordPress
@@ -63,46 +63,13 @@ export function LegalSections({ page, locale }: { page: LegalPage; locale: Local
 
   return (
     <div lang={LOCALE_META[locale].htmlLang}>
-      {/* compact hero */}
-      <section className="relative isolate overflow-hidden bg-navy text-white">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 -left-32 size-[30rem] rounded-full bg-brand/25 blur-[130px]"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -bottom-40 size-[24rem] rounded-full bg-cyan/10 blur-[110px]"
-        />
-        <div className="container-x relative py-14 sm:py-20 lg:py-24">
-          <nav aria-label={common.breadcrumb} className="text-xs text-white/60">
-            <ol className="flex flex-wrap items-center gap-1.5">
-              <li>
-                <Link href={localePath(locale, "home")} className="transition-colors hover:text-white">
-                  {common.nav.home}
-                </Link>
-              </li>
-              <li aria-hidden>
-                <ChevronRight className="size-3.5 text-white/30" />
-              </li>
-              <li aria-current="page" className="text-white/90">
-                {label}
-              </li>
-            </ol>
-          </nav>
-          <p className="pill glass-dark mt-5 text-[10px] tracking-[0.12em] text-cyan sm:text-[11px] sm:tracking-[0.18em]">
-            <span className="size-1.5 rounded-full bg-cyan" aria-hidden />
-            {t.eyebrow}
+      <CompactHero locale={locale} common={common} eyebrow={t.eyebrow} title={label}>
+        {SHOW_LEAD[page] && content.title && (
+          <p className="mt-3 max-w-2xl text-xl leading-snug font-light sm:text-2xl">
+            <span className="text-cyan-gradient">{content.title}</span>
           </p>
-          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.08] font-bold tracking-[-0.035em] sm:text-5xl lg:text-[3.4rem]">
-            {label}
-          </h1>
-          {SHOW_LEAD[page] && content.title && (
-            <p className="mt-3 max-w-2xl text-xl leading-snug font-light sm:text-2xl">
-              <span className="text-cyan-gradient">{content.title}</span>
-            </p>
-          )}
-        </div>
-      </section>
+        )}
+      </CompactHero>
 
       <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="container-x grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-14 xl:gap-20">

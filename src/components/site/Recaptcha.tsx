@@ -16,7 +16,11 @@
  * step and be reset after a failed submit — a v2 token is single-use.
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+/** Size of Google's v2 checkbox widget (its "normal" size), in CSS px. */
+const WIDGET_WIDTH = 304;
+const WIDGET_HEIGHT = 78;
 
 declare global {
   interface Window {
@@ -55,8 +59,22 @@ export function Recaptcha({
   /** Fires with the token when solved, and with "" when it expires. */
   onToken: (token: string) => void;
 }) {
+  const frame = useRef<HTMLDivElement>(null);
   const box = useRef<HTMLDivElement>(null);
   const widgetId = useRef<number | null>(null);
+  const [scale, setScale] = useState(1);
+
+  // Google's widget is a fixed 304×78 iframe. On narrow phones the form is slimmer than
+  // that, so shrink it to the available width (never enlarge) instead of clipping it.
+  useEffect(() => {
+    const el = frame.current;
+    if (!el) return;
+    const fit = () => setScale(Math.min(1, el.clientWidth / WIDGET_WIDTH));
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -80,5 +98,10 @@ export function Recaptcha({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={box} className="min-h-[78px]" />;
+  return (
+    // The scaled box still takes its full layout size, so the outer height follows the scale.
+    <div ref={frame} className="w-full" style={{ height: WIDGET_HEIGHT * scale }}>
+      <div ref={box} className="origin-top-left" style={{ width: WIDGET_WIDTH, transform: scale < 1 ? `scale(${scale})` : undefined }} />
+    </div>
+  );
 }
