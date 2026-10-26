@@ -106,15 +106,19 @@ async function blogMetadata(route: BlogRoute): Promise<Metadata> {
   const post = await getPostBySlug(route.slug, locale);
   if (!post) return {};
   const url = `${SITE.url}${blogPostPath(post, locale)}`;
-  const description = post.excerpt.slice(0, 160);
+  // Yoast's title / description when WordPress has them (already the full <title>,
+  // site name included, so it bypasses the layout's "%s | …" template); else the
+  // post title and excerpt.
+  const title = post.seo.title ? { absolute: post.seo.title } : post.title;
+  const description = post.seo.description ?? post.excerpt.slice(0, 160);
   return {
-    title: post.title,
+    title,
     description,
     // hreflang to each locale's translated URL (+ x-default → English), from the API's `slugs`.
     alternates: { canonical: url, languages: alternatesFor((l) => blogPostPath(post, l)) },
     openGraph: {
       type: "article",
-      title: post.title,
+      title: post.seo.title ?? post.title,
       description,
       url,
       publishedTime: post.date,

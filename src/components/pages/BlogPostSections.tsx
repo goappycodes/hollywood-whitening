@@ -48,7 +48,7 @@ export function BlogPostSections({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
-      description: post.excerpt,
+      description: post.seo.description ?? post.excerpt,
       url,
       mainEntityOfPage: url,
       inLanguage: htmlLang,
