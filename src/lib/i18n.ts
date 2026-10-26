@@ -110,6 +110,7 @@ export const BUILT_PAGES = [
   "star-one",
   "comet-2",
   "galaxy",
+  "sitemap",
 ] as const satisfies readonly PageKey[];
 export type BuiltPage = (typeof BUILT_PAGES)[number];
 

@@ -170,5 +170,19 @@
       "teeth-whitening-pen": "Teeth Whitening Pen",
       "whitening": "Whitening"
     }
+  },
+  "sitemap": {
+    "metaTitle": "Sitemap | Hollywood Whitening",
+    "metaDescription": "Creating a site map is an essential part of website design. It can help you see all the pages on your website clearly, and understand which pages are most important.",
+    "eyebrow": "Site Index",
+    "title": "Sitemap",
+    "intro": "Every page on the Hollywood Whitening site in one place — our whitening packages, training, guides and latest articles.",
+    "pages": "Pages",
+    "products": "Products",
+    "legal": "Legal",
+    "account": "Your Account",
+    "posts": "Blog Articles",
+    "postsEmpty": "Articles are unavailable right now — browse them on the blog.",
+    "xml": "XML sitemap for search engines"
   }
 }

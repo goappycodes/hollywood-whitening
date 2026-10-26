@@ -170,5 +170,19 @@
       "teeth-whitening-pen": "Zahnaufhellungsstift",
       "whitening": "Aufhellung"
     }
+  },
+  "sitemap": {
+    "metaTitle": "Sitemap | Hollywood Whitening",
+    "metaDescription": "Die Erstellung einer Sitemap ist ein wesentlicher Bestandteil des Webdesigns. Sie hilft Ihnen, alle Seiten Ihrer Website übersichtlich zu erfassen und zu erkennen, welche Seiten am wichtigsten sind.",
+    "eyebrow": "Seitenübersicht",
+    "title": "Sitemap",
+    "intro": "Alle Seiten von Hollywood Whitening auf einen Blick – unsere Whitening-Pakete, Schulungen, Ratgeber und die neuesten Artikel.",
+    "pages": "Seiten",
+    "products": "Produkte",
+    "legal": "Rechtliches",
+    "account": "Ihr Konto",
+    "posts": "Blogartikel",
+    "postsEmpty": "Die Artikel sind gerade nicht verfügbar – Sie finden sie im Blog.",
+    "xml": "XML-Sitemap für Suchmaschinen"
   }
 }

@@ -170,5 +170,19 @@
       "teeth-whitening-pen": "Bolígrafo blanqueador",
       "whitening": "Blanqueamiento"
     }
+  },
+  "sitemap": {
+    "metaTitle": "Hollywood Whitening - Descubre Nuestro Mapa del Sitio",
+    "metaDescription": "Elaborar un mapa del sitio es esencial para el diseño web, proporcionando una visión clara de todas las páginas y su importancia.",
+    "eyebrow": "Índice del sitio",
+    "title": "Mapa del sitio",
+    "intro": "Todas las páginas de Hollywood Whitening en un solo lugar: nuestros paquetes de blanqueamiento, formación, guías y los artículos más recientes.",
+    "pages": "Páginas",
+    "products": "Productos",
+    "legal": "Legal",
+    "account": "Tu cuenta",
+    "posts": "Artículos del blog",
+    "postsEmpty": "Los artículos no están disponibles en este momento; consúltalos en el blog.",
+    "xml": "Mapa del sitio XML para buscadores"
   }
 }
