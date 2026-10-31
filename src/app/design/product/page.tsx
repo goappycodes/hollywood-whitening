@@ -6,33 +6,19 @@ import { Enquire, FaqList, SectionLabel } from "@/components/design/Parts";
 import { ProductVideo } from "@/components/product/ProductVideo";
 import { StickyEnquiryBar } from "@/components/product/StickyEnquiryBar";
 import { Reveal } from "@/components/ui/Reveal";
-import { getHomeContent, getProductContent } from "@/lib/content";
+import { COMET as comet, COMPARE, SPECS } from "@/components/design/data";
+import { getProductContent } from "@/lib/content";
 import { PACKAGES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = { title: { absolute: "New product page design: Comet 2™ | Hollywood Whitening™" } };
 
 const product = getProductContent("comet-2", "en");
-const packages = getHomeContent("en").packages;
-const comet = PACKAGES.find((p) => p.slug === "comet-2")!;
 
 const FACTS = [
   { value: "3", label: "Light sources" },
   { value: "40", label: "Treatments included" },
   { value: "1–30", label: "Minute treatment time" },
   { value: comet.rating.toFixed(2), label: `Rating from ${comet.reviews} reviews` },
-];
-
-const SPECS = [
-  { label: "Display", value: "5-inch colour touchscreen" },
-  { label: "Light output", value: "Blue, Red, Blue + Red + Purple, Blue + Purple" },
-  { label: "Power output", value: "Three-stage selection, to suit the customer’s condition" },
-  { label: "Treatment time", value: "1–30 minutes" },
-  { label: "Frame", value: "Aluminium, with adjustable angles and height" },
-  { label: "Standby", value: "Auto sleep after 60 seconds not in use" },
-  { label: "Hygiene", value: "Disposable sheath, to help prevent cross-infection" },
-  { label: "Voltage", value: "AC 100V–240V" },
-  { label: "Machine box", value: "46 × 67 × 20 cm, 11 kg" },
-  { label: "Material box", value: "30 × 15 × 25 cm, 4 kg" },
 ];
 
 const USES = [
@@ -44,15 +30,6 @@ const USES = [
 const stripped = (html: string) => html.replace(/<[^>]+>/g, "").trim();
 const delivery = product.sections.find((s) => s.kind === "delivery")!;
 const deliveryText = delivery.blocks.flatMap((b) => (b.type === "p" ? [stripped(b.html)] : []));
-
-const COMPARE = [
-  { label: "Use", values: ["Great mobility", "Mobile and fixed", "Fixed only"] },
-  { label: "Treatments included", values: PACKAGES.map((p) => packages.items[p.slug].treatments.replace(" Treatments Inc", "")) },
-  { label: "Wavelengths", values: ["Single", "Triple", "Single"] },
-  { label: "Maintenance", values: ["None", "None", "High"] },
-  { label: "Results", values: PACKAGES.map((p) => `${p.results}/10`) },
-  { label: "Rating", values: PACKAGES.map((p) => p.rating.toFixed(2)) },
-];
 
 export default function DesignProductPage() {
   return (
@@ -88,17 +65,15 @@ export default function DesignProductPage() {
             </dl>
           </div>
         </div>
-        <div className="hw-lit">
-          <Image
-            src="/images/products/comet-2/Comet-2-Full-Kit.jpg"
-            alt="The Comet 2 machine on its wheeled stand, beside the complete kit"
-            width={700}
-            height={1200}
-            priority
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            className="hw-fade mx-auto w-full max-w-md lg:h-[calc(100dvh-7rem)] lg:min-h-[32rem] lg:w-auto lg:max-w-none"
-          />
-        </div>
+        <Image
+          src="/images/science/teeth-whitening-machine.jpg"
+          alt="A smiling man seated beside the Comet 2 machine"
+          width={933}
+          height={1600}
+          priority
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="aspect-[4/5] w-full object-cover object-top lg:aspect-auto lg:h-[calc(100dvh-7rem)] lg:min-h-[32rem]"
+        />
       </section>
 
       <section className="hw-dark mt-14 overflow-hidden py-16 sm:mt-20 sm:py-28">
@@ -125,15 +100,21 @@ export default function DesignProductPage() {
       </section>
 
       <section className="hw-x">
-        <div className="hw-lit">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-[3fr_1fr_1fr]">
           <Image
             src="/images/products/comet-2/Comet-2-Landscape.jpg"
             alt="Comet 2 with its light head on, beside the kit: shade guide, protective glasses, gels and mouth trays"
             width={1200}
             height={700}
-            sizes="(min-width: 1536px) 90rem, 100vw"
-            className="hw-fade mx-auto w-full max-w-6xl"
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="col-span-2 w-full lg:col-span-1"
           />
+          <div className="relative aspect-[3/4] lg:aspect-auto">
+            <Image src="/images/products/comet-2/2.jpg" alt="The Comet 2 light head" fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4] lg:aspect-auto">
+            <Image src="/images/products/comet-2/6.jpg" alt="The Comet 2 colour touchscreen and stylus" fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
+          </div>
         </div>
         <p className="mt-3 text-sm text-muted">Pictures are for illustration only.</p>
       </section>

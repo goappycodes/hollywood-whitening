@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { DESIGN_ROUTES } from "@/components/design/Chrome";
 import { LoopVideo } from "@/components/design/LoopVideo";
-import { Enquire, FaqList, SectionLabel, ShadeGuide } from "@/components/design/Parts";
+import { Enquire, FaqList, SectionLabel } from "@/components/design/Parts";
 import { Reveal } from "@/components/ui/Reveal";
 import { fill, getHomeContent } from "@/lib/content";
 import { HERO_MEDIA, PACKAGES } from "@/lib/site";
@@ -66,8 +66,6 @@ export default function DesignHomePage() {
           </div>
           <LoopVideo src={HERO_MEDIA.video} poster={HERO_MEDIA.poster} />
         </div>
-
-        <ShadeGuide className="mt-10 h-16 sm:mt-14 sm:h-28" />
       </section>
 
       <section aria-label={home.stats.label} className="hw-x mt-14 sm:mt-20">
@@ -138,9 +136,7 @@ export default function DesignHomePage() {
             return (
               <Reveal key={pkg.slug}>
                 <article className="hw-rule grid items-center gap-6 py-8 lg:grid-cols-[3fr_4fr_3fr_auto] lg:gap-10">
-                  <div className="hw-lit">
-                    <Image src={pkg.image} alt="" width={1024} height={597} sizes="(min-width: 1024px) 25vw, 100vw" className="hw-fade w-full" />
-                  </div>
+                  <Image src={pkg.image} alt="" width={1024} height={597} sizes="(min-width: 1024px) 25vw, 100vw" className="w-full" />
                   <div>
                     <p className="hw-label text-muted">
                       {item.tier} · {comet ? "Best seller" : item.badge}

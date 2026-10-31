@@ -1,0 +1,190 @@
+/*
+ * Concept B: calm and professional, for salon and clinic owners.
+ * White and porcelain, brand navy, light geometric type, and arched image frames.
+ * Overriding the theme tokens also restyles the shared EnquiryForm and StickyEnquiryBar.
+ */
+.hb {
+  --color-ink: #12263f;
+  --color-muted: #566678;
+  --color-line: #dfe5eb;
+  --color-pearl: #f5f7f9;
+  --color-brand: #1d5fa8;
+  --color-brand-deep: #12263f;
+  --color-brand-sky: #e9f0f7;
+  --color-navy: #12263f;
+  --color-cyan: #fff;
+  --hb-porcelain: #f5f7f9;
+  --hb-gutter: clamp(1.25rem, 4vw, 3rem);
+
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-hb-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.hb :is(h1, h2, h3) {
+  hyphens: manual;
+}
+
+.hb-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: var(--hb-gutter);
+}
+
+.hb-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.hb-porcelain {
+  background: var(--hb-porcelain);
+}
+
+.hb-h1,
+.hb-h2,
+.hb-h3 {
+  font-family: var(--font-hb-display), ui-sans-serif, sans-serif;
+  font-weight: 300;
+  text-wrap: balance;
+}
+.hb-h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+}
+.hb-h2 {
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+.hb-h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.hb-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.hb-lead {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+
+.hb-btn,
+.hb-btn-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+.hb-btn {
+  background: var(--color-ink);
+  color: #fff;
+}
+.hb-btn:hover {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+.hb-btn-line:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.hb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: var(--color-brand);
+  text-underline-offset: 4px;
+}
+.hb-link:hover {
+  text-decoration: underline;
+}
+
+/* The arched window: the concept's signature image frame. */
+.hb-arch {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px 0.75rem 0.75rem;
+  background: var(--hb-porcelain);
+}
+
+/* For photos on pure white, which would otherwise lose the arch against the page. */
+.hb-arch-tint {
+  background: #eef2f6;
+}
+.hb-arch-tint img {
+  mix-blend-mode: multiply;
+}
+
+.hb-photo {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.hb-card {
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.hb a:focus-visible,
+.hb button:focus-visible,
+.hb summary:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.hb details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.hb details > summary::-webkit-details-marker {
+  display: none;
+}
+.hb details[open] .hb-chevron {
+  transform: rotate(180deg);
+}
+.hb-chevron {
+  transition: transform 0.25s;
+}
+
+.hb form button[type="submit"] {
+  background: var(--color-ink);
+  box-shadow: none;
+}
+.hb form button[type="submit"]:hover {
+  background: var(--color-brand);
+}
+.hb .fixed.inset-x-0 a {
+  box-shadow: none;
+}
+.hb-video > div {
+  border-radius: 1rem;
+  box-shadow: none;
+}
+.hb-video button > span:last-child {
+  background: #fff;
+  color: var(--color-ink);
+  box-shadow: none;
+}

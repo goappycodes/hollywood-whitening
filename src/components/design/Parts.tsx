@@ -7,28 +7,6 @@ import { pageHref } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
-/** Stained to bright, as on a dentist's shade guide. */
-export function shadeAt(t: number) {
-  const from = [214, 174, 96];
-  const to = [255, 255, 255];
-  const [r, g, b] = from.map((c, i) => Math.round(c + (to[i] - c) * t));
-  return `rgb(${r} ${g} ${b})`;
-}
-
-export function ShadeGuide({ className = "h-16 sm:h-24" }: { className?: string }) {
-  return (
-    <div aria-hidden className={`flex items-start gap-[2px] sm:gap-1 ${className}`}>
-      {Array.from({ length: 20 }, (_, i) => (
-        <span
-          key={i}
-          className="hw-tab rise h-full"
-          style={{ backgroundColor: shadeAt(i / 19), "--rise-delay": `${i * 0.04}s` } as React.CSSProperties}
-        />
-      ))}
-    </div>
-  );
-}
-
 export function SectionLabel({ index, children }: { index?: string; children: ReactNode }) {
   return (
     <p className="hw-label flex gap-3 text-muted">

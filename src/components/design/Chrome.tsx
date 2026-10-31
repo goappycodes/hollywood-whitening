@@ -20,7 +20,7 @@ export function DesignHeader() {
   return (
     <header className="hw-x flex flex-wrap items-center justify-between gap-x-3 gap-y-3 py-4 sm:gap-x-8 sm:py-5">
       <Link href={DESIGN_ROUTES.home} aria-label={SITE.legalName}>
-        <Image src="/images/logo.png" alt="" width={289} height={55} priority className="hw-multiply h-7 w-auto sm:h-9" />
+        <Image src="/images/logo.png" alt="" width={289} height={55} priority className="h-7 w-auto sm:h-9" />
       </Link>
       <nav aria-label="Main" className="order-3 flex w-full gap-6 text-[0.95rem] font-medium sm:order-none sm:w-auto sm:gap-9">
         {NAV.map((item) => (

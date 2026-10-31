@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, DM_Mono, Instrument_Sans } from "next/font/google";
 import { DesignFooter, DesignHeader } from "@/components/design/Chrome";
-import { ShadeScroll } from "@/components/design/ShadeScroll";
 import "./design.css";
 
 const display = Bodoni_Moda({
@@ -29,14 +28,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/**
- * New design direction, kept apart from the current pages for client review.
- * The page background whitens as it scrolls (ShadeScroll); see design.css for tokens.
- */
+/** Concept A, kept apart from the current pages for client review; see design.css for tokens. */
 export default function DesignLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`hw ${display.variable} ${body.variable} ${mono.variable} flex min-h-dvh flex-col`}>
-      <ShadeScroll />
       <DesignHeader />
       <main id="main" className="flex-1">
         {children}
