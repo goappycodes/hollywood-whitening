@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Dancing_Script, Marck_Script, Montserrat, Sora } from "next/font/google";
-import { Header } from "@/components/site/Header";
-import { Footer } from "@/components/site/Footer";
 import { HtmlLang } from "@/components/site/HtmlLang";
 import { getHomeContent } from "@/lib/content";
 import { SITE } from "@/lib/site";
@@ -98,11 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="flex min-h-dvh flex-col" suppressHydrationWarning>
         <HtmlLang />
-        <Header />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       </body>
     </html>
