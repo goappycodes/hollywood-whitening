@@ -19,7 +19,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
           alt={image.alt}
           fill
           priority
-          sizes="(min-width: 1024px) 40rem, 100vw"
+          sizes="(min-width: 1024px) 44rem, 100vw"
           className="object-cover"
           style={{ objectPosition: image.position }}
         />

@@ -1,0 +1,222 @@
+/*
+ * Concept C: "switching on the light". Black stage, pure white light, and one signature:
+ * the Arc, a smile-shaped line in the machine's real blue, red and purple.
+ * Overriding the theme tokens also restyles the shared EnquiryForm and StickyEnquiryBar.
+ */
+.hc {
+  --hc-black: #050506;
+  --hc-violet: #8a4dff;
+  --hc-blue: #3d7bff;
+  --hc-red: #ff4257;
+  --hc-spectrum: linear-gradient(90deg, var(--hc-violet), var(--hc-blue) 55%, var(--hc-red));
+  --hc-gutter: clamp(1.25rem, 2.5vw, 2.5rem);
+  --color-ink: #050506;
+  --color-muted: #5f6066;
+  --color-line: rgb(5 5 6 / 0.14);
+  --color-pearl: #f4f4f5;
+  --color-brand: #050506;
+  --color-brand-deep: #3d7bff;
+  --color-brand-sky: #eeeef0;
+  --color-navy: #050506;
+  --color-cyan: #fff;
+
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-hc-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.hc :is(h1, h2, h3) {
+  hyphens: manual;
+}
+
+.hc-x {
+  width: 100%;
+  max-width: 110rem;
+  margin-inline: auto;
+  padding-inline: var(--hc-gutter);
+}
+
+.hc-on {
+  background: #fff;
+  color: var(--hc-black);
+}
+.hc-off {
+  background: var(--hc-black);
+  color: #fff;
+  --color-line: rgb(255 255 255 / 0.18);
+  --color-muted: #a3a4ab;
+}
+
+.hc-section {
+  padding-block: clamp(5rem, 11vw, 11rem);
+}
+
+.hc-display {
+  font-family: var(--font-hc-display), ui-sans-serif, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+.hc-giant {
+  font-size: clamp(3.6rem, 11.5vw, 13rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+.hc-h2 {
+  font-size: clamp(2.6rem, 6.4vw, 7rem);
+}
+.hc-h3 {
+  font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+.hc-lead {
+  font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.hc-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+
+.hc-btn,
+.hc-btn-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    box-shadow 0.3s,
+    background-color 0.2s,
+    color 0.2s;
+}
+.hc-btn {
+  background: var(--hc-black);
+  color: #fff;
+}
+.hc-off .hc-btn {
+  background: #fff;
+  color: var(--hc-black);
+}
+.hc-btn:hover {
+  box-shadow:
+    -10px 4px 28px -4px var(--hc-violet),
+    0 6px 28px -4px var(--hc-blue),
+    10px 4px 28px -4px var(--hc-red);
+}
+.hc-btn-line {
+  border: 1px solid currentColor;
+}
+.hc-btn-line:hover {
+  background: var(--hc-black);
+  color: #fff;
+}
+.hc-off .hc-btn-line:hover {
+  background: #fff;
+  color: var(--hc-black);
+}
+
+.hc-rule {
+  border-top: 1px solid var(--color-line);
+}
+.hc-spectrum-line {
+  height: 2px;
+  background: var(--hc-spectrum);
+}
+
+/* Header inverts itself over the black and white sections. */
+.hc-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+/* Switch-on hero: the photo is revealed by a circle of light growing from the lamp. */
+.hc-reveal {
+  mask-image: radial-gradient(circle at var(--lx, 50%) var(--ly, 57%), #000 calc(var(--r, 60px) * 0.62), transparent var(--r, 60px));
+}
+
+.hc details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.hc details > summary::-webkit-details-marker {
+  display: none;
+}
+.hc details[open] .hc-plus {
+  transform: rotate(45deg);
+}
+.hc-plus {
+  transition: transform 0.25s;
+}
+
+.hc a:focus-visible,
+.hc button:focus-visible,
+.hc summary:focus-visible {
+  outline: 2px solid var(--hc-blue);
+  outline-offset: 3px;
+}
+
+/* Range input for the results dial. */
+.hc-dial {
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--hc-spectrum);
+  cursor: pointer;
+}
+.hc-dial::-webkit-slider-thumb {
+  appearance: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 24px 2px var(--hc-blue);
+}
+.hc-dial::-moz-range-thumb {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 24px 2px var(--hc-blue);
+}
+.hc-dial:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 12px;
+}
+
+.hc form button[type="submit"] {
+  background: var(--hc-black);
+  box-shadow: none;
+}
+.hc form button[type="submit"]:hover {
+  background: var(--hc-blue);
+}
+.hc .fixed.inset-x-0 a {
+  box-shadow: none;
+}
+.hc .fixed.inset-x-0 a[href^="#"] {
+  background: #fff;
+  color: var(--hc-black);
+}
+.hc-video > div {
+  border-radius: 0;
+  box-shadow: none;
+}
+.hc-video button > span:last-child {
+  background: #fff;
+  color: var(--hc-black);
+  box-shadow: none;
+}

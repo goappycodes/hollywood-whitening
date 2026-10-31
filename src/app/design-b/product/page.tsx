@@ -37,7 +37,7 @@ const deliveryText = delivery.blocks.flatMap((b) => (b.type === "p" ? [stripped(
 export default function ConceptProductPage() {
   return (
     <>
-      <section className="hb-x grid items-start gap-10 pt-8 pb-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pt-12">
+      <section className="hb-x grid items-start gap-10 pt-8 pb-16 lg:grid-cols-[minmax(0,44rem)_minmax(0,1fr)] lg:gap-16 lg:pt-12">
         <Gallery images={IMAGES} />
         <div className="lg:sticky lg:top-8">
           <p className="hb-eyebrow">Complete business package</p>
@@ -72,12 +72,12 @@ export default function ConceptProductPage() {
 
       <section className="hb-porcelain hb-section">
         <div className="hb-x grid items-center gap-10 md:grid-cols-[5fr_7fr] lg:gap-20">
-          <div className="hb-arch mx-auto w-full max-w-sm">
+          <div className="hb-arch mx-auto w-full max-w-md">
             <Image
               src="/images/science/teeth-whitening-machine.jpg"
               alt="A smiling man seated beside the Comet 2"
               fill
-              sizes="(min-width: 768px) 24rem, 100vw"
+              sizes="(min-width: 768px) 28rem, 100vw"
               className="object-cover object-top"
             />
           </div>

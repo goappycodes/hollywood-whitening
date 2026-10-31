@@ -43,8 +43,8 @@ export function AudienceTabs({ items }: { items: Audience[] }) {
       </div>
 
       <div id="aud-panel" role="tabpanel" aria-labelledby={`aud-tab-${active}`} className="mt-10 grid items-center gap-10 md:grid-cols-[5fr_7fr] lg:gap-20">
-        <div className={`hb-arch mx-auto w-full max-w-sm ${item.tint ? "hb-arch-tint" : ""}`}>
-          <Image key={item.image} src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 24rem, 100vw" className="object-cover object-top" />
+        <div className={`hb-arch mx-auto w-full max-w-md ${item.tint ? "hb-arch-tint" : ""}`}>
+          <Image key={item.image} src={item.image} alt={item.alt} fill sizes="(min-width: 768px) 28rem, 100vw" className="object-cover object-top" />
         </div>
         <div>
           <h3 className="hb-h2">{item.title}</h3>

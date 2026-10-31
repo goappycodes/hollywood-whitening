@@ -74,7 +74,7 @@ export default function ConceptHomePage() {
   return (
     <>
       <section className="grid items-center gap-10 pt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14 lg:py-16">
-        <div className="pr-[var(--hb-gutter)] pl-[max(var(--hb-gutter),calc((100vw-80rem)/2+var(--hb-gutter)))]">
+        <div className="pr-[var(--hb-gutter)] pl-[max(var(--hb-gutter),calc((100vw-var(--hb-max))/2+var(--hb-gutter)))]">
           <p className="hb-eyebrow">For salons, clinics and technicians</p>
           <h1 className="hb-h1 mt-4">Professional teeth whitening, made for your business</h1>
           <p className="hb-lead mt-6 max-w-lg">
@@ -173,12 +173,12 @@ export default function ConceptHomePage() {
               ))}
             </ul>
           </div>
-          <div className="hb-arch order-first mx-auto w-full max-w-sm md:order-none">
+          <div className="hb-arch order-first mx-auto w-full max-w-md md:order-none">
             <Image
               src="/images/products/comet-2/6.jpg"
               alt="The Comet 2 colour touchscreen and stylus"
               fill
-              sizes="(min-width: 768px) 24rem, 100vw"
+              sizes="(min-width: 768px) 28rem, 100vw"
               className="object-cover"
             />
           </div>

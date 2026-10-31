@@ -82,7 +82,7 @@ export default function ConceptServicePage() {
             width={2560}
             height={1707}
             priority
-            sizes="(min-width: 1280px) 74rem, 100vw"
+            sizes="100vw"
             className="aspect-[3/2] w-full object-cover object-top md:aspect-[2/1]"
           />
         </div>
@@ -136,12 +136,12 @@ export default function ConceptServicePage() {
 
       <section className="hb-section !pt-0">
         <div className="hb-x grid items-center gap-10 md:grid-cols-[5fr_7fr] lg:gap-20">
-          <div className="hb-arch hb-arch-tint mx-auto w-full max-w-sm">
+          <div className="hb-arch hb-arch-tint mx-auto w-full max-w-md">
             <Image
               src="/images/science/operating-teeth-whitening-macihne.jpg"
               alt="A man operating the Comet 2 touchscreen"
               fill
-              sizes="(min-width: 768px) 24rem, 100vw"
+              sizes="(min-width: 768px) 28rem, 100vw"
               className="object-cover object-bottom"
             />
           </div>
