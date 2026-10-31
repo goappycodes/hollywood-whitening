@@ -75,54 +75,53 @@ export default function ConceptHomePage() {
         </div>
       </section>
 
-      <section id="systems" className="scroll-mt-0">
-        {PACKAGES.map((pkg, i) => {
-          const item = home.packages.items[pkg.slug];
-          const portrait = PORTRAITS[pkg.slug];
-          const comet = pkg.slug === "comet-2";
-          return (
-            <article key={pkg.slug} className="hc-off border-t border-white/15 lg:sticky lg:top-0 lg:grid lg:h-dvh lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-              <div className="relative aspect-[4/5] bg-white lg:aspect-auto">
-                <Image
-                  src={portrait.src}
-                  alt={`${pkg.name} machine`}
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className={portrait.contain ? "object-contain p-8" : "object-cover"}
-                />
-              </div>
-              <div className="flex flex-col justify-between gap-12 px-[var(--hc-gutter)] pt-10 pb-12 lg:pt-28 lg:pb-14 lg:pl-16">
-                <div>
-                  <p className="hc-tag">
+      <section id="systems" className="hc-off hc-section scroll-mt-0 !pt-0">
+        <div className="hc-x">
+          <div className="hc-rule flex flex-col gap-4 pt-5 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+            <h2 className="hc-display hc-h2">Three systems, one standard.</h2>
+            <p className="text-muted">Pricing is provided on enquiry.</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3 lg:mt-14">
+            {PACKAGES.map((pkg, i) => {
+              const item = home.packages.items[pkg.slug];
+              const portrait = PORTRAITS[pkg.slug];
+              const comet = pkg.slug === "comet-2";
+              return (
+                <article key={pkg.slug} className={`hc-card flex flex-col p-5 sm:p-7 ${comet ? "hc-card-lit" : ""} ${i === 1 ? "md:mt-10" : i === 2 ? "md:mt-20" : ""}`}>
+                  <div className="hc-capsule mx-auto aspect-[3/4] w-[72%]">
+                    <Image
+                      src={portrait.src}
+                      alt={`${pkg.name} machine`}
+                      fill
+                      sizes="(min-width: 768px) 22vw, 72vw"
+                      className={portrait.contain ? "object-contain p-6" : "object-cover"}
+                    />
+                  </div>
+                  <p className="hc-tag mt-8">
                     {String(i + 1).padStart(2, "0")} / 03 · {comet ? "Best seller" : item.badge}
                   </p>
-                  <h2 className="hc-display hc-giant mt-5">
-                    {pkg.name.replace("™", "")}
-                    <span className="align-[1em] text-[0.2em] tracking-normal">™</span>
-                  </h2>
-                </div>
-                <div>
-                  <ul className="grid gap-x-8 gap-y-2.5 text-lg sm:grid-cols-2">
+                  <h3 className="hc-display hc-h3 mt-2">{pkg.name}</h3>
+                  <ul className="mt-6 flex-1">
                     {[item.treatments.replace(" Inc", " included"), ...item.features].map((feature) => (
-                      <li key={feature} className="hc-rule pt-2.5">
+                      <li key={feature} className="hc-rule py-2.5">
                         {feature}
                       </li>
                     ))}
-                    <li className="hc-rule pt-2.5">
+                    <li className="hc-rule py-2.5 text-muted">
                       {pkg.rating.toFixed(2)} / 5 · {fill(home.packages.ratingCount, { n: pkg.reviews })}
                     </li>
                   </ul>
-                  <a href={comet ? ROUTES.product : "#enquire"} className={`mt-8 ${comet ? "hc-btn" : "hc-btn-line"}`}>
+                  <a href={comet ? ROUTES.product : "#enquire"} className={`mt-6 w-full ${comet ? "hc-btn" : "hc-btn-line"}`}>
                     {comet ? "Explore Comet 2™" : "Enquire"} <ArrowUpRight className="size-4" aria-hidden />
                   </a>
-                </div>
-              </div>
-            </article>
-          );
-        })}
+                </article>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
-      <section className="hc-on relative z-10">
+      <section className="hc-on">
         <Image
           src="/images/teeth-guys.jpg"
           alt="Two men smiling as they look at a Hollywood Whitening product box"
@@ -144,7 +143,7 @@ export default function ConceptHomePage() {
         </div>
       </section>
 
-      <section className="hc-off hc-section relative z-10 overflow-hidden">
+      <section className="hc-off hc-section overflow-hidden">
         <div className="hc-x">
           <Arc className="w-full max-w-md" stroke={4} />
           <figure className="mt-12">
@@ -166,19 +165,17 @@ export default function ConceptHomePage() {
         </div>
       </section>
 
-      <section className="hc-on hc-section relative z-10">
+      <section className="hc-on hc-section">
         <div className="hc-x grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-20">
           <h2 className="hc-display hc-h2">Clear answers.</h2>
           <Faqs items={FAQ_PICKS.map((i) => home.blogFaq.faqs[i])} />
         </div>
       </section>
 
-      <div className="relative z-10">
-        <EnquirySection
-          title="Switch on your business."
-          body="Tell us about your plans and our team will talk you through the packages, pricing and next steps."
-        />
-      </div>
+      <EnquirySection
+        title="Switch on your business."
+        body="Tell us about your plans and our team will talk you through the packages, pricing and next steps."
+      />
     </>
   );
 }

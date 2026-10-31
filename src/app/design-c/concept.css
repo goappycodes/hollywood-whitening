@@ -134,6 +134,25 @@
   background: var(--hc-spectrum);
 }
 
+/* Package cards: the best seller is the one that's switched on. */
+.hc-card {
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+}
+.hc-card-lit {
+  border-color: #fff;
+  box-shadow:
+    -14px 6px 44px -12px var(--hc-violet),
+    0 10px 44px -12px var(--hc-blue),
+    14px 6px 44px -12px var(--hc-red);
+}
+.hc-capsule {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #fff;
+}
+
 /* Header inverts itself over the black and white sections. */
 .hc-header {
   position: fixed;
