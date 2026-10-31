@@ -1,0 +1,109 @@
+/*
+ * Concept E: concept D's pearl, one step bolder. Loaded after D's stylesheet, whose classes
+ * and shared components it reuses. Adds larger headings, saturated iridescent panels,
+ * capsule images, a rotating badge and a ticker.
+ */
+.he {
+  background: #f3f2fc;
+}
+
+.he .hd-h1 {
+  font-size: clamp(2.6rem, 4.9vw, 4.9rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+}
+.he .hd-h2 {
+  font-size: clamp(2.05rem, 3.5vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+.he .hd-accent {
+  background-image: linear-gradient(95deg, #5a31e8, #2f74ee 52%, #e0427f);
+}
+
+/* The saturated panel. Used with hd-ink, which supplies its light-on-dark text and buttons. */
+.he .he-iris {
+  background:
+    radial-gradient(60% 90% at 8% 8%, #7a50ff 0%, transparent 62%),
+    radial-gradient(55% 85% at 92% 12%, #2f7de8 0%, transparent 62%),
+    radial-gradient(60% 80% at 82% 104%, #d2437e 0%, transparent 62%),
+    #2c2098;
+  --color-muted: rgb(255 255 255 / 0.84);
+  --color-line: rgb(255 255 255 / 0.26);
+}
+.he .he-iris .hd-eyebrow {
+  color: #fff;
+}
+.he .he-iris .hd-accent {
+  background-image: linear-gradient(95deg, #fff, #dfe9ff 55%, #ffdbe8);
+}
+.he .he-iris .hd-btn {
+  color: #2c2098;
+}
+
+/* Capsule image frame. */
+.he-capsule:not(.absolute) {
+  position: relative;
+}
+.he-capsule {
+  overflow: hidden;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow:
+    0 0 0 6px rgb(255 255 255 / 0.9),
+    0 30px 60px -30px rgb(60 40 170 / 0.55);
+}
+
+/* Big serif numeral or mark with the iridescent fill. */
+.he-numeral {
+  font-family: var(--font-hd-serif), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-size: 3.6rem;
+  line-height: 1;
+  background: linear-gradient(95deg, #5a31e8, #2f74ee 52%, #e0427f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.he-pill {
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.75);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.9);
+}
+
+/* Rotating text badge. */
+.he-badge {
+  animation: he-spin 26s linear infinite;
+}
+@keyframes he-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ticker. */
+.he-ticker {
+  animation: he-ticker 42s linear infinite;
+}
+@keyframes he-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .he-stagger-2 {
+    margin-top: 2.5rem;
+  }
+  .he-stagger-3 {
+    margin-top: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .he-badge,
+  .he-ticker {
+    animation: none;
+  }
+}
