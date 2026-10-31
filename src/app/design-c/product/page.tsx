@@ -34,7 +34,7 @@ export default function ConceptProductPage() {
         <div className="hc-x flex flex-col gap-8 lg:min-h-[calc(100dvh-10rem)] lg:justify-between">
           <div>
             <p className="hc-tag">Best seller · Complete business package</p>
-            <h1 className="hc-display mt-4 whitespace-nowrap text-[clamp(5rem,21vw,23rem)] leading-[0.82] tracking-[-0.055em]">
+            <h1 className="hc-display mt-4 whitespace-nowrap text-[clamp(4.2rem,15vw,16rem)] leading-[0.86] tracking-[-0.05em]">
               Comet 2<span className="align-[3.9em] text-[0.14em] tracking-normal">™</span>
             </h1>
           </div>
@@ -99,7 +99,7 @@ export default function ConceptProductPage() {
           <dl className="mt-24 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
             {NUMBERS.map((n) => (
               <div key={n.label} className="hc-rule pt-5">
-                <dd className="hc-display text-[clamp(2.75rem,11vw,6rem)] lg:text-[clamp(3rem,6vw,6rem)]">{n.value}</dd>
+                <dd className="hc-display text-[clamp(2.5rem,10vw,5rem)] lg:text-[clamp(2.75rem,4.6vw,5rem)]">{n.value}</dd>
                 <dt className="mt-3 text-muted">{n.label}</dt>
               </div>
             ))}

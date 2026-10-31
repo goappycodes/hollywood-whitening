@@ -36,8 +36,6 @@ export default function ConceptHomePage() {
   return (
     <>
       <SwitchOnHero
-        alt="A smiling woman with her hand on the touchscreen of a Hollywood Whitening machine"
-        tallAlt="A smiling man seated beside a Hollywood Whitening machine"
         headline={
           <h1 className="hc-display hc-giant">
             Cold light.
@@ -69,7 +67,7 @@ export default function ConceptHomePage() {
           <dl className="mt-24 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
             {NUMBERS.map((n) => (
               <div key={n.label} className="hc-rule pt-5">
-                <dd className="hc-display text-[clamp(2.75rem,11vw,6rem)] lg:text-[clamp(3rem,6vw,6rem)]">{n.value}</dd>
+                <dd className="hc-display text-[clamp(2.5rem,10vw,5rem)] lg:text-[clamp(2.75rem,4.6vw,5rem)]">{n.value}</dd>
                 <dt className="mt-3 text-muted">{n.label}</dt>
               </div>
             ))}

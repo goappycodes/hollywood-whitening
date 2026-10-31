@@ -1,0 +1,270 @@
+/*
+ * Concept D: mother-of-pearl. Bright panels with an iridescent sheen in the lamp's violet,
+ * ice blue and rose, arranged as a bento grid, with modest type for business buyers.
+ * Overriding the theme tokens also restyles the shared EnquiryForm and StickyEnquiryBar.
+ */
+.hd {
+  --hd-ink: #17152b;
+  --hd-accent: #4a47c9;
+  --hd-gutter: clamp(1rem, 2vw, 2rem);
+  --hd-radius: 1.75rem;
+  --color-ink: #17152b;
+  --color-muted: #5d5b72;
+  --color-line: rgb(23 21 43 / 0.11);
+  --color-pearl: #f6f7fb;
+  --color-brand: #4a47c9;
+  --color-brand-deep: #17152b;
+  --color-brand-sky: #ecebfb;
+  --color-navy: #17152b;
+  --color-cyan: #fff;
+
+  background: #f4f5fa;
+  color: var(--color-ink);
+  font-family: var(--font-hd-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.hd :is(h1, h2, h3) {
+  hyphens: manual;
+  text-wrap: balance;
+}
+
+.hd-x {
+  width: 100%;
+  max-width: 100rem;
+  margin-inline: auto;
+  padding-inline: var(--hd-gutter);
+}
+
+.hd-h1 {
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.hd-h2 {
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.hd-h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+/* The fancy note: one phrase per heading in a pearl-tinted serif italic. */
+.hd-accent {
+  font-family: var(--font-hd-serif), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  letter-spacing: -0.01em;
+  background: linear-gradient(95deg, #5b3fd6, #3f74e0 55%, #c2487f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hd-ink .hd-accent {
+  background: linear-gradient(95deg, #cdbfff, #a9d0ff 55%, #ffc2d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hd-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--hd-accent);
+}
+.hd-ink .hd-eyebrow {
+  color: #bdb6ff;
+}
+.hd-lead {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Panels. Each has a hairline iridescent edge. */
+.hd-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--hd-radius);
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 1px rgb(23 21 43 / 0.06),
+    0 1px 2px rgb(23 21 43 / 0.03),
+    0 18px 40px -28px rgb(60 50 140 / 0.28);
+}
+.hd-pearl {
+  background:
+    radial-gradient(60% 85% at 12% 8%, #e8e2ff 0%, transparent 62%),
+    radial-gradient(52% 75% at 88% 12%, #dbeeff 0%, transparent 62%),
+    radial-gradient(62% 80% at 72% 100%, #ffe6ef 0%, transparent 62%),
+    linear-gradient(#fdfdff, #f7f8fd);
+}
+.hd-ink {
+  background:
+    radial-gradient(70% 90% at 90% 0%, rgb(112 90 230 / 0.5) 0%, transparent 60%),
+    radial-gradient(60% 80% at 0% 100%, rgb(60 120 230 / 0.35) 0%, transparent 60%),
+    var(--hd-ink);
+  color: #fff;
+  --color-muted: #bcbad0;
+  --color-line: rgb(255 255 255 / 0.16);
+}
+
+/* Hero: a pearl wash over the video, so the copy sits on light and the footage shows clear. */
+.hd-hero-wash {
+  background:
+    radial-gradient(38% 70% at 6% 10%, rgb(232 226 255 / 0.95) 0%, transparent 70%),
+    radial-gradient(34% 60% at 26% 100%, rgb(255 230 239 / 0.9) 0%, transparent 70%),
+    linear-gradient(90deg, rgb(251 251 255 / 0.98) 0%, rgb(251 251 255 / 0.95) 36%, rgb(251 251 255 / 0) 62%);
+}
+
+/* Sheen that follows the cursor (see Sheen.tsx). */
+.hd-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(22rem circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.55), rgb(205 195 255 / 0.18) 45%, transparent 70%);
+  mix-blend-mode: soft-light;
+  transition: opacity 0.3s;
+}
+.hd-tile:hover::after {
+  opacity: 1;
+}
+
+/* Small data card floating over a photo. */
+.hd-float {
+  border-radius: 1.1rem;
+  background: rgb(255 255 255 / 0.82);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.7),
+    0 14px 30px -14px rgb(40 30 110 / 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.hd-btn,
+.hd-btn-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+.hd-btn {
+  background: var(--hd-ink);
+  color: #fff;
+}
+.hd-btn:hover {
+  background: var(--hd-accent);
+}
+.hd-btn-line {
+  box-shadow: inset 0 0 0 1px rgb(23 21 43 / 0.2);
+}
+.hd-btn-line:hover {
+  box-shadow: inset 0 0 0 1px var(--hd-ink);
+  background: #fff;
+}
+.hd-ink .hd-btn {
+  background: #fff;
+  color: var(--hd-ink);
+}
+.hd-ink .hd-btn:hover {
+  background: #dcd8ff;
+}
+.hd-ink .hd-btn-line {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.4);
+}
+.hd-ink .hd-btn-line:hover {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.hd-chip {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgb(23 21 43 / 0.16);
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: rgb(255 255 255 / 0.6);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.hd-chip:hover {
+  background: #fff;
+}
+.hd-chip[aria-selected="true"],
+.hd-chip[aria-pressed="true"] {
+  background: var(--hd-ink);
+  color: #fff;
+  box-shadow: none;
+}
+
+.hd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--hd-accent);
+}
+.hd-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.hd-ink .hd-link {
+  color: #cfcaff;
+}
+
+.hd a:focus-visible,
+.hd button:focus-visible,
+.hd summary:focus-visible {
+  outline: 2px solid var(--hd-accent);
+  outline-offset: 3px;
+}
+
+.hd details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.hd details > summary::-webkit-details-marker {
+  display: none;
+}
+.hd details[open] .hd-chevron {
+  transform: rotate(180deg);
+}
+.hd-chevron {
+  transition: transform 0.25s;
+}
+
+.hd form button[type="submit"] {
+  background: var(--hd-ink);
+  box-shadow: none;
+}
+.hd form button[type="submit"]:hover {
+  background: var(--hd-accent);
+}
+.hd .fixed.inset-x-0 a {
+  box-shadow: none;
+}
+.hd-video > div {
+  border-radius: var(--hd-radius);
+  box-shadow: none;
+}
+.hd-video button > span:last-child {
+  background: #fff;
+  color: var(--hd-ink);
+  box-shadow: none;
+}

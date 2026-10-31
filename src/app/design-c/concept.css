@@ -58,12 +58,13 @@
   line-height: 0.98;
 }
 .hc-giant {
-  font-size: clamp(3.6rem, 11.5vw, 13rem);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-size: clamp(3rem, 7.6vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
 }
 .hc-h2 {
-  font-size: clamp(2.6rem, 6.4vw, 7rem);
+  font-size: clamp(2.2rem, 4.6vw, 5rem);
+  line-height: 1.02;
 }
 .hc-h3 {
   font-size: clamp(1.6rem, 2.6vw, 2.6rem);
@@ -142,9 +143,24 @@
   mix-blend-mode: difference;
 }
 
-/* Switch-on hero: the photo is revealed by a circle of light growing from the lamp. */
-.hc-reveal {
-  mask-image: radial-gradient(circle at var(--lx, 50%) var(--ly, 57%), #000 calc(var(--r, 60px) * 0.62), transparent var(--r, 60px));
+/* The Arc lights up on load. */
+.hc-arc-in {
+  animation: hc-arc-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+@keyframes hc-arc-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 50% 0 50%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(-100% -20% -100% -20%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hc-arc-in {
+    animation: none;
+  }
 }
 
 .hc details > summary {
